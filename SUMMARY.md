@@ -2,4 +2,6 @@
 
 * [Introduction](README.md)
 * [Whitepaper](whitepaper.md)
+* [FAQ](faq.md)
+* [Follow Us](follow-us.md)
 
