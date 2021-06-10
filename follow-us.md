@@ -1,7 +1,7 @@
 # Follow Us
 
 - Website: [https://minswap.org](https://minswap.org/)  
-- Read our whitepaper: [https://minswap.org/docs/whitepaper.pdf](https://minswap.org/docs/whitepaper.pdf)  
+- Read our whitepaper: [https://docs.minswap.org/whitepaper](https://docs.minswap.org/whitepaper)  
 - Follow Twitter for more updates: [https://twitter.com/minswapdex](https://twitter.com/minswapdex)  
 - Talk to our community on Discord: [https://discord.gg/amg2AFrPMJ](https://discord.gg/amg2AFrPMJ)  
 - See our development on GitHub: [https://github.com/minswap](https://github.com/minswap)  
