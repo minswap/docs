@@ -2,17 +2,17 @@
 description: Frequently Asked Questions
 ---
 
-# faq
+# FAQ
 
 ## 1. Token Launch & General Information
 
 ### 1.1 Can you do an elevator pitch of MinSwap?
 
-We aim to bring an innovative multi-model asset pool decentralized exchange to the Cardano blockchain. MinSwap aims to be the best liquidity provider on the market by integrating the best asset pool models from across the DEX ecosystem into one protocol. The combination of stable pools, multi-asset pools, and concentrated liquidity will benefit both traders and liquidity providers. We are fair launch with no pre-sales. This ensures our community of users are maximally rewarded, not speculators and insiders
+We aim to bring an innovative multi-model asset pool decentralized exchange to the Cardano blockchain. MinSwap aims to be the best liquidity provider on the market by integrating the best asset pool models from across the DEX ecosystem into one protocol. The combination of stable pools, multi-asset pools, and concentrated liquidity will benefit both traders and liquidity providers. We are fair launch with no pre-sales. This ensures our community of users are maximally rewarded, not speculators and insiders.
 
-### 1.2 How do you buy Min token?
+### 1.2 How do you buy MIN token?
 
-MIN tokens does not have any pre-sale or ICO, ISO or IDO. The only way to acquire MIN tokens is by participating in the protocol or trading it directly on MinSwap. However, there will be an airdrop to reward participants of our incentivized test-net.
+MIN tokens do not have any pre-sale or ICO, ISO or IDO. The only way to acquire MIN tokens is by participating in the protocol or trading it directly on MinSwap. However, there will be an airdrop to reward participants of our incentivized test-net.
 
 1. We anticipate our incentivized test-net \(open to everybody\) with an airdrop will occur in mid-July \(exact date could change based on IOHK onboarding to Alonzo white test-net\). You will be able to deploy the web interface, use the DEX \(trade, farm, and provide liquidity with test tokens\) as normal but in a test environment, and receive airdrop tokens for it. As far as airdrop participation goes, we are going to logarithmically limit rewards, so whales are more on an even playing field with regular stakers. This mechanism, as well as a detailed test-net guide, will be released prior to the test-net launch. Participation will be straightforward and accessible to the non-technical user.
 2. Upon DEX main-net launch, stake LP tokens gained from providing an equal amount of ADA and MIN tokens as liquidity to farm more MIN tokens. This should be sometime in late August/early September. Initial MIN tokens are obtained from the test-net, once main-net goes live you can buy MIN tokens after 24 hours. Unlike ISO, ICO or IDO, through standard DEX distribution, you get MIN tokens according to a rate based on liquidity amount and not increasing or reducing your tokens based on the percentage of the pool you take up. So, it is not a preselected percentage that may reduce as more people buy in, but rather a rate.
@@ -23,7 +23,7 @@ Even though you will be using a test wallet, you will receive your MIN tokens on
 
 ### 1.4 How is MinSwap different from upcoming DEXs in Cardano such as Sundae Swap, Cardex or ErgoDEX?
 
-MinSwap offers a different approach, for instance see the features highlighted in our [WhitePaper](https://docs.minswap.org/whitepaper) such as: multi-function liquidity pools, multi-pool routing, functioning as an on-chain price oracle or automatic babel fees redemption. We also focus more on building instead of fundraising. However, since no DEXs have launched or provided test-environments comparisons are difficult.
+MinSwap offers a different approach, for instance see the features highlighted in our [Whitepaper](https://docs.minswap.org/whitepaper) such as: multi-function liquidity pools, multi-pool routing, functioning as an on-chain price oracle or automatic babel fees redemption. We also focus more on building instead of fundraising. However, since no DEXs have launched or provided test-environments comparisons are difficult.
 
 1. MinSwap will focus on developing multiple kinds of AMM liquidity pools and allow a user's trade to route through the most efficient pools \(this multi-pool routing feature could later be turned into a DEX aggregator\).
 2. We will also roll out features that help to develop the Cardano ecosystem, like an IFO launchpad that allows other projects to launch their tokens safely without fearing IDO sniping bots. We will also have an SPO-friendly delegation policy that helps the decentralization of the network. We aim to be the best platform for new projects to list their token, and for their community to buy and support them.
@@ -52,7 +52,7 @@ Yes, there will be multi-sig and withdrawal limit. So it will take most of the d
 
 No, there isn't. Our community discussion is held in [Discord](https://discord.gg/amg2AFrPMJ) only.
 
-### 1.11 What does MIP-1 in the WhitePaper mean?
+### 1.11 What does MIP-1 in the Whitepaper mean?
 
 MIP stands for MinSwap Improvement Proposal, similar to BIP and EIP. MinSwap is a community oriented project from the start and new changes will be proposed and discussed with our community via MIP process.
 
@@ -76,7 +76,7 @@ The official ADA fee to transact with native tokens is not known yet, we will kn
 
 ### 2.4 Regarding the video of the Demo, once swapping on the pool, is there somewhere where we can see the “pool stats” \(e.g. total liquidity in the LP, the fees taken…\)?
 
-We will add more helpful text in the interface, we'll also create a dedicated info site like the one for [Uniswap.](https://info.uniswap.org/) 
+We will add more helpful text in the interface, we'll also create a dedicated info site like the one for [Uniswap.](https://info.uniswap.org/)
 
 ### 2.5 How do you market to people who have substantial liquidity to provide to the protocol?
 
@@ -160,9 +160,9 @@ You provide your ADA tokens to MinSwap to earn LP tokens and trade fees, MinSwap
 
 ### 5.2 How do you design around the issue that Cardano only lets you touch a eUTXO once per block? Without designing around that, only one person could trade against each pool every block.
 
-There's a myth that the eUTXO model only allows one UTXO to be consumed per block, but when we tested it, we found no problem so far. Our hypothesis is that if the transactions are being submitted sequentially through a centralized PAB \(Plutus Application Backend\), the PAB will execute each transaction with UTXO ref of the previous transaction and once all transactions are included in a block it will naturally succeed. 
+There's a myth that the eUTXO model only allows one UTXO to be consumed per block, but when we tested it, we found no problem so far. Our hypothesis is that if the transactions are being submitted sequentially through a centralized PAB \(Plutus Application Backend\), the PAB will execute each transaction with UTXO ref of the previous transaction and once all transactions are included in a block it will naturally succeed.
 
-**There are 2 scenarios that could go wrong though:** 
+**There are 2 scenarios that could go wrong though:**
 
 1. Somebody submitted an invalid transaction that fails, thus failing subsequent dependent transactions. However, this somebody will suffer a transaction fee because they fail as onchain validator but the subsequent dependent transaction doesn't have to pay a fee because they just refer to the wrong UTXO ref.
 2. Transactions are being submitted from different PAB that takes time to sync their blockchain state with each other, they both refer to the same UTXO and fail. This is unavoidable but we think it's better than letting nodes deciding transaction order based on gas bidding which would lead to nasty problems like transaction took forever to confirm and MEV**.**
@@ -175,14 +175,9 @@ Plutus is written in Haskell, which means that we benefit from using a language 
 
 Solidity, there are many kinds of tokens: Ether, ERC-20, ERC-721,... which lead to ugly wrap and unwrap in many cases. In Plutus all tokens are the same thing: native token, so operations on them are much easier. eUTXO is amazing because it can predict transaction fees accurately and users pay no fee for failed transactions. It also prevents a whole class of problems Ethereum is fighting now like front-running, never-confirmed transactions and MEV. There are some concerns with concurrency in eUTXO but it stems from the Ethereum mindset that a smart contract is one giant state machine serving the richest gas bidders first, which again leads to so many problems like the ones above.
 
-The blockchain only stores the hash of a script, which means a script takes the same space no matter how complicated it is. This is long-term thinking about decentralization, considering Ethereum is more than 300GB now. Of course, there's always 2 sides of the same coin - one thing we found difficult with Plutus is on-chain debugging, but we believe the Plutus team is working hard to improve this. In conclusion, the long years of researching and building from scratch has yielded results. What we have now is a better, faster and safer smart contract platform. Retweet if you think Plutus is going to eat the world finance!
+The blockchain only stores the hash of a script, which means a script takes the same space no matter how complicated it is. This is long-term thinking about decentralization, considering Ethereum is more than 300GB now. Of course, there's always 2 sides of the same coin - one thing we found difficult with Plutus is on-chain debugging, but we believe the Plutus team is working hard to improve this. In conclusion, the long years of researching and building from scratch has yielded results. What we have now is a better, faster and safer smart contract platform.
 
 ## Disclaimer
 
 **The content of the FAQ is for informational purposes only, you should not construe any such information or any material on the MinSwap site as legal, investment, financial, or other advice. Your use of the MinSwap protocol upon launch involves various risks, including, but not limited to, losses while digital assets are being supplied to the MinSwap protocol and losses due to the fluctuation of prices of tokens in a trading pair or liquidity pool. Before using the MinSwap protocol, you should review the relevant documentation to make sure you understand how the MinSwap protocol works. Although MinSwap Labs developed much of the initial code for the MinSwap protocol, it does not provide, own, or control the MinSwap protocol, which is run by smart contracts deployed on the Cardano blockchain. After launch, upgrades and modifications to the protocol will be managed in a community-driven way by holders of the MIN governance token . No developer or entity involved in creating the MinSwap protocol will be liable for any claims or damages whatsoever associated with your use.**
-
-\*\*\*\*
-
-
-
 
