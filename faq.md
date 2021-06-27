@@ -58,7 +58,7 @@ MIP stands for MinSwap Improvement Proposal, similar to BIP and EIP. MinSwap is 
 
 ### 1.12 Could you share some details about the team’s experience and how the project came about?
 
-Our team consists of 4 engineers with experience in FAANG companies and large open-source projects, one marketing manager and 2 designers. You can check our profiles \(Linkedin, Github, etc\) on MinSwap.org. The project started around Feb/Mar 2021 when we were researching cryptocurrencies and Cardano, we found that there wasn't any DEX built on Cardano yet and decided to conceive one. There are many L1 platforms but we found that Cardano has a good community that really cares about its ecosystem and decentralization, good technology and researching approach and we thought that if we choose Cardano as L1 platform to build a DEX it will definitely last.
+Our team consists of 4 engineers with experience in big companies like Amazon, GHTK and large open-source projects, one marketing manager and 2 designers. You can check our profiles \(Linkedin, Github, etc\) on MinSwap.org. The project started around Feb/Mar 2021 when we were researching cryptocurrencies and Cardano, we found that there wasn't any DEX built on Cardano yet and decided to conceive one. There are many L1 platforms but we found that Cardano has a good community that really cares about its ecosystem and decentralization, good technology and researching approach and we thought that if we choose Cardano as L1 platform to build a DEX it will definitely last.
 
 ## 2. Implementation, Attracting LPs and Marketing.
 
