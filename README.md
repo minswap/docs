@@ -6,20 +6,23 @@ With the upcoming release of Alonzo, there will be a lot of innovative projects 
 
 ## Features
 
-- **Fair Launch:** No pre-mine, no pre-sale. MIN tokens are distributed fairly with only 10% allocated to development funds.  
-- **Yield Farming:** MIN tokens are rewarded to liquidity providers who stake their liquidity pool tokens.  
-- **Launchpool:** Supporting new projects in Cardano ecosystem with Initial DEX Offering \(IDO\) and Initial Farm Offering \(IFO\).  
-- **Permissionless:** Anybody can list tokens without permission. Anybody can trade tokens without KYC.  
-- **Community First:** All trading fees go directly to liquidity providers. MIN token holders can vote democratically on protocol changes.  
-- **Ethereum Compatible**: With ERC-20 Converter, users can trade Ethereum tokens at much lower fees.  
-- **Stake Pool Operators Support**: Minswap supports the SPOs by a community-oriented ADA delegation policy and automatic native token fees conversion. \(more details in FAQ\)
+* **Fair Launch:** No pre-mine, no pre-sale. MIN tokens are distributed fairly with only 10% allocated to development funds.  
+* **Yield Farming:** MIN tokens are rewarded to liquidity providers who stake their liquidity pool tokens.  
+* **Launchpool:** Supporting new projects in Cardano ecosystem with Initial DEX Offering \(IDO\) and Initial Farm Offering \(IFO\).  
+* **Permissionless:** Anybody can list tokens without permission. Anybody can trade tokens without KYC.  
+* **Community First:** All trading fees go directly to liquidity providers. MIN token holders can vote democratically on protocol changes.  
+* **Ethereum Compatible**: With ERC-20 Converter, users can trade Ethereum tokens at much lower fees.  
+* **Stake Pool Operators Support**: Minswap supports the SPOs by a community-oriented ADA delegation policy and automatic native token fees conversion. \(more details in FAQ\)
 
 ## Roadmap
-- **Q2 2021:** Fundraising, Constant-Product Pool, Testnet  
-- **Q3 2021:** Mainnet, Security Audit, Liquidity Mining, Initial DEX Offering \(IDO\), Initial Farm Offering \(IFO\)  
-- **Q4 2021:** Stable Pool  
-- **Q1 2022:** Decentralized Autonomous Organization \(DAO\), Community Governance
+
+* **Q2 2021:** Fundraising, Constant-Product Pool, Testnet  
+* **Q3 2021:** Mainnet, Security Audit, Liquidity Mining, Initial DEX Offering \(IDO\), Initial Farm Offering \(IFO\)  
+* **Q4 2021:** Stable Pool  
+* **Q1 2022:** Decentralized Autonomous Organization \(DAO\), Community Governance
 
 ## Token Distribution
+
 Only 10% of the newly minted tokens is allocated to the dev funds, the rest go to our community. 🤗  
 And yes, no premine or presale, at all.
+
