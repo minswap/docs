@@ -5,3 +5,7 @@
 * [FAQ](faq.md)
 * [Follow Us](follow-us.md)
 
+## Proposals
+
+* [Governance](proposals/governance.md)
+
