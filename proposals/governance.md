@@ -10,7 +10,7 @@ description: >-
 
 From the beginning, Minswap will have an online user interface and simple voting procedure for MIPs. MIP stands for Minswap Improvement Proposal, similar to BIP and EIP. As a community-oriented project from the start, new changes will be proposed and discussed with our community via the MIP process.
 
-While Minswap governance will be live from day one, decentralized control of the treasury and protocol changes via MIP implementations will be rolled out on a vesting schedule.  An overview of this schedule will be published prior to launch. Essentially, the rights and power accorded to MIN token holders will steadily increase with time. The reason for vesting governance is to provide the community enough time to familiarize itself with the governance system, bring in high-quality protocol delegates, build and test our technical governance tools, and allow discussions and communications to develop.
+While Minswap governance will be live from day one, decentralized control of the treasury and protocol changes via MIP implementations will be rolled out on a vesting schedule. An overview of this schedule will be published prior to launch. Essentially, the rights and power accorded to MIN token holders will steadily increase with time. The reason for vesting governance is to provide the community enough time to familiarize itself with the governance system, bring in high-quality protocol delegates, build and test our technical governance tools, and allow discussions and communications to develop.
 
 To mitigate concerns about the use of the Minswap community treasury before governance fully vests we have implemented a number of measures. These include multi-sig wallet lockup of funds, public and audited smart contracts that hold treasury funds, a transparent process when key protocol changes are made, and a clear and fair vesting
 
@@ -40,15 +40,15 @@ The code for a proposal must be written before it comes to a vote. All proposed 
 
 For a MIP to move from “Discourse” to “Proposal” it must gain at least X million MINC\(0.25 % total supply\)
 
-For a MIP “Proposal” to pass and become binding it must gain a quorum of at least X million MINC            \(X = 3% of total supply\)
+For a MIP “Proposal” to pass and become binding it must gain a quorum of at least X million MINC \(X = 3% of total supply\)
 
-MINC is our voting metric, and is decided as follows: 
+MINC is our voting metric, and is decided as follows:
 
-Each MIN in the MIN-ADA pool = 2 MINC 
+Each MIN in the MIN-ADA pool = 2 MINC
 
 Each MIN held via stakeMIN tokens = 1 MINC
 
 Each MIN not deployed in protocol = .5 MINC
 
-The duration of voting periods are:  Discourse Period - 14 days / "Proposal" Voting Period  - 7 days
+The duration of voting periods are: Discourse Period - 14 days / "Proposal" Voting Period - 7 days
 

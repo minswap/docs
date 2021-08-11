@@ -6,8 +6,8 @@
 
 ## FAQ
 
-* [General](faqs/general.md)
-* [FISO](faqs/fiso.md)
+* [General](faq/general.md)
+* [FISO](faq/fiso.md)
 
 ## Proposals
 
