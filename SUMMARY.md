@@ -2,8 +2,12 @@
 
 * [Introduction](README.md)
 * [Whitepaper](whitepaper.md)
-* [FAQ](faq.md)
 * [Follow Us](follow-us.md)
+
+## FAQ
+
+* [General](faqs/general.md)
+* [FISO](faqs/fiso.md)
 
 ## Proposals
 
