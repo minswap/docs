@@ -2,7 +2,7 @@
 
 ![](.gitbook/assets/minswap_promo_twitter.jpg)
 
-With the upcoming release of Alonzo, there will be a lot of innovative projects looking for a place to initially distribute their tokens. There will also be lots of DeFi users looking for a place to trade new tokens as well as support their favorite projects. This is the premise of MinSwap - a multi-pool automated market maker. What is multi-pool, anyway? It means that there can be multiple pricing functions for one single pair, for example constant-product function, StableSwap invariant, Kyber's DMM function, etc. The trading interface will compute and route to the most efficient pools.
+With the upcoming release of Alonzo, there will be a lot of innovative projects looking for a place to initially distribute their tokens. There will also be lots of DeFi users looking for a place to trade new tokens as well as support their favorite projects. This is the premise of Minswap - a multi-pool automated market maker. What is multi-pool, anyway? It means that there can be multiple pricing functions for one single pair, for example constant-product function, StableSwap invariant, Kyber's DMM function, etc. The trading interface will compute and route to the most efficient pools.
 
 ## Features
 
