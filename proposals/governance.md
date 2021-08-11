@@ -8,7 +8,7 @@ description: >-
 
 ## Initial Governance Overview
 
-From the beginning, Minswap will have an online user interface and simple voting procedure for MIPs. MIP stands for MinSwap Improvement Proposal, similar to BIP and EIP. As a community-oriented project from the start, new changes will be proposed and discussed with our community via the MIP process.
+From the beginning, Minswap will have an online user interface and simple voting procedure for MIPs. MIP stands for Minswap Improvement Proposal, similar to BIP and EIP. As a community-oriented project from the start, new changes will be proposed and discussed with our community via the MIP process.
 
 While Minswap governance will be live from day one, decentralized control of the treasury and protocol changes via MIP implementations will be rolled out on a vesting schedule.  An overview of this schedule will be published prior to launch. Essentially, the rights and power accorded to MIN token holders will steadily increase with time. The reason for vesting governance is to provide the community enough time to familiarize itself with the governance system, bring in high-quality protocol delegates, build and test our technical governance tools, and allow discussions and communications to develop.
 
