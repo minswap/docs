@@ -104,7 +104,17 @@ Yes, FISO tokens must be redeemed no later than 10 epochs after the FISO ends. A
 
 ### Will there be a general Minswap FAQ?
 
-Yes, it is [here](faqs/general).
+Yes, it is [here](faq/general).
+
+### Where can I find the original announcements?
+
+[Fair ISO application for stake pool operators begins now!](https://medium.com/minswap/fair-iso-application-for-stake-pool-operators-begins-now-e6d563f85eec)
+[https://medium.com/minswap/minswap-fair-launch-tokenomics-and-fiso-airdrop-start-date-a75f3e75a546](https://medium.com/minswap/minswap-fair-launch-tokenomics-and-fiso-airdrop-start-date-a75f3e75a546)
+
+### What is *Legends of the FISO*?
+
+It's a cool comic in our comic series that we minted as NFTs.
+![](.gitbook/assets/fiso-comic-light.jpg)
 
 ## Disclaimer
 
