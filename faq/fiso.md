@@ -25,7 +25,7 @@ All pools that fit that criteria at the time of snapshot were assigned a number 
 
 Stake in one of the ten active pools we’ve partnered with, when all those reach 3 million ADA in delegation, we’ll open fifteen more reserve pools.
 
-**Here are the active pools: GINGR, BLADE, AMOON, ADAHS, VAULT, DEGAS, RSV, MALU, BACK, SWELL**
+\*\*\*\*[**Click here to see the active pools**](https://fiso.minswap.org/)\*\*\*\*
 
 ### How is the reward calculated?
 
