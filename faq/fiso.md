@@ -109,9 +109,18 @@ That will only affect your ADA rewards, it’s one of the reasons we implemented
 
 No. If all 10 go over 3 million ADA the 15 reserve pools are opened. It will not affect your rewards.
 
-### What is MINt, why do I get the majority of my rewards in MINt rather than MIN? Is a MINt/ADA pool different than a MIN/ADA pool? What is the 45 day lockup? How will you tackle impermanent loss for MINt?
+### What is MINt, why do I get the majority of my rewards in MINt rather than MIN? Is a MINt/ADA pool different than a MIN/ADA pool? What is the 45 day lockup? 
 
 MINt is a token that converts into MIN if locked in a contract with ADA for 45 days. Upon seeding MINt and ADA through our designated converter interface on the Minswap app, a MINx/ADA LP token will be minted and locked for 45 days. The ‘x’ indicates a multiplier for yield farming rewards on top of the normal MIN/ADA LP rate. After 45 days, you can withdraw your ADA and newly minted MIN tokens. The ADA will be redeemable immediately, but the MIN will be sent back to users' wallets on a 45-day linear vesting schedule. The intention of the MINt token is to encourage people to participate in the protocol and interact with our application. It should be reiterated that MINt tokens are locked then converted only when entered into a contract through our designated conversion interface. It is possible to create a MINt/ADA, or MINt/Any-Other-Asset, pair to trade MINt. However, after 73 epochs the converter will no longer work. The latest any new MIN will begin vesting from MINt conversions will be epoch 82 \(epoch 73 deposit + 45 days\).
+
+### What is the implication of impermanent loss \(IL\) in locking up ADA and MINt in ADA/MIN pool?
+
+Impermanent loss occurs when pair price moves against each other. However, traditional understanding of IL will not work the same for MINt case because one side of the pair \(MINt\) is the tokens you get for free and has a different market traded price compared to MIN. When you lock up ADA and MINt in ADA/MIN pool, two cases can happen:
+
+* MIN price goes up, this results in your locked ADA amount goes up.
+* MIN price goes down, this results in your locked ADA amount goes down.
+
+This happens due to the nature of how constant-product AMM works. If you LP early, high chances are MIN price will go up against ADA, which result in you walking away with more ADA than you initially deposit. In the opposite case, which is unlikely, you get compensated with the new MIN tokens from yield farming. Note that the LP tokens from locking ADA and MINt will have one of the highest yield farm APY in the beginning.
 
 ### Will a rewards tracker/calculator be provided?
 
