@@ -8,7 +8,7 @@ description: General Frequently Asked Questions
 
 ### 1.1 Can you do an elevator pitch of Minswap?
 
-We aim to bring an innovative multi-model asset pool decentralized exchange to the Cardano blockchain. Minswap aims to be the best liquidity provider on the market by integrating the best asset pool models from across the DEX ecosystem into one protocol. The combination of stable pools, multi-asset pools, and concentrated liquidity will benefit both traders and liquidity providers. We are fair launch with no pre-sales. This ensures our community of users are maximally rewarded, not speculators and insiders.
+We aim to bring an innovative multi-model asset pool decentralized exchange to the Cardano blockchain. Minswap aims to be the best liquidity provider on the market by integrating the best asset pool models from across the DEX ecosystem into one protocol. The combination of stable pools, multi-asset pools, and concentrated liquidity will benefit both traders and liquidity providers. We are fair launch without any private or VC investment. This ensures our community of users are maximally rewarded, not speculators and insiders.
 
 ### 1.2 How do you buy MIN token?
 
