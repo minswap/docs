@@ -160,14 +160,7 @@ You provide your ADA tokens to Minswap to earn LP tokens and trade fees, Minswap
 
 ### 5.2 How do you design around the issue that Cardano only lets you touch a eUTXO once per block? Without designing around that, only one person could trade against each pool every block.
 
-There's a myth that the eUTXO model only allows one UTXO to be consumed per block, but when we tested it, we found no problem so far. Our hypothesis is that if the transactions are being submitted sequentially through a centralized PAB \(Plutus Application Backend\), the PAB will execute each transaction with UTXO ref of the previous transaction and once all transactions are included in a block it will naturally succeed.
-
-**There are 2 scenarios that could go wrong though:**
-
-1. Somebody submitted an invalid transaction that fails, thus failing subsequent dependent transactions. However, this somebody will suffer a transaction fee because they fail as onchain validator but the subsequent dependent transaction doesn't have to pay a fee because they just refer to the wrong UTXO ref.
-2. Transactions are being submitted from different PAB that takes time to sync their blockchain state with each other, they both refer to the same UTXO and fail. This is unavoidable but we think it's better than letting nodes deciding transaction order based on gas bidding which would lead to nasty problems like transaction took forever to confirm and MEV**.**
-
-Additional info found on Reddit: A single dApp like a DEX could enable simultaneity by having multiple transaction outputs that users can access. Although each output can only be used by one person, there are multiple of them. If someone submits an invalid transaction nothing will happen. There will be no failed transaction or charged transaction fee, unless a malicious actor tries to breach the rules then they will suffer fees.This is a complicated topic, the team is waiting for an official answer from IOHK and the Plutus team.
+[Introducing Laminar — An eUTxO scaling protocol for accounting-style smart contract](https://medium.com/minswap/introducing-laminar-an-eutxo-scaling-protocol-for-accounting-style-smart-contract-d1ac8847dde8)
 
 ### 5.3 How does writing Smart Contracts in Cardano with Plutus compare to Solidity on Ethereum?
 
