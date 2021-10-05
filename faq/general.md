@@ -8,11 +8,11 @@ description: General Frequently Asked Questions
 
 ### 1.1 Can you do an elevator pitch of Minswap?
 
-We aim to bring an innovative multi-model asset pool decentralized exchange to the Cardano blockchain. Minswap aims to be the best liquidity provider on the market by integrating the best asset pool models from across the DEX ecosystem into one protocol. The combination of stable pools, multi-asset pools, and concentrated liquidity will benefit both traders and liquidity providers. We are fair launch without any private or VC investment. This ensures our community of users are maximally rewarded, not speculators and insiders.
+We aim to bring an innovative multi-model asset pool decentralized exchange to the Cardano blockchain. Minswap aims to be the best liquidity provider on the market by integrating the best asset pool models from across the DEX ecosystem into one protocol. The combination of stable pools, multi-asset pools, and concentrated liquidity will benefit both traders and liquidity providers. Our tokens are fairly distributed without any private or VC investment. This ensures our community of users are maximally rewarded, not speculators and insiders.
 
 ### 1.2 How do you buy MIN token?
 
-MIN tokens do not have any pre-sale or ICO, ISO or IDO. The only way to acquire MIN tokens is by participating in the protocol or trading it directly on Minswap. However, there will be an airdrop to reward participants of our incentivized test-net.
+The only way to acquire MIN tokens is by participating in the protocol or trading it directly on Minswap. However, there will be an airdrop to reward participants of our incentivized test-net.
 
 1. We anticipate our incentivized test-net \(open to everybody\) with an airdrop will occur in mid-July \(exact date could change based on IOHK onboarding to Alonzo test-net\). You will be able to open the web interface, use the DEX \(trade, farm, and provide liquidity with test tokens\) as normal but in a test environment, and receive airdrop tokens for it. As far as airdrop participation goes, we are going to logarithmically limit rewards, so whales are more on an even playing field with regular stakers. This mechanism, as well as a detailed test-net guide, will be released prior to the test-net launch. Participation will be straightforward and accessible to the non-technical user.
 2. Upon DEX main-net launch, stake LP tokens gained from providing an equal amount of ADA and MIN tokens as liquidity to farm more MIN tokens. This should be sometime in late August/early September. Initial MIN tokens are obtained from the test-net, once main-net goes live you can buy MIN tokens after 24 hours.

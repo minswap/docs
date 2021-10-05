@@ -6,7 +6,7 @@ With the upcoming release of Alonzo, there will be a lot of innovative projects 
 
 ## Features
 
-* **Fair Launch:** No pre-mine, no pre-sale. MIN tokens are distributed fairly to protocol participants and early adopters.
+* **Fair Distribution:** MIN tokens are distributed fairly to protocol participants and early adopters.
 * **Yield Farming:** MIN tokens are rewarded to liquidity providers who stake their liquidity pool tokens.  
 * **Launchpool:** Supporting new projects in Cardano ecosystem with Initial DEX Offering \(IDO\) and Initial Farm Offering \(IFO\).  
 * **Permissionless:** Anybody can list tokens without permission. Anybody can trade tokens without KYC.  
