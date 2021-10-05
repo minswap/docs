@@ -160,7 +160,7 @@ Yes, it is [here](general.md).
 
 [Fair ISO application for stake pool operators begins now!](https://medium.com/minswap/fair-iso-application-for-stake-pool-operators-begins-now-e6d563f85eec) 
 
-[Minswap fair launch tokenomics and FISO airdrop start date](https://medium.com/minswap/minswap-fair-launch-tokenomics-and-fiso-airdrop-start-date-a75f3e75a546)
+[Minswap fair tokenomics and FISO airdrop start date](https://medium.com/minswap/minswap-fair-launch-tokenomics-and-fiso-airdrop-start-date-a75f3e75a546)
 
 ### What is _Legends of the FISO_?
 
