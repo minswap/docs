@@ -4,180 +4,174 @@ description: Frequently Asked Questions
 
 # FAQ
 
-## 1. Token Launch & General Information
+## 1. **代币发行和一般信息**
 
-### 1.1 Can you do an elevator pitch of MinSwap?
+### 1.1 **你能做一个Minswap的推介吗？**
 
-We aim to bring an innovative multi-model asset pool decentralized exchange to the Cardano blockchain. MinSwap aims to be the best liquidity provider on the market by integrating the best asset pool models from across the DEX ecosystem into one protocol. The combination of stable pools, multi-asset pools, and concentrated liquidity will benefit both traders and liquidity providers. We are fair launch with no pre-sales. This ensures our community of users are maximally rewarded, not speculators and insiders.
+我们宗旨在为Cardano区块链带来一个创新的多模式资产池去中心化交易所。 Minswap 旨在通过将来自整个 DEX 生态系统的最佳资产池模型整合到一个协议中，成为市场上最好的流动性提供者。稳定池、多资产池和集中流动性的结合将使交易者和流动性提供者都受益。我们的代币是公平分配的，没有任何私人或风险投资。这确保了我们的用户社区得到最大的回报，而不是投机者和内部人员。
 
-### 1.2 How do you buy MIN token?
+### 1.2 如何购买MIN代币?
 
-MIN tokens do not have any pre-sale or ICO, ISO or IDO. The only way to acquire MIN tokens is by participating in the protocol or trading it directly on MinSwap. However, there will be an airdrop to reward participants of our incentivized test-net.
+t获取 MIN 代币的唯一方法是参与协议或直接在 Minswap 上进行交易。但是将会有空投来奖励我们测试网的参与者。
 
-1. We anticipate our incentivized test-net \(open to everybody\) with an airdrop will occur in mid-July \(exact date could change based on IOHK onboarding to Alonzo test-net\). You will be able to open the web interface, use the DEX \(trade, farm, and provide liquidity with test tokens\) as normal but in a test environment, and receive airdrop tokens for it. As far as airdrop participation goes, we are going to logarithmically limit rewards, so whales are more on an even playing field with regular stakers. This mechanism, as well as a detailed test-net guide, will be released prior to the test-net launch. Participation will be straightforward and accessible to the non-technical user.
-2. Upon DEX main-net launch, stake LP tokens gained from providing an equal amount of ADA and MIN tokens as liquidity to farm more MIN tokens. This should be sometime in late August/early September. Initial MIN tokens are obtained from the test-net, once main-net goes live you can buy MIN tokens after 24 hours.
+1. 我们预计我们的测试网（对所有人开放）将在 7 月中旬进行空投（具体日期可能会根据 IOHK 对 Alonzo 测试网的加入而改变）。您将能够在测试环境中打开 Web 界面使用 DEX（包括交易、农场和提供流动性测试代币），并为其接收空投代币。就空投参与而言，我们将对数限制奖励，因此鲸鱼与其他人平等地竞争。该机制以及详细的测试网指南将在测试网启动之前发布。非技术用户可以直接参。
+2. DEX 主网上线后，通过提供等量的 ADA 和 MIN 代币作为流动性获得 LP 代币，以获得更多 MIN 代币。这应该是在八月底/九月初的某个时候。初始 MIN 代币从测试网获得，一旦主网上线，您可以在 24 小时后购买 MIN 代币。
 
-### 1.3 Will the airdropped tokens on test-net need to be converted to main-net when the main-net launches?
+### 1.3 测试网上空投的代币在主网上线时是否需要转换到主网上？
 
-Even though you will be using a test wallet, you will receive your MIN tokens on the main-net wallet. We put a small logic at the monetary policy that allows a transaction sending MINv0 token to burn address \(0x0\) and forge corresponding MINv1 tokens. Also, we airdrop to the main-net address based on your public key in test-net since your private key can work the same way, you’ll be able to access your funds on main-net. We have tools to scan the blockchain and see which wallets interact with which contracts.
+即使您将使用测试钱包，您也会在主网钱包上收到您的 MIN 代币。我们在货币政策上放了一个小逻辑，允许发送 MINv0 代币的交易烧毁地址（0x0）并伪造相应的 MINv1 代币。另外，我们根据你在测试网中的公钥空投到主网地址，因为你的私钥可以同样的方式工作，你就可以在主网上得到你的资金。我们有工具可以扫描区块链并查看哪些钱包与哪些合约进行交互。
 
-### 1.4 How is MinSwap different from upcoming DEXs in Cardano such as Sundae Swap, Cardex or ErgoDEX?
+### 1.4 Minswap 与 Cardano 即将推出的 DEX（例如 Sundae Swap、Cardex 或 ErgoDEX）有何不同？
 
-MinSwap offers a different approach, for instance see the features highlighted in our [Whitepaper](https://docs.minswap.org/whitepaper) such as: multi-function liquidity pools, multi-pool routing, functioning as an on-chain price oracle or automatic babel fees redemption. We also focus more on building instead of fundraising. However, since no DEXs have launched or provided test-environments comparisons are difficult.
+Minswap 提供了一种不同的方法，例如查看我们白皮书中强调的功能，例如：多功能流动性池、多池路由、作为链上价格预测机或自动费用赎回。我们也更专注于建设而不是筹款。但是，由于没有 DEX 启动或提供测试环境，因此比较困难。
 
-1. MinSwap will focus on developing multiple kinds of AMM liquidity pools and allow a user's trade to route through the most efficient pools \(this multi-pool routing feature could later be turned into a DEX aggregator\).
-2. We will also roll out features that help to develop the Cardano ecosystem, like an IFO launchpad that allows other projects to launch their tokens safely without fearing IDO sniping bots. We will also have an SPO-friendly delegation policy that helps the decentralization of the network. We aim to be the best platform for new projects to list their token, and for their community to buy and support them.
+1. Minswap 将专注于开发多种类型的 AMM（主动做市商） 流动性池，并允许用户的交易通过最有效的池进行路由（这种多池路由功能稍后可以变成 DEX 聚合器。
+2.  我们还将推出有助于开发 Cardano 生态系统的功能，例如 IFO 启动板，它允许其他项目安全地启动其代币，而不必担心 IDO 狙击机器人。我们还将制定一项对 SPO 友好的授权政策，以帮助网络去中心化。我们的目标是成为新项目上架代币以及社区购买和支持他们的最佳平台。
 
-### 1.5 How can I support MinSwap?
 
-Follow our [Twitter](https://twitter.com/minswapdex) and join our [Discord ](https://discord.gg/amg2AFrPMJ)for the latest news. Go to [Ideascale](https://cardano.ideascale.com/a/dtd/MinSwap-Multi-pool-DEX/352679-48088) to support our proposal by clapping and vote for us in the upcoming Catalyst Fund 5, and future ones when voting comes. Catalyst voting is important as this is how the MinSwap project will obtain funds for future development.
 
-### 1.6 Are you developing your own wallet? Or will there be a MetaMask-like wallet for Cardano by the time you launch?
+### 1.5 如何支持Minswap?
 
-We hope [Yoroi](https://yoroi-wallet.com/) and [Daedelus](https://daedaluswallet.io/) will be functional by then, but otherwise we will create a minimal interface for the wallet.
+关注我们的 [Twitter](https://twitter.com/minswapdex) an并加入我们的 [Discord ](https://discord.gg/amg2AFrPMJ)以获取最新消息. 前往 [Ideascale](https://cardano.ideascale.com/a/dtd/MinSwap-Multi-pool-DEX/352679-48088) 支持我们的提案，在即将到来的 Catalyst Fund 5 中并为我们投票。Catalyst 投票很重要，因为这是 Minswap 项目获得未来发展资金的方式。
 
-### 1.7 Is the team part of [Plutus Pioneers Program](https://developers.cardano.org/en/plutus-pioneer-program/)?
+### 1.6 你在开发自己的钱包吗？或者在您推出时是否会有类似 MetaMask 的 Cardano 钱包？
 
-Yes, and the team also learnt Plutus by watching Lars´ videos, reading Plutus source code and grinding every day.
+我们希望 [Yoroi](https://yoroi-wallet.com) 和 [Daedelus](https://daedaluswallet.io) 届时能够正常工作，否则我们将为钱包创建一个最小的界面。
 
-### 1.8 What will be the price of MIN token to ADA or to USD?
+### 1.7 团队是 [Plutus Pioneers Program](https://developers.cardano.org/en/plutus-pioneer-program/) 的一部分吗?
 
-MIN is not pegged. No specific formula has been decided upon yet. Once the first LP is created, you can stake to earn it. So, market forces will determine the price.
+是的，团队还通过观看 Lars 的视频、阅读 Plutus 源代码和每天磨练来学习 Plutus。
 
-### 1.9 Is there any restriction on the development funds?
+### 1.8 MIN 代币对 ADA 或对美元的价格是多少?
 
-Yes, there will be multi-sig and withdrawal limit. So it will take most of the dev team and a long period of time to fully drain the funds.
+MIN 不挂钩。目前还没有确定具体的公式。创建第一个 LP 后，您可以通过质押来赚取它。因此，市场力量将决定价格。
 
-### 1.10 Is there an official Telegram group for MinSwap?
+### 1.9 开发资金是否有限制?
 
-No, there isn't. Our community discussion is held in [Discord](https://discord.gg/amg2AFrPMJ) only.
+是的，会有多重签名和提款限制。因此，将需要大部分开发团队和很长一段时间才能完全耗尽资金。
 
-### 1.11 What does MIP-1 in the Whitepaper mean?
+### 1.10 Minswap有官方的Telegram群吗p?
 
-MIP stands for MinSwap Improvement Proposal, similar to BIP and EIP. MinSwap is a community oriented project from the start and new changes will be proposed and discussed with our community via MIP process.
+不，没有。我们的社区讨论仅在  [Discord](https://discord.gg/amg2AFrPMJ) 中进行。
 
-### 1.12 Could you share some details about the team’s experience and how the project came about?
+### 1.11 白皮书中的MIP-1是什么意思?
 
-Our team consists of 4 engineers with experience in big companies like Amazon, GHTK and large open-source projects, one marketing manager and 2 designers. You can check our profiles \(Linkedin, Github, etc\) on MinSwap.org. The project started around Feb/Mar 2021 when we were researching cryptocurrencies and Cardano, we found that there wasn't any DEX built on Cardano yet and decided to conceive one. There are many L1 platforms but we found that Cardano has a good community that really cares about its ecosystem and decentralization, good technology and researching approach and we thought that if we choose Cardano as L1 platform to build a DEX it will definitely last.
+MIP 代表 Minswap Improvement Proposal，类似于 BIP 和 EIP。 Minswap 从一开始就是一个面向社区的项目，新的更改将通过 MIP 流程与我们的社区一起提出和讨论。
 
-## 2. Implementation, Attracting LPs and Marketing.
+### 1.12 能否分享一下团队的经验以及项目是如何产生的?
 
-### 2.1 What model/mathematical formula will your first available pools follow?
+我们的团队由 4 名在亚马逊、GHTK 和大型开源项目等大公司拥有丰富经验的工程师、一名营销经理和 2 名设计师组成。您可以在 Minswap.org 上查看我们的个人资料（Linkedin、Github 等。该项目于 2021 年 2 月/ 3 月左右开始，当时我们正在研究加密货币和Cardano，我们发现目前还没有任何基于Cardano的 DEX 并决定构思一个。 L1 平台有很多，但我们发现 Cardano 有一个很好的社区，非常关心它的生态系统和去中心化，良好的技术和研究方法，我们认为如果我们选择 Cardano 作为 L1 平台来构建 DEX，它肯定会持续下去实施、吸引 LP 和营销。
 
-First one will be like [Uniswap v2](https://uniswap.org/blog/uniswap-v2/). Uniswap v3 \(concentrated LP\) is probably the next if it proves itself well in Ethereum and we can translate it nicely into Cardano eUTxO model as it keeps all AMM´s good parts while being close to an order-book model in terms of capital efficiency. Later on, we'll expand to other liquidity pools such as StableSwap pool or DMM pool and the trading interface will become like a pool aggregator that routes the trade through the most efficient pools.
+## 2. 实施、吸引 LP 和营销.
 
-### 2.2 Regarding DEXs, will you focus more on gamification/UX/marketing \(like PancakeSwap\) or like others more on liquidity \(like Uniswap\). Do we know what the initial focus of MinSwap will be?
+### 2.1 第一个可用池将遵循什么模型/数学公式?
 
-Uniswap v3 is focusing on capital efficiency because they've gathered enough liquidity, the users consist more of professionals and institutions, and they have a team highly experienced in Solidity and Ethereum to pull that off. Pancake is based on Uniswap v2 and they took some good ideas from Ethereum to implement on BSC, along with good UI/UX and marketing to make it a well rounded product. MinSwap will most likely follow Pancake in the beginning then go our own path \(multi-pool, capital efficiency\) afterwards.
+第一个类似于 [Uniswap v2](https://uniswap.org/blog/uniswap-v2/). Uniswap v3（集中式 LP) 如果它在以太坊中证明自己很好，我们可以很好地将其转换为 Cardano eUTxO 模型，因为它保留了 AMM 的所有优点，同时在资本效率方面接近订单簿模型。我们将扩展到其他流动性池，如稳定币池或 DMM 池，交易界面将变得像一个池聚合器，通过最有效的池路由交易。
 
-### 2.3 Did you overcome the MIN value ADA problem? At the moment, to transfer native tokens on Cardano blockchain you need to send around 1.45 ADA along for the transaction fee. Is this still the case?
+### 2.2 关于 DEX，你会更关注游戏化/用户体验/营销（如 PancakeSwap）还是像其他人一样更关注流动性（如 Uniswap）。我们知道 Minswap 的最初重点是什么吗?
 
-The official ADA fee to transact with native tokens is not known yet, we will know once Alonzo test-net is out. In the blockchain simulator, where we show our Proof of Concept \([see video](https://youtu.be/NxZBj8e_Yic)\) it charges a flat transaction of 10 ADA or 10 Lovelace.
+Uniswap v3 专注于资本效率，因为他们收集了足够的流动性，用户由更多的专业人士和机构组成，并且他们拥有一支稳定和以太坊方面经验丰富的团队来实现这一目标。 Pancake 基于 Uniswap v2，他们从以太坊中汲取了一些很好的想法，并在 BSC 上实施，再加上良好的 UI/UX 和营销，使其成为一个全面的产品。 Minswap 一开始很可能会跟随 Pancake，然后走我们自己的道路（多池，资本效率。
 
-### 2.4 Regarding the video of the Demo, once swapping on the pool, is there somewhere where we can see the “pool stats” \(e.g. total liquidity in the LP, the fees taken…\)?
+### 2.3 你是否克服了 MIN 值 ADA 问题？目前，要在 Cardano 区块链上转移原生代币，您需要发送大约 1.45 ADA 来支付交易费用。现在还是这样吗？
 
-We will add more helpful text in the interface, we'll also create a dedicated info site like the one for [Uniswap.](https://info.uniswap.org/)
+使用原生代币进行交易的官方 ADA 费用尚不清楚，一旦 Alonzo 测试网出来，我们就会知道。在区块链模拟器中，我们展示了我们的概念证明，它收取 10 ADA 或 10 Lovelace 的固定交易费用。
 
-### 2.5 How do you market to people who have substantial liquidity to provide to the protocol?
+### 2.4 **关于Demo的视频，一旦在矿池上交换，有什么地方可以看到“矿池统计数据”（例如LP的总流动性，收取的费用……)**?
 
-We are considering making the mint rate much higher \(like x5-x10\) in the beginning \(2-4 weeks\) to attract more LPs, this is similar to how a traditional business discounts when just opening. Early announcement + large incentives for a short duration will suffice in the beginning. To keep LPs from withdrawing their liquidity after the high initial rewards end we are considering a number of options. MIN multipliers for long-term early providers, NFTs, leaderboards, and other methods are being explored.
+我们将在界面中添加更多有用的文本，我们还将创建一个像 [Uniswap](https://info.uniswap.org) 一样的专用信息站点。
 
-### 2.6 What's your plan for the NFT campaign?
+### 2.5 **你如何向拥有大量流动性以提供给协议的人进行营销？**
 
-Our plan is to release our NFTs which we'll be able to share on NFT related forums and servers. It appeals to global markets, as we're big on multilingual international reach. Our first target is Japan. Second is Spain. Then South America, Brazil, then maybe Italy and so on. There will be some time between each giveaway as the team will also be focused on limited merch and other promotional items.
+我们正在考虑在开始时（2-4 周）提高造币率（如 x5-x10）以吸引更多 LP，这类似于传统业务在开业时的折扣。早期公告+短期大奖励就足够了。为了防止 LP 在高初始奖励结束后撤回其流动性，我们正在考虑多种选择。正在探索长期早期提供商的 MIN 乘数、NFT、排行榜和其他方法。
 
-### 2.7 How will you do marketing?
+### 2.6 **您对 NFT 活动的计划是什么**?
 
-We plan to promote MinSwap and attract users in a number of ways. Twitter will be the platform for big giveaways, community engagement, and most announcements can be found there first. Keep an eye on our [Twitter page](https://twitter.com/minswapdex). Interviews on different Youtube channels, engagement with the [Reddit community](https://www.reddit.com/r/MinSwap/), and promotion in places where the crypto community gathers are all underway.
+我们的计划是发布我们将能够在 NFT 相关论坛和服务器上共享的 NFT。它对全球市场具有吸引力，因为我们在多语言国际影响力方面占有重要地位。我们的第一个目标是日本。其次是西班牙。然后是南美、巴西，然后可能是意大利等等。每次赠品之间都会有一段时间，因为团队还将专注于有限的商品和其他促销品。
 
-## 3. DEX Features
+### 2.7 **你将如何进行营销**?
 
-### 3.1 How will you gradually implement different pools?
+我们计划通过多种方式推广 Minswap 并吸引用户。 Twitter 将成为大赠品、社区参与的平台，大多数公告都可以首先在那里找到。请密切关注我们的 [Twitter page](https://twitter.com/minswapdex). 页面。不同 Youtube 频道的采访、与 [Reddit community](https://www.reddit.com/r/MinSwap/), 社区的互动以及在加密社区聚集的地方进行宣传都在进行中。
 
-In the beginning, because of low liquidity, LPs can only provide liquidity to ADA/X pool \(X is a token\) and every trade of X to Y will go like X -&gt; ADA -&gt; Y. After we get enough users, we'll allow people to create X/Y pools and our frontend interface will find the best trade routes, but that's for constant-product pools, after that we'll go multi-pool which you can find in the [WhitePaper](https://docs.minswap.org/whitepaper).
+## 3. DEX 特点
 
-### 3.2 Will MinSwap have Limit Orders for swapping?
+### 3.1 你将如何逐步实施不同的池?
 
-DEXs normally don't have limit orders for a reason, it's hard to implement on smart contracts of a CFMM \(Constant Function Market Makers\) though Uniswap v3 with their new concentrated liquidity pool has a "sort of" limit order.
+一开始由于流动性低，**LP**只能给**ADA/X**池提供流动性（**X**是代币），**X**到**Y**的每一笔交易都会像**X -> ADA -> Y**。当我们获得足够的用户后，我们将允许人们创建 **X/Y** 池，之后我们的前端界面将会找到最佳交易路线，但这是针对恒定产品池的，之后我们开放更多的流动性矿池，您可以在白皮书 ([WhitePaper](https://docs.minswap.org/whitepaper)) 中找到.
 
-### 3.3 Any plans for smart contract audit?
+### 3.2 **Minswap** 是否有限价单进行交换（**swapping)**?
 
-Yes, we'll contact audit firms and apply for Catalyst Fund 6. The audit firms and completion dates will be announced in the next few months before the main-net launch.
+一般上**DEX** 都没有限价单，尽管**Uniswap v3**及其新的集中流动性池具有**“**某种**”**限价单，但很难在 **CFMM**（恒定函数做市商）的智能合约上实施.
 
-### 3.4 Will there be light mode/dark mode?
+### 3.3 有没有智能合约审计计划？
 
-It is on our roadmap but not a priority.
+有，我们将会联系审计公司并申请Catalyst Fund 6。审计公司和完成日期将在主网发布前的几个月内公布。
 
-### 3.5 Will MinSwap only be able to trade tokens built on Cardano? Will there be an ETH/ADA pool?
+### 3.4 会有亮模式**/**暗模式吗?
 
-There'll be the ERC20-Converter that helps bridge tokens from Ethereum, and [WrapAssets](https://www.wrapassets.io) to bring wrapped Bitcoin and other cryptocurrencies, so we will be able to have ETH/ADA pool.
+它在我们的路线图上，但不是优先事项。
 
-### 3.6 Is it a cross-chain DEX?
+### 3.5 **Minswap** 是否只能交易建立在 **Cardano** 上的代币？ **** 会有 **ETH/ADA** 池吗？
 
-We originally had an idea of a cross-chain DEX based on Cardano when writing the WhitePaper. But then figured that other projects are probably developing bridges in parallel while we develop the DEX \(e.g. ERC-20 converter, WrapAsset, ThorChain\) so we set that idea aside. When MinSwap comes out, we'll use whatever bridge is available to trade assets from other chains.
+将有**ERC20-Converter**帮助桥接来自以太坊的代币，以及 [WrapAssets](https://www.wrapassets.io) 以带来打包的比特币和其他加密货币，因此我们将能够拥有**ETH/ADA**池。
 
-### 3.7 Is the code open-sourced?
+### 3.6 是跨链**DEX**吗?
 
-Yes, most of the code is open sourced on Github. The smart contract code is private and will be open sourced once it is fully audited before main-net launch. But to understand how people are building Dapps for Cardano the Plutus Pioneer Program has great example code: [Found Here.](https://github.com/input-output-hk/plutus-pioneer-program)
+在编写白皮书时，我们最初有一个基于 **Cardano** 的跨链**DEX**的想法。 **** 但后来发现在我们开发 **DEX** 的同时，其他项目可能正在并行开发桥梁（例如 **ERC-20** 转换器、**WrapAsset**、**ThorChain**），所以我们搁置了这个想法。 **** 当 **Minswap** 发布时，我们将使用任何可用的桥梁来交易来自其他链的资产。
 
-### 3.8 According to your [Youtube Demo](https://youtu.be/NxZBj8e_Yic), performing a transaction seems kind of slow from a User Experience perspective, how will you improve this?
+### 3.7 代码是否开源?
 
-Through User Interface, we're going to show a popup of "Transaction submitted, view on Cardano explorer" and then show the transaction confirmed notification later.
+是的，大部分代码都是在**Github**上开源的。 **** 智能合约代码是私有的，在主网启动前经过全面审计后将开源。 **** 但如果想了解如何在**Cardano**构建**Dapp**，**Plutus Pioneer Program** 有很好的示例代 [Found Here](https://github.com/input-output-hk/plutus-pioneer-program)。
 
-## 4. DEX for eUTXO Model, security and tokenomics.
+### 3.8 根据您的 [Youtube Demo](https://youtu.be/NxZBj8e\_Yic), 从用户体验的角度来看，执行交易似乎有点慢，您将如何改进这一点？
 
-### 4.1 Regarding eUTXO model, isn’t it annoying for farming on a DEX?
+通过用户界面，我们将显示**“**交易已提交，在 **Cardano explorer**上查看**”**的弹出窗口，然后显示交易确认通知。
 
-Smart contracts don’t keep any addresses, they only keep the funds and the total supply of LP tokens corresponding to the pool. So, when you redeem LP tokens, the smart contract gives you the funds according to the ratio of your LP tokens. In the worst case, we have to store the people's addresses in the farm, it's easy enough as Plutus allows us to get the “true” PubKeyHash of a wallet, as opposed to the “smoke” addresses of Yoroi/Daedelus.
+## 4. **关于DEX的eUTXO 模型、安全性和代币经济学。**
 
-### 4.2 Is MinSwap going to have protection against flash loan attacks?
+### 4.1 关于**eUTXO**模型，在**DEX**上**yield farming**的体验是否良好？
 
-This refers to an attack on Pancake Bunny using Pancake Swap, it is difficult something like this can happen in Cardano. In addition, we will have a TWAP \(Time Weighted Average Price\) price oracle and fair LP token pricing in our roadmap to help other projects shield against flash loan attacks if they're interested in using MinSwap as price oracle.
+智能合约不保留任何地址，它们只保留与池对应的资金和**LP**代币的总供应量。 **** 因此，当您赎回**LP**代币时，智能合约会根据您的**LP**代币比例为您赎回资金。 **** 在最坏的情况下，我们必须将人们的地址存储在农场中，这很简单，因为**Plutus**允许我们获得钱包**“**真实**”**的**PubKeyHash**，而不是**Yoroi/Daedelus**的**“**烟雾**”**地址。.
 
-### 4.3 Are you afraid of front-running attacks?
+### 4.2 **Minswap** 是否会针对闪贷攻击提供保护？
 
-No, Cardano doesn't even have to care about front-running or MEV \(“miner-extractable value” refers to the amount of value that miners can suck out of the system by front-running\), because of the eUTXO model. In the eUTXO model the input and output of a transaction is predetermined before it's submitted to the chain, so if a relayer/staker node saw it and decided to front-run you, they'll use the input and your transaction is no longer valid, and you don't have to pay any fee. Since front-running a transaction makes that transaction invalid, the front-runner doesn't make any profit, and a sandwich attack is impossible.
+这是指使用**Pancake Swap**攻击**Pancake Bunny**，但在**Cardano**中很难发生这样的事情。 **** 此外，我们的路线图（**road map**）中将有一个 **TWAP**（时间加权平均价格）价格预言机和公平的 **LP** 代币定价，以帮助其他有兴趣使用**Minswap**作为价格预言机的项目抵御闪电贷攻击。
 
-### 4.4 What is the tokenomics of MIN?
+### 4.3 你害怕抢先攻击吗?
 
-The tokenomics is under research. It will be published in the next MIP \(will be shared in the Discord server\). Some rough ideas include a huge mint rate in the beginning to offset for Impermanent Loss, MIN tokens will be used for governance and for staking xMIN to get a percentage of trading fees and other economic activities such as dividends. Every protocol begins with a highly inflationary scheme to reward early participants, because it's extremely risky in the beginning. Thus, providing liquidity in the first month \(“harvest season”\) after main-net launch will lead to x5-x10 more rewards than in later months. We'll have a detailed tokenomics draft, then send it to the community for feedback and input, then finalize it and make it official.
+不，由于**eUTXO**模型，**Cardano**甚至不必关心抢先交易或**MEV**（**“**矿工可提取价值**”**是指矿工可以通过抢先交易从系统中吸取的价值量）。 **** 在**eUTXO**模型中，交易的输入和输出在提交到链之前是预先确定的，因此如果中继者**/**权益人节点看到它并决定提前运行您，他们将使用输入并且您的交易不再有效 **** ，而且您无需支付任何费用。 **** 由于抢先交易会使该交易无效，因此领先交易者不会获得任何利润，因此不可能进行夹心攻击。
 
-### 4.5 Do you have the APYs for different pools, emission schedules and other numbers figured out yet? Will rewards be locked for any amount of time?
+### 4.4 **MIN**的代币经济学是什么?
 
-APY: it depends on supply and demand, the supply is controlled by our team and later by community via a DAO, the demand is control by market participants.
+代币经济学正在研究中。 **** 它将在下一个 **MIP** 中发布（将在 **Discord** 服务器中共享）。 **** 一些粗略的想法包括一开始的巨额铸币率以抵消无常损失，**MIN** 代币将用于治理和抵押 **xMIN** 以获得一定比例的交易费用和其他经济活动，例如股息。 **** 每个协议都以一个高度膨胀的计划开始，以奖励早期参与者，因为它在开始时风险极大。 **** 因此，在主网启动后的第一个月（**“**收获季节**”**）提供流动性将导致比后面几个月多 **x5-x10** 的奖励。 **** 我们将有一个详细的代币经济学草案，然后将其发送给社区以获得反馈和意见，然后最终确定并使其正式化。
 
-Emission schedule: The first month is the "harvest season", emission is huge there, it will be reduced as time goes on and trading volume increases allowing LPs to earn more from trading fees.
+### 4.5 您是否已经计算出不同池的 **APY**、排放时间表和其他数字？ **** 奖励会被锁定任何时间吗?
 
-### 4.6 How does MinSwap delegate locked ADA?
+APY：这取决于供求关系，供应由我们的团队控制，然后由社区通过 DAO 控制，需求由市场参与者控制。
 
-20% of locked ADA is delegated to stake pools that haven't produced any block to help the SPOs mint their first block. The rest is delegated to small-to-medium community pools to encourage decentralization and make sure LPs earn stake rewards on top of trade fees. The delegation policy parameters can later be voted to change by the DAO.
+排放时间表：第一个月是“收获季节”，排放量巨大，随着时间的推移和交易量的增加APY就会随之减少，但是这可以让LP从交易费用中获得更多的收益。
 
-## 5. Advanced Technicals
+### 4.6 **Minswap**如何委托锁定**ADA**?
 
-### 5.1 In your Youtube Interview with [MUSE Pool](https://youtu.be/yL9RXSqVHDs), you mention you can “stake” your ADA, 3 times, which would give you 3 ways to generate passive income at the same time, how does this work?
+20% 的锁定 ADA 被委托给尚未产生任何区块的权益池，以帮助 SPO 铸造他们的第一个区块。 其余的则委托给中小型社区池，以鼓励去中心化并确保 LP 在交易费用之外获得股权奖励。 委托策略参数稍后可以由 DAO 投票更改。
 
-You provide your ADA tokens to MinSwap to earn LP tokens and trade fees, MinSwap delegates your ADA to stake pools so you earn staking rewards, later on you lend your LP tokens at [Liqwid](https://www.liqwid.finance/) and earn interest. So that's 3 times.
+## 5. **进阶技术**
 
-### 5.2 How do you design around the issue that Cardano only lets you touch a eUTXO once per block? Without designing around that, only one person could trade against each pool every block.
+### 5.1 在你对 [MUSE Pool](https://youtu.be/yL9RXSqVHDs) 的 **Youtube** 采访中，你提到你可以**“**质押**”**你的 **ADA**，**3** 次，这会给你 **3** 种方式同时产生被动收入，这是如何运作的？
 
-There's a myth that the eUTXO model only allows one UTXO to be consumed per block, but when we tested it, we found no problem so far. Our hypothesis is that if the transactions are being submitted sequentially through a centralized PAB \(Plutus Application Backend\), the PAB will execute each transaction with UTXO ref of the previous transaction and once all transactions are included in a block it will naturally succeed.
+您将 ADA 代币提供给 Minswap 以赚取 LP 代币和交易费，Minswap 将您的 ADA 委托给权益池，以便您获得权益奖励，之后您将 LP 代币借给 [Liqwid](https://www.liqwid.finance) 并赚取利息。 所以是3次。
 
-**There are 2 scenarios that could go wrong though:**
+### 5.2 你如何围绕 **Cardano** 只允许你每个区块接触一次 **eUTXO** 的问题进行设计？ **** 如果不围绕这一点进行设计，那么每个区块只有一个人可以与每个矿池进行交易。
 
-1. Somebody submitted an invalid transaction that fails, thus failing subsequent dependent transactions. However, this somebody will suffer a transaction fee because they fail as onchain validator but the subsequent dependent transaction doesn't have to pay a fee because they just refer to the wrong UTXO ref.
-2. Transactions are being submitted from different PAB that takes time to sync their blockchain state with each other, they both refer to the same UTXO and fail. This is unavoidable but we think it's better than letting nodes deciding transaction order based on gas bidding which would lead to nasty problems like transaction took forever to confirm and MEV**.**
+介绍 [Laminar](https://medium.com/minswap/introducing-laminar-an-eutxo-scaling-protocol-for-accounting-style-smart-contract-d1ac8847dde8) — 一种用于会计式智能合约的 eUTxO 扩展协议
 
-Additional info found on Reddit: A single dApp like a DEX could enable simultaneity by having multiple transaction outputs that users can access. Although each output can only be used by one person, there are multiple of them. If someone submits an invalid transaction nothing will happen. There will be no failed transaction or charged transaction fee, unless a malicious actor tries to breach the rules then they will suffer fees.This is a complicated topic, the team is waiting for an official answer from IOHK and the Plutus team.
+### 5.3 在 Cardano 中使用 Plutus 编写智能合约与在 Ethereum 上编写智能合约相比如何？
 
-### 5.3 How does writing Smart Contracts in Cardano with Plutus compare to Solidity on Ethereum?
+Plutus 是用 Haskell 编写的，这意味着我们受益于使用一种已经开发了几十年的语言来编写安全和正确的程序，而不是发明一种新的程序。 Haskell 是少数原生支持大整数的语言之一，因此我们可以编写像 a + b - c 这样的普通算术，而不是像 a.add(b).sub(c) 这样的奇怪代码。基于 Haskell 构建还意味着我们可以从第一天开始使用许多稳定的工具和库，包括 QuickCheck。通常在 Solidity 中，开发人员只为少数场景编写测试，但 QuickCheck 就像一个测试猴子，它会随机玩我们的智能合约几千次，看看它是否会崩溃。
 
-Plutus is written in Haskell, which means that we benefit from using a language that has been developed for decades to write safe and correct programs, instead of inventing a new one. Haskell is one of the few languages supporting big integers natively, so we can write normal arithmetic like a + b - c instead of weird code like a.add\(b\).sub\(c\). Building on Haskell also means we can use a lot of stable tooling and libraries from day 1, including QuickCheck. Normally in Solidity devs only write tests for a few scenarios, but QuickCheck is like a test monkey that randomly plays with our smart contract a few thousand times to see if it breaks.
+代币有很多种：Ether，ERC-20，ERC-721，...这在很多情况下会导致丑陋的包装和解包。在 Plutus 中，所有代币都是相同的：原生代币，因此对它们的操作要容易得多。 eUTXO 很神奇，因为它可以准确预测交易费用，并且用户对失败的交易不支付任何费用。它还可以防止以太坊现在正在解决的一系列问题，例如抢先交易、从未确认的交易和 MEV。 eUTXO 中的并发性存在一些问题，但它源于以太坊的心态，即智能合约是一个巨大的状态机，首先为最富有的 Gas 投标人提供服务，这又导致了许多类似上述问题的问题。
 
-Solidity, there are many kinds of tokens: Ether, ERC-20, ERC-721,... which lead to ugly wrap and unwrap in many cases. In Plutus all tokens are the same thing: native token, so operations on them are much easier. eUTXO is amazing because it can predict transaction fees accurately and users pay no fee for failed transactions. It also prevents a whole class of problems Ethereum is fighting now like front-running, never-confirmed transactions and MEV. There are some concerns with concurrency in eUTXO but it stems from the Ethereum mindset that a smart contract is one giant state machine serving the richest gas bidders first, which again leads to so many problems like the ones above.
-
-The blockchain only stores the hash of a script, which means a script takes the same space no matter how complicated it is. This is long-term thinking about decentralization, considering Ethereum is more than 300GB now. Of course, there's always 2 sides of the same coin - one thing we found difficult with Plutus is on-chain debugging, but we believe the Plutus team is working hard to improve this. In conclusion, the long years of researching and building from scratch has yielded results. What we have now is a better, faster and safer smart contract platform.
+区块链只存储脚本的哈希值，这意味着脚本无论多么复杂都占用相同的空间。这是对去中心化的长期考虑，考虑到以太坊现在已经超过 300GB。当然，同一个硬币总是有两个方面——我们发现 Plutus 的难点之一是链上调试，但我们相信 Plutus 团队正在努力改进这一点。总而言之，多年的从头研究和建设已经取得了成果。我们现在拥有的是一个更好、更快、更安全的智能合约平台。
 
 ## Disclaimer
 
 **The content of the FAQ is for informational purposes only, you should not construe any such information or any material on the MinSwap site as legal, investment, financial, or other advice. Your use of the MinSwap protocol upon launch involves various risks, including, but not limited to, losses while digital assets are being supplied to the MinSwap protocol and losses due to the fluctuation of prices of tokens in a trading pair or liquidity pool. Before using the MinSwap protocol, you should review the relevant documentation to make sure you understand how the MinSwap protocol works. Although MinSwap Labs developed much of the initial code for the MinSwap protocol, it does not provide, own, or control the MinSwap protocol, which is run by smart contracts deployed on the Cardano blockchain. After launch, upgrades and modifications to the protocol will be managed in a community-driven way by holders of the MIN governance token . No developer or entity involved in creating the MinSwap protocol will be liable for any claims or damages whatsoever associated with your use.**
-
