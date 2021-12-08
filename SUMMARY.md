@@ -1,7 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
-* [Whitepaper](whitepaper.md)
+* [简介 (Introduction)](README.md)
+* [白皮书 (Whitepaper)](whitepaper.md)
 * [FAQ](faq.md)
-* [Follow Us](follow-us.md)
-
+* [关注我们](follow-us.md)
