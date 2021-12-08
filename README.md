@@ -1,28 +1,27 @@
-# Introduction
+# 简介 (Introduction)
 
-![](.gitbook/assets/minswap_promo_twitter.jpg)
+![](.gitbook/assets/minswap\_promo\_twitter.jpg)
 
-With the upcoming release of Alonzo, there will be a lot of innovative projects looking for a place to initially distribute their tokens. There will also be lots of DeFi users looking for a place to trade new tokens as well as support their favorite projects. This is the premise of MinSwap - a multi-pool automated market maker. What is multi-pool, anyway? It means that there can be multiple pricing functions for one single pair, for example constant-product function, StableSwap invariant, Kyber's DMM function, etc. The trading interface will compute and route to the most efficient pools.
+随着 Alonzo 的即将发布，将会有很多创新项目寻找一个地方来分发他们的代币。 还将有许多 DeFi 用户寻找交易新代币以及支持他们最喜欢的项目的地方。 这就是 MinSwap 的前提——多池自动化做市商。 什么是多池？ 这意味着一对可以有多个定价函数，例如恒定乘积函数、StableSwap 不变函数、Kyber 的 DMM 函数等。交易界面将计算并路由到最有效的池。
 
-## Features
+## 特征
 
-* **Fair Launch:** No pre-mine, no pre-sale. MIN tokens are distributed fairly with only 10% allocated to development funds.  
-* **Yield Farming:** MIN tokens are rewarded to liquidity providers who stake their liquidity pool tokens.  
-* **Launchpool:** Supporting new projects in Cardano ecosystem with Initial DEX Offering \(IDO\) and Initial Farm Offering \(IFO\).  
-* **Permissionless:** Anybody can list tokens without permission. Anybody can trade tokens without KYC.  
-* **Community First:** All trading fees go directly to liquidity providers. MIN token holders can vote democratically on protocol changes.  
-* **Ethereum Compatible**: With ERC-20 Converter, users can trade Ethereum tokens at much lower fees.  
-* **Stake Pool Operators Support**: Minswap supports the SPOs by a community-oriented ADA delegation policy and automatic native token fees conversion. \(more details in FAQ\)
+* **公平发布**: 无预挖。 MIN 代币公平分配，只有 10% 分配给开发基金。 &#x20;
+* **Yield Farming**: MIN 代币奖励给持有其流动性池代币的流动性提供者。&#x20;
+* **Launchpool**: 通过初始 DEX 产品 (IDO) 和初次农场发行 (IFO) 支持 Cardano 生态系统中的新项目。&#x20;
+* **无需许可:** 任何人都可以在未经许可的情况下列出代币。 任何人都可以在没有 KYC 的情况下交易代币。
+* **社区优先:** 所有交易费用直接支付给流动性提供者。 MIN 代币持有者可以对协议更改进行民主投票。 &#x20;
+* **以太坊兼容**: 使用 ERC-20 转换器，用户可以以低得多的费用交易以太坊代币。
+* **权益池运营商支持**: Minswap 通过面向社区的 ADA 委托政策和自动原生代币费用转换来支持 SPO。 （更多细节在常见问题中）
 
-## Roadmap
+## 路线图
 
-* **Q2 2021:** Fundraising, Constant-Product Pool, Testnet  
-* **Q3 2021:** Mainnet, Security Audit, Liquidity Mining, Initial DEX Offering \(IDO\), Initial Farm Offering \(IFO\)  
-* **Q4 2021:** Stable Pool  
-* **Q1 2022:** Decentralized Autonomous Organization \(DAO\), Community Governance
+* **Q2 2021:** 年第二季度：筹款、恒定产品池、测试网&#x20;
+* **Q3 2021:** 年第三季度：主网、安全审计、流动性挖掘、初始 DEX 产品 (IDO)、初始农场产品 (IFO) &#x20;
+* **Q4 2021:** 年第四季度：稳定池 &#x20;
+* **Q1 2022:** 年第一季度：去中心化自治组织 (DAO)，社区治理
 
-## Token Distribution
+## 代币分配
 
-Only 10% of the newly minted tokens is allocated to the dev funds, the rest go to our community. 🤗  
-And yes, no premine or presale, at all.
-
+新铸造的代币中只有 10% 分配给开发基金，其余分配给我们的社区。. 🤗\
+是的，没有预挖或预售
