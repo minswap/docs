@@ -1,12 +1,13 @@
 # Follow Us
 
-* Website: [https://minswap.org](https://minswap.org/)  
-* Read our whitepaper: [https://docs.minswap.org/whitepaper](https://docs.minswap.org/whitepaper)  
-* Follow Twitter for more updates: [https://twitter.com/minswapdex](https://twitter.com/minswapdex)  
-* Talk to our community on Discord: [https://discord.gg/amg2AFrPMJ](https://discord.gg/amg2AFrPMJ)  
-* See our development on GitHub: [https://github.com/minswap](https://github.com/minswap)  
-* Subscribe to our Youtube channel: [https://www.youtube.com/channel/UCsRa1jLwp7fhgh5P2KzBR8Q](https://www.youtube.com/channel/UCsRa1jLwp7fhgh5P2KzBR8Q)
-* Subscribe to our writings and blogging: [https://medium.com/minswap](https://medium.com/minswap)  
-* Join our Reddit community: [https://www.reddit.com/r/MinSwap/](https://www.reddit.com/r/MinSwap/)  
-* Contact us at contact@minswap.org
-
+* [Website](https://minswap.org/)
+* [Whitepaper](https://docs.minswap.org/whitepaper)
+* [Twitter](https://twitter.com/minswapdex)
+* [Discord](https://discord.gg/ZjB8ZBhkbm)
+* [GitHub](https://github.com/minswap)
+* [YouTube](https://www.youtube.com/channel/UCsRa1jLwp7fhgh5P2KzBR8Q)
+* [Reddit](https://www.reddit.com/r/MinSwap/)
+* [Telegram](https://t.me/MinswapMafia)
+* [Facebook](https://www.facebook.com/minswap/)
+* [Medium \(Blog\)](https://medium.com/minswap)
+* Contact us at [contact@minswap.org](mailto:contact@minswap.org)
