@@ -1,8 +1,8 @@
 ---
-description: General Frequently Asked Questions
+description: Frequently Asked Questions
 ---
 
-# General
+# FAQ
 
 ## 1. **代币发行和一般信息**
 
