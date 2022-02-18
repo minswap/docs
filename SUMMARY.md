@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * [Whitepaper](whitepaper.md)
 * [Follow Us](follow-us.md)
+* [Tokenomics](tokenomics.md)
 
 ## FAQ
 
@@ -12,4 +13,3 @@
 ## Proposals
 
 * [Governance](proposals/governance.md)
-
