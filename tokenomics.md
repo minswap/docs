@@ -4,11 +4,11 @@ The Minswap protocol currently has two types of tokens:
 
 **MIN token:** The governance token of the protocol with future utility. \
 \
-**MINt token:** A token that can be converted to MINt through usage of the protocol. Please read the following document for the detailed mechanics.\
-\
+**MINt token:** A token that can be converted to MIN through usage of the protocol. Please read the following [document](https://minswap-labs.medium.com/how-to-convert-your-mint-tokens-c7331c8eaa01) for the detailed mechanics.
+
 The Minswap **Token Distribution** is the following:
 
-![](.gitbook/assets/image.png)
+![](.gitbook/assets/tokenomics.png)
 
 ## Yield Farming
 
