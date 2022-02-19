@@ -16,13 +16,13 @@ The Minswap **Token Distribution** is the following:
 
 The Yield Farming Emission Schedule until the end of July will be the following:
 
-**March 2022:** 1.2% total supply = 60 million MIN = 2,000,000 daily. \
-**April 2022:** 1.1% total supply = 55 million MIN = 1,833,333 daily \
-**May 2022:** 1% total supply = 50 million MIN = 1,666,666 daily. \
-**June 2022:** 0.9% total supply = 45 million MIN = 1,500,000 daily. \
-**July 2022:** 0.8% total supply = 40 million MIN = 1,333,333 daily.
+**1st month (14th March 2022 to 14th April) :** 1.2% total supply = 60 million MIN ≈ 2,000,000 daily. \
+**2nd month (14th April 2022 to 14th May) :** 1.1% total supply = 55 million MIN ≈ 1,833,333 daily \
+**3rd month** **(14th** **May 2022 to 14th June)** 1% total supply = 50 million MIN ≈ 1,666,666 daily. \
+**4th month (14th** **June 2022 to 14th July)** 0.9% total supply = 45 million MIN ≈ 1,500,000 daily. \
+**5th month (14th** **July 2022 to 14th August)** 0.8% total supply = 40 million MIN ≈ 1,333,333 daily.
 
-In total, to bootstrap liquidity and to ensure early supporters of Minswap are maximally rewarded, 5% of total supply has been allocated towards Yield Farming in the first 5 months. After July, the schedule will be adjusted. We welcome any community input regarding pools that could be added and schedule adjustment in our [Forum](https://forum.minswap.org).
+In total, to bootstrap liquidity and to ensure early supporters of Minswap are maximally rewarded, **5% of total supply** has been allocated towards Yield Farming in the first 5 months. In July, the schedule will be adjusted. We welcome any community input regarding pools that could be added and schedule adjustment in our [Forum](https://forum.minswap.org).
 
 The initial pools eligible for Yield Farming rewards and the and distribution mechanics of Yield Farming rewards will be updated here and announced on our [Twitter](https://twitter.com/MinswapDEX).&#x20;
 
