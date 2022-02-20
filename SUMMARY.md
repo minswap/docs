@@ -8,6 +8,7 @@
 ## FAQ
 
 * [General](faq/general.md)
+* [MINt token](faq/mint-token.md)
 * [FISO](faq/fiso.md)
 
 ## Proposals
