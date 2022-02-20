@@ -8,7 +8,7 @@ Essentially, a user who wants to convert their MINt tokens, will **first** have 
 
 Meanwhile, the MINt tokens will be burnt, and the same amount of MIN tokens are minted into a vesting smart contract, set up to have 45 days of lock up and 45 days of linear vesting. This means that, after 45 days, the LP tokens will be **unlocked**, but the converted MIN tokens will go through an extra 45 days of linear vesting until they can be fully redeemed. We will have a Web3 interface to harvest any released MIN, and the process to harvest will be the same as harvesting MIN tokens from the FISO rewards.
 
-## This complex, can you give a example?
+## This too complex, can you me give an example?
 
 You can read more about the MINt token, including an example in the following [article](https://minswap-labs.medium.com/how-to-convert-your-mint-tokens-c7331c8eaa01).
 

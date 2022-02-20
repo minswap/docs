@@ -26,7 +26,7 @@ Even though you will be using a test wallet, you will receive your MIN tokens on
 Minswap offers a different approach, for instance see the features highlighted in our [Whitepaper](https://docs.minswap.org/whitepaper) such as: multi-function liquidity pools, multi-pool routing, functioning as an on-chain price oracle or automatic babel fees redemption. We also focus more on building instead of fundraising. However, since no DEXs have launched or provided test-environments comparisons are difficult.
 
 1. Minswap will focus on developing **multiple kinds of AMM liquidity pools** and allow a user's trade to route through the most efficient pools (this multi-pool routing feature could later be turned into a DEX aggregator).
-2. Minswap aims to be at the **cutting edge of Cardano DeFi**, we pioneered ideas such as the [FISO](https://medium.com/minswap/minswap-fair-launch-tokenomics-and-fiso-airdrop-start-date-a75f3e75a546) model or the [MINt](https://forum.minswap.org/t/mint-token-expose-mint-liquidity-providers-to-other-pairs/40) token our [LBE](https://minswap-labs.medium.com/meteor-lbe-mainnet-launch-yield-farming-more-f73c6c2a8b37) and plan to continue doing so with further novel initiatives, like an IFO launchpad that allows other projects to launch their tokens safely without fearing IDO sniping bots. We will also have an SPO-friendly delegation policy that helps the decentralization of the network. We aim to be the best platform for new projects to list their token, and for their community to buy and support them.
+2. Minswap aims to be at the **cutting edge of Cardano DeFi**, we pioneered ideas such as the [FISO](https://medium.com/minswap/minswap-fair-launch-tokenomics-and-fiso-airdrop-start-date-a75f3e75a546) model, the [MINt](https://forum.minswap.org/t/mint-token-expose-mint-liquidity-providers-to-other-pairs/40) token an our [LBE](https://minswap-labs.medium.com/meteor-lbe-mainnet-launch-yield-farming-more-f73c6c2a8b37), and plan to continue doing so with further novel initiatives, like an IFO launchpad that allows other projects to launch their tokens safely without fearing IDO sniping bots. We will also have an SPO-friendly delegation policy that helps the decentralization of the network. We aim to be the best platform for new projects to list their token, and for their community to buy and support them.
 
 ### 1.5 How can I support Minswap?
 
@@ -64,7 +64,7 @@ Our team consists of 4 engineers with experience in big companies like Amazon, G
 
 ### 2.1 What model/mathematical formula will your first available pools follow?
 
-First one will be like [Uniswap v2](https://uniswap.org/blog/uniswap-v2/). Uniswap v3 (concentrated LP) is probably the next if it proves itself well in Ethereum and we can translate it nicely into Cardano eUTxO model as it keeps all AMM´s good parts while being close to an order-book model in terms of capital efficiency. Later on, we'll expand to other liquidity pools such as StableSwap pool or DMM pool and the trading interface will become like a pool aggregator that routes the trade through the most efficient pools.
+First one will be like [Uniswap v2](https://uniswap.org/blog/uniswap-v2/). Uniswap v3 (concentrated LP) is probably the next if it proves itself well in Ethereum and we can translate it nicely into Cardano eUTxO model as it keeps all the good parts of AMMs while being close to an order-book model in terms of capital efficiency. Later on, we'll expand to other liquidity pools such as StableSwap pool or DMM pool and the trading interface will become like a pool aggregator that routes the trade through the most efficient pools.
 
 ### 2.2 Regarding DEXs, will you focus more on gamification/UX/marketing (like PancakeSwap) or like others more on liquidity (like Uniswap). Do we know what the initial focus of Minswap will be?
 
@@ -82,7 +82,7 @@ We plan to promote Minswap and attract users in a number of ways. Twitter will b
 
 ### 3.1 Any plans for smart contract audit?
 
-Yes, we havebeen audited by [Tweag](https://minswap-labs.medium.com/minswap-announces-audit-completion-by-tweag-79a2910b98a).&#x20;
+Yes, we have been audited by [Tweag](https://minswap-labs.medium.com/minswap-announces-audit-completion-by-tweag-79a2910b98a).&#x20;
 
 ### 3.2 Will Minswap only be able to trade tokens built on Cardano? Will there be an ETH/ADA pool?
 
@@ -104,7 +104,7 @@ Smart contracts don’t keep any addresses, they only keep the funds and the tot
 
 ### 4.2 Is Minswap going to have protection against flash loan attacks?
 
-This refers to an attack on Pancake Bunny using Pancake Swap, it is difficult something like this can happen in Cardano. In addition, we will have a TWAP (Time Weighted Average Price) price oracle and fair LP token pricing in our roadmap to help other projects shield against flash loan attacks if they're interested in using Minswap as price oracle.
+This refers to an attack on Pancake Bunny using Pancake Swap, it is difficult something like this can happen on Cardano. In addition, we will have a TWAP (Time Weighted Average Price) price oracle and fair LP token pricing in our roadmap to help other projects shield against flash loan attacks if they're interested in using Minswap as price oracle.
 
 ### 4.3 Are you afraid of front-running attacks?
 
