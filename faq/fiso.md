@@ -4,6 +4,8 @@ description: FISO Frequently Asked Questions
 
 # FISO
 
+### \*Disclaimer\*: our FISO campaign is now over. We have decided to preserve this page for anyone who has questions about how it was conducted.
+
 ### What is a FISO? Do you profit from it? Do I pay anything for it?
 
 FISO stands for Fair Initial Stake Offering, it is a form of ISO in which rather than taking delegators away from SPOs for profit from margin fees, or even having a free ISO airdrop where delegators keep all ADA rewards which still takes delegators away from SPO, we instead feature 10 small stake pools to delegate towards and we also have 15 pools in reserve, by participating, you increase the decentralization of the network doing so, you pay no fees save for SPO margin fees which are capped for participating pools (read below for steps taken with pools in violation). You will also need to pay a transfer fee to receive MIN/MINt airdrops (more details on that below). We do not profit from this, but it does market us significantly.
