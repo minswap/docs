@@ -10,6 +10,7 @@
 * [General](faq/general.md)
 * [MINt token](faq/mint-token.md)
 * [FISO](faq/fiso.md)
+* [METEOR LBE](faq/meteor-lbe.md)
 
 ## Proposals
 
