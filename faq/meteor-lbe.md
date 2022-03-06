@@ -32,4 +32,4 @@ From 8th March to 14th March you can Provide Liquidity and receive Liquidity Pro
 
 **8) How does the bonus for LBE participants work?**
 
-We haven't revealed the exact mechanics. But the 110% to 200% bonus means that, for instance if normal APR for staking MIN/ADA LP tokens in the Yield Farm is 200% APR, anyone who has gotten MIN/ADA LP tokens during the Encounter Phase in the LBE by turning in purrADA will get 220-400% APR.
+We haven't revealed the exact mechanics. But the 110% to 200% bonus means that (please note, this bonus is essentially 1.1x to 2x, so in real numbers 10% to 100% more apr than normal apr), for instance if normal APR for staking MIN/ADA LP tokens in the Yield Farm is 200% APR, anyone who has gotten MIN/ADA LP tokens during the Encounter Phase in the LBE by turning in purrADA will get 220-400% APR.
