@@ -14,7 +14,7 @@ The Minswap **Token Distribution** is the following:
 
 ## Yield Farming
 
-The Yield Farming Emission Schedule until the end of July will be the following:
+The Yield Farming Emission Schedule until mid August will be the following:
 
 **1st month (14th March 2022 to 14th April) :** 1.2% total supply = 60 million MIN ≈ 2,000,000 daily. \
 **2nd month (14th April 2022 to 14th May) :** 1.1% total supply = 55 million MIN ≈ 1,833,333 daily \
@@ -22,17 +22,7 @@ The Yield Farming Emission Schedule until the end of July will be the following:
 **4th month (14th** **June 2022 to 14th July) :** 0.9% total supply = 45 million MIN ≈ 1,500,000 daily. \
 **5th month (14th** **July 2022 to 14th August)** **:** 0.8% total supply = 40 million MIN ≈ 1,333,333 daily.
 
-In total, to bootstrap liquidity and to ensure early supporters of Minswap are maximally rewarded, **5% of total supply** has been allocated towards Yield Farming in the first 5 months. In July, the schedule will be adjusted. We welcome any community input regarding pools that could be added and schedule adjustment in our [Forum](https://forum.minswap.org).
-
-The initial pools eligible for Yield Farming rewards are:&#x20;
-
-* _**Lion Farm**_**: MIN/ADA** — **50 points**. The MIN/ADA pool will have 50 points, meaning 50% of the 2 million daily MIN rewards, or _1 million MIN daily_, will be allocated towards those who provide liquidity in the MIN/ADA pair and stake their LP tokens. As a reminder, everyone who provided ADA in the LBE and keeps the purrADA, will be able to exchange the purrADA for ADA/MIN LP tokens shortly and before Yield Farming commences.
-* _**Tiger Farms:**_ **PAVIA/ADA, LQ/ADA, MELD/ADA, WMT/ADA, DANA/ADA** — **7 points each**. Each of these pools will have 7 points, meaning 7% of the 2 million daily MIN rewards, or _140,000 MIN daily_, will be allocated towards those who provide liquidity in each of these pairs and stake their LP tokens.
-* _**Cat Farm:**_ **CNETA/ADA** — **5.5 points**. This means 5.5% of the 2 million daily MIN rewards, or _110,000 MIN daily._
-* _**Kitty Farms:**_ **AADA/ADA, CLAP/ADA, VYFI/ADA** — **3 points**. Each of these pools will have 3 points, meaning 3% of the 2 million daily MIN rewards, or _60,000 MIN daily._
-* _**Dog Farm:**_ **HOSKY/ADA** — **0.5 points**. This means 0.5% of the 2 million daily MIN rewards, or _10,000 MIN daily._
-
-These farms are only the initial farms and will be subject to change as soon as one week after our their launch on March 14th.&#x20;
+In total, to bootstrap liquidity and to ensure early supporters of Minswap are maximally rewarded, **5% of total supply** has been allocated towards _Yield Farming_ in the first 5 months. In July, the schedule will be adjusted. We welcome any community input regarding pools that could be added and schedule adjustment in our [Forum](https://forum.minswap.org).
 
 ## Token Vesting Schedules
 
