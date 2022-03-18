@@ -27,8 +27,6 @@ All pools that fit that criteria at the time of snapshot were assigned a number 
 
 Stake in one of the ten active pools we’ve partnered with, when all those reach 3 million ADA in delegation, we’ll open fifteen more reserve pools.
 
-\*\*\*\*[**Click here to see the active pools**](https://fiso.minswap.org)\*\*\*\*
-
 ### How is the reward calculated?
 
 125 million tokens total (2.5% of total supply) will be rewarded to the participants of Minswap’s FISO. Delegator rewards will consist of 80% MINt tokens and 20% MIN tokens. Each epoch of the FISO, 6.25 million tokens are rewarded to delegators. The number of tokens an individual receives is calculated by a scoring system that approximates, every epoch, the percentage of total FISO delegation that their ADA equals. The reason the scoring system is only an “approximation” of each participants percentage of total delegation per epoch is due to two mechanisms:
