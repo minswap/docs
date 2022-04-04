@@ -8,6 +8,7 @@
   * [Yield Farming Example](yield-farming/yield-farming-example.md)
   * [Farms Allocation & Governance](yield-farming/farms-allocation-and-governance.md)
   * [LBE NFT Mechanism](yield-farming/lbe-nft-mechanism.md)
+* [Token Listing](token-listing.md)
 
 ## FAQ
 
