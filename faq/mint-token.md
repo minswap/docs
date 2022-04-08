@@ -14,7 +14,7 @@ You can read more about the MINt token, including an example in the following [a
 
 ## When and until when can I start converting MINt tokens?
 
-You can start converting on April 14th 2022. You can convert until April 14th 2023.&#x20;
+You can start converting on April 16th 2022. You can convert until April 16th 2023.&#x20;
 
 ## What is the intention of the MINt token
 
