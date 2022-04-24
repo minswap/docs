@@ -12,10 +12,7 @@ We aim to bring an innovative multi-model asset pool decentralized exchange to t
 
 ### 1.2 How do you buy MIN token?
 
-Currently, there are only 2 ways to acquire MIN tokens:
-
-1. Participate in our **Liquidity Bootrstrapping Event (LBE)**. In the LBE, you will deposit ADA and get back an LP token of ADA/MIN where half of the ADA deposited has been swapped to MIN.
-2. Swap on DEXs where Minswap tokens are currently traded. In addition, you could wait until our LBE is over and start trading Minswap tokens on **the 8th March 2022 on our DEX**.
+Swap on DEXs where Minswap tokens are currently traded such as [Minswap](https://app.minswap.org/swap).
 
 ### 1.3 Will the airdropped tokens on test-net need to be converted to main-net when the main-net launches?
 
@@ -23,7 +20,7 @@ Even though you will be using a test wallet, you will receive your MIN tokens on
 
 ### 1.4 How is Minswap different from upcoming DEXs in Cardano such as SundaeSwap, Cardax or ErgoDEX?
 
-Minswap offers a different approach, for instance see the features highlighted in our [Whitepaper](https://docs.minswap.org/whitepaper) such as: multi-function liquidity pools, multi-pool routing, functioning as an on-chain price oracle or automatic babel fees redemption. We also focus more on building instead of fundraising. However, since no DEXs have launched or provided test-environments comparisons are difficult.
+Minswap offers a different approach, for instance see the features highlighted in our [Whitepaper](https://docs.minswap.org/whitepaper) such as: multi-function liquidity pools, multi-pool routing, functioning as an on-chain price oracle or automatic babel fees redemption. In addition:
 
 1. Minswap will focus on developing **multiple kinds of AMM liquidity pools** and allow a user's trade to route through the most efficient pools (this multi-pool routing feature could later be turned into a DEX aggregator).
 2. Minswap aims to be at the **cutting edge of Cardano DeFi**, we pioneered ideas such as the [FISO](https://medium.com/minswap/minswap-fair-launch-tokenomics-and-fiso-airdrop-start-date-a75f3e75a546) model, the [MINt](https://forum.minswap.org/t/mint-token-expose-mint-liquidity-providers-to-other-pairs/40) token an our [LBE](https://minswap-labs.medium.com/meteor-lbe-mainnet-launch-yield-farming-more-f73c6c2a8b37), and plan to continue doing so with further novel initiatives, like an IFO launchpad that allows other projects to launch their tokens safely without fearing IDO sniping bots. We will also have an SPO-friendly delegation policy that helps the decentralization of the network. We aim to be the best platform for new projects to list their token, and for their community to buy and support them.
@@ -116,13 +113,7 @@ You can read about our tokenomics here: [Tokenomics](https://docs.minswap.org/to
 
 ### 4.5 Do you have the APYs for different pools, emission schedules and other numbers figured out yet? Will rewards be locked for any amount of time?
 
-APY: it depends on supply and demand, the supply is controlled by our team and later by community via a DAO, the demand is control by market participants.
-
-Emission schedule: The first month is the "harvest season", emission is huge there, it will be reduced as time goes on and trading volume increases allowing LPs to earn more from trading fees.
-
-### 4.6 How does Minswap delegate locked ADA?
-
-20% of locked ADA is delegated to stake pools that haven't produced any block to help the SPOs mint their first block. The rest is delegated to small-to-medium community pools to encourage decentralization and make sure LPs earn stake rewards on top of trade fees. The delegation policy parameters can later be voted to change by the DAO.
+You can see our Yield Farming schedule on our [Tokenomics page](../tokenomics.md). APYs vary according to factors such as TVL of the Pool and Volume. To see how MIN rewards are allocated to each Pool, please read our [Yield Farming page](../yield-farming/).
 
 ## 5. Advanced Technicals
 

@@ -10,11 +10,22 @@ The initial Farms eligible for MIN rewards are:&#x20;
 
 These farms are only the initial farms and will be subject to change as soon as one week after their launch on **March 14th**.&#x20;
 
-## Governance and the Kitty Farmer Committee&#x20;
+Update: on the 23rd of March 2022 new Farm Allocations will be the following:&#x20;
 
-**Governance and the Kitty Farmer Committee**
+![](<../.gitbook/assets/image (2).png>)
 
-It is extremely important we constantly gather feedback from community members and integrate it adjusting the Points of our farms. That is precisely the intention of our **“Kitty Farmer Committee”**. Kitty Farmers (also known as “OGs” in our Discord) are some of the most passionate Minswap Community Members, who have been supporting the team from the beginning, providing invaluable feedback and helping other less experienced community members get acquainted with Minswap and DeFi in general.
+Further adjustments to MIN Farms will come, but they will be posted in our [Governance Forum](https://forum.minswap.org).
 
-Kitty Farmers were instrumental in deciding this initial Yield Farming allocation. In addition, during the coming months, the Minswap team will work **very closely** with the Kitty Farmer Committee on adding/removing farms, adjusting the points of each farm, and further initiatives. It is important to highlight that becoming a Kitty Farmer is **not** a closed process, it is entirely open and anyone who contributes consistently and valuably to the Minswap protocol in our **** [**Discord**](https://t.co/lwv9szH541) and [**Forum**](https://forum.minswap.org) will be considered for membership in the Committee.
+## How are Farm Points decided on?&#x20;
 
+Farms are rebalanced bi-weekly according to the Forumula laid out in the following [Medium Article](https://marco112358.medium.com/a-formula-driven-model-for-minswap-min-emissions-a73f3f6794dc).
+
+In short, the formula looks at these 2 metrics:
+
+**14 Day Average Daily Volume:** a smoothed measure of the volume transacted in a LP over the past 14 days. The long term success of a DEX is driven by deep liquidity and volume. Token emissions cannot last forever, so eventually LP rewards will come down to volume only. A DEX that has strong volume after emissions end will continue to incentivize users to provide liquidity to the LPs. Therefore, we should be rewarding pools with high volume.
+
+**14 Day Average Total Value Locked:** a smoothed measure of the Total Value Locked inside of a LP over the past 14 days. TVL shows how deep the liquidity of a pool is. Deeper liquidity means less slippage for anyone who wants to transact in that pair of tokens. So, deeper liquidity incentivizers users to use Minswap DEX to swap this specific pair of tokens. If a token pair has deeper liquidity on a competing DEX, it is highly likely that the competing DEX will have better pricing. Thus, we should be rewarding pools with lower TVL in order to incentivize users to deposit liquidity in those pools, and drive volume to Minswap.
+
+Currently, the Volume Metric is **9x** more important, as the aim is to reward pools that have high Volume and low TVL.
+
+In addition, it is extremely important we constantly gather feedback from community members and integrate it adjusting the Points of our farms. That is precisely the intention of our **“Kitty Farmer Committee”**. Kitty Farmers (also known as “OGs” in our Discord) are some of the most passionate Minswap Community Members, who have been supporting the team from the beginning, providing invaluable feedback and helping other less experienced community members get acquainted with Minswap and DeFi in general. Kitty Farmers play a significant role in adjusting the parameters of the forumla as well as deciding on the additon and removal of Farms.
