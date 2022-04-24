@@ -1,6 +1,6 @@
 # MINt token
 
-## What is MINt token?
+## What is MINt?
 
 MINt is a cardano native token that **was given to early supporters** of the Minswap protoco during our [FISO](fiso.md). MINt can be **converted into MIN** and offers a **temporary yield farming boost** for providing and locking up LP tokens in the Minswap DEX.
 
@@ -40,7 +40,7 @@ Minswap did their own ISO, a **FISO**. That’s how most of the MINt tokens made
 
 In order to convert your MINt to actual MIN, you need to [provide liquidity](https://app.minswap.org/liquidity) to any pool that has a farm available on Minswap first. If you have already staked LP tokens in a farm and want to use them for MINt conversion, you will need to temporarily [unstake](https://app.minswap.org/farm) them.
 
-You then **stake the LP tokens together with MINt** in [the dedicated MINt section](https://app.minswap.org/mint) on the app. However, your MINt tokens are locked for 45 days and will only be linearly released as MIN for an additional 45 day vesting period.
+You then **stake the LP tokens together with MINt** in [**the dedicated MINt section**](https://app.minswap.org/mint) on the app. However, your MINt tokens are locked for 45 days and will only be linearly released as MIN for an additional 45 day vesting period.
 
 ![](https://lh5.googleusercontent.com/vJYqBqbpLeQGEBoK97suc8yNhGVZ03E876aKPVWA\_6rJfzfsdnDa7zG\_NoabdlXi2VCzpmCl2t1WlA1Yz9M1iJITbiZtCL503EFdAR4dp8wLrhpRiAGXVjzLXCvPtqrpr6\_kNE5Q)
 
