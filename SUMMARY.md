@@ -6,7 +6,8 @@
 * [Tokenomics](tokenomics.md)
 * [Yield Farming](yield-farming/README.md)
   * [Yield Farming Example](yield-farming/yield-farming-example.md)
-  * [Farms Allocation & Governance](yield-farming/farms-allocation-and-governance.md)
+  * [Farms Allocation & Governance](yield-farming/farms-allocation-and-governance/README.md)
+    * [New MIN Farm Requirements](yield-farming/farms-allocation-and-governance/new-min-farm-requirements.md)
 * [Token Listing](token-listing.md)
 
 ## FAQ

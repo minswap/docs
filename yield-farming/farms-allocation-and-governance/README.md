@@ -12,7 +12,7 @@ These farms are only the initial farms and will be subject to change as soon as 
 
 Update: on the 23rd of March 2022 new Farm Allocations will be the following:&#x20;
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../../.gitbook/assets/image (2).png>)
 
 Further adjustments to MIN Farms will come, but they will be posted in our [Governance Forum](https://forum.minswap.org).
 
