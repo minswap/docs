@@ -10,7 +10,7 @@ The initial Farms eligible for MIN rewards are:&#x20;
 
 These farms are only the initial farms and will be subject to change as soon as one week after their launch on **March 14th**.&#x20;
 
-**1st Farm Rebalance:** on the 23rd of March 2022 new Farm Allocations will be the following:&#x20;
+**1st Farm Rebalance:** on the 23rd of April 2022 new Farm Allocations will be the following:&#x20;
 
 ![](<../../.gitbook/assets/image (2) (1).png>)
 
