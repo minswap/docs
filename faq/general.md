@@ -27,7 +27,7 @@ Minswap offers a different approach, for instance see the features highlighted i
 
 ### 1.5 How can I support Minswap?
 
-Follow our [Twitter](https://twitter.com/minswapdex), join our [Discord ](https://discord.gg/amg2AFrPMJ)for the latest news and participate in our [Forum ](https://forum.minswap.org)to dicuss ideas that help improve Minswap as a whole.
+Follow our [Twitter](https://twitter.com/minswapdex), join our [Discord ](https://discord.gg/amg2AFrPMJ)for the latest news and participate in our [Forum ](https://forum.minswap.org/)to dicuss ideas that help improve Minswap as a whole.
 
 ### 1.6 Are you developing your own wallet? Or will there be a MetaMask-like wallet for Cardano by the time you launch?
 
@@ -119,7 +119,7 @@ You can see our Yield Farming schedule on our [Tokenomics page](../tokenomics.md
 
 ### 5.1 In your Youtube Interview with [MUSE Pool](https://youtu.be/yL9RXSqVHDs), you mention you can “stake” your ADA, 3 times, which would give you 3 ways to generate passive income at the same time, how does this work?
 
-You provide your ADA tokens to Minswap to earn LP tokens and trade fees, Minswap delegates your ADA to stake pools so you earn staking rewards, later on you lend your LP tokens at [Liqwid](https://www.liqwid.finance) and earn interest. So that's 3 times.
+You provide your ADA tokens to Minswap to earn LP tokens and trade fees, Minswap delegates your ADA to stake pools so you earn staking rewards, later on you lend your LP tokens at [Liqwid](https://www.liqwid.finance/) and earn interest. So that's 3 times.
 
 ### 5.2 How do you design around the issue that Cardano only lets you touch a eUTXO once per block? Without designing around that, only one person could trade against each pool every block.
 
