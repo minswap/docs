@@ -2,7 +2,7 @@
 
 Minswap is a decentralized exchange, which mean that anyone can list their token to trade on Minswap. The simplest way to do so is by creating a liquidity pool of ADA and your token. Go to [https://app.minswap.org/liquidity](https://app.minswap.org/liquidity) and select ADA for First Token and your token for Second Token. Verify that the button displays **Create Pool** and the pool share is 100%. If they don't, it means the pool has already been created.
 
-![Example of creating ADA/scratch pool](<.gitbook/assets/image (1).png>)
+![Example of creating ADA/scratch pool](<.gitbook/assets/image (1) (1).png>)
 
 When creating a pool, you can freely set the amount of ADA and your token. The ratio will determine the initial price after the pool is created. In the example above, the initial price for ADA/scratch pair will be 1 ADA = 200,000 scratch.
 

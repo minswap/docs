@@ -7,6 +7,7 @@
 * [Yield Farming](yield-farming/README.md)
   * [Yield Farming Example](yield-farming/yield-farming-example.md)
   * [Farms Allocation & Governance](yield-farming/farms-allocation-and-governance/README.md)
+    * [Historical MIN Farm Rebalances](yield-farming/farms-allocation-and-governance/historical-min-farm-rebalances.md)
     * [New MIN Farm Requirements](yield-farming/farms-allocation-and-governance/new-min-farm-requirements.md)
 * [Token Listing](token-listing.md)
 

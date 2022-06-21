@@ -8,19 +8,7 @@ The initial Farms eligible for MIN rewards are:&#x20;
 * _**Kitty Farms:**_ **AADA/ADA, CLAP/ADA, VYFI/ADA** — **3 points**. Each of these pools will have 3 points, meaning 3% of the 2 million daily MIN rewards, or _60,000 MIN daily._
 * _**Dog Farm:**_ **HOSKY/ADA** — **0.5 points**. This means 0.5% of the 2 million daily MIN rewards, or _10,000 MIN daily._
 
-These farms are only the initial farms and will be subject to change as soon as one week after their launch on **March 14th**.&#x20;
-
-**1st Farm Rebalance:** on the 23rd of April 2022 new Farm Allocations will be the following:&#x20;
-
-![](<../../.gitbook/assets/image (2) (1).png>)
-
-**2nd Farm Rebalance:** on the 23rd of May 2022 new Farm Allocations will be the following:&#x20;
-
-![](<../../.gitbook/assets/image (2).png>)
-
-
-
-Further adjustments to MIN Farms will come, but they will be posted in our [Governance Forum](https://forum.minswap.org/).
+**These farms were only the initial farms and have changed since**. For an overview of the current Allocation Points and History of Farm Rebalances, see the subsection: [Historical MIN Farm Reblances](https://app.gitbook.com/s/-Mb6kABTQvTeYDjx9qXI-887967055/\~/changes/FYA2xR9CSsN8KYtkqJmg/yield-farming/farms-allocation-and-governance/historical-min-farm-reblances).
 
 ## How are Farm Points decided on?&#x20;
 
