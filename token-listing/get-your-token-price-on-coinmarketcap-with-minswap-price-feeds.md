@@ -1,6 +1,6 @@
 # Get your Token Price on CoinMarketCap with Minswap price feeds
 
-As was announced in the beginning of July on our Twitter, Cardano Native Tokens no longer need to list on a CEX to get tracked on [CoinMarketCap](https://coinmarketcap.com/), projects can list their tokens on Minswap DEX to get tracked automatically on CMC.
+[As was announced in the beginning of July on our Twitter](https://twitter.com/MinswapDEX/status/1542850619152662529?s=20\&t=Jia\_fXbexrqo5N5Hgbtj\_g), Cardano Native Tokens no longer need to list on a CEX to get tracked on [CoinMarketCap](https://coinmarketcap.com/), projects can list their tokens on Minswap DEX to get tracked automatically on CMC.
 
 ## How does it work?
 
