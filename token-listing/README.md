@@ -10,3 +10,7 @@ When creating a pool, you can freely set the amount of $ADA and your token. The 
 
 Currently, Minswap syncs token metadata including decimals and logos from the official [Cardano Token Registry](https://github.com/cardano-foundation/cardano-token-registry) every 30 minutes. In order for your token to display with correct decimal and logo on Minswap, you would need to submit your metadata to Cardano Token Registry. Once your submission is accepted, it takes at most 30 minutes to display correctly on Minswap.
 
+### Market Cap Information
+
+Minswap calculates market cap data from public code in a GitHub repository: [https://github.com/minswap/market-cap](https://github.com/minswap/market-cap). In order for your token to have market cap displayed, you should create a PR to this repository, or create an issue and our team will work on it (slower).
+
