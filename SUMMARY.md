@@ -9,7 +9,8 @@
   * [Farms Allocation & Governance](yield-farming/farms-allocation-and-governance/README.md)
     * [Historical MIN Farm Rebalances](yield-farming/farms-allocation-and-governance/historical-min-farm-rebalances.md)
     * [New MIN Farm Requirements](yield-farming/farms-allocation-and-governance/new-min-farm-requirements.md)
-* [Token Listing](token-listing.md)
+* [Token Listing](token-listing/README.md)
+  * [Get your Token Price on CoinMarketCap with Minswap price feeds](token-listing/get-your-token-price-on-coinmarketcap-with-minswap-price-feeds.md)
 
 ## FAQ
 
