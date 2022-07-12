@@ -19,3 +19,7 @@
 **4th Farm Rebalance:** on the 21st of June 2022 new Farm Allocations were the following:
 
 ![](<../../.gitbook/assets/image (3).png>)
+
+**5th Farm Rebalance:** on the 7th of July 2022 new Farm Allocations were the following:
+
+![](<../../.gitbook/assets/image (2).png>)
