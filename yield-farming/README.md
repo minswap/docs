@@ -6,20 +6,16 @@ Yield Farming is an initiative used by protocols in _DeFi_ to incentivize liquid
 
 In Minswap, this translates to distributing **MIN token rewards** to users who Provide Liquidity on our DEX and stake their Liquidity Provider Tokens (LP Tokens or **LPTs**). Staking LPTs will earn you MIN rewards in proportion to how much the share the LPTs you are staking is compared to the total LPTs staked in the particular farm. Minswap will aim to have an effective system for farming yield, while also offering the best user experience.
 
-## **How does Yield Farming work on Minswap**
+## **Yield Farming Vesting Schedule**
 
-**1)** Firstly, anyone who Provides Liquidity in any pair on the DEX will receive **LP Tokens (LPTs)**.&#x20;
+The Yield Farming Emission Schedule until mid August will be the following:
 
-**2)** If the pair you have provided has a **farm** (a list of starting eligible farms is in the subsection _Farms Allocation & Governance_), these LPTs can then be staked and start earning MIN tokens from that moment on.&#x20;
+**1st month (16th March 2022 to 15th April) :** 1.2% total supply = 60 million MIN ≈ 2,000,000 daily. \
+**2nd month (15th April 2022 to 15th May) :** 1.1% total supply = 55 million MIN ≈ 1,833,333 daily \
+**3rd month** **(15th** **May 2022 to 14th June) :** 1% total supply = 50 million MIN ≈ 1,666,666 daily. \
+**4th month (14th** **June 2022 to 14th July) :** 0.9% total supply = 45 million MIN ≈ 1,500,000 daily. \
+**5th month (14th** **July 2022 to 16th August)** **:** 0.8% total supply = 40 million MIN ≈ 1,333,333 daily.
 
-**3)** Once you have staked your LPTs in a farm, you can withdraw your accrued MIN rewards **at any time**. Rewards will be calculated based on the second unit (so, **every second**), which means you **won’t need to wait a fixed period of time** to collect the MIN tokens you have earned. So, you can harvest any time that you have accrued rewards! But, we do advise **against harvesting rewards too often**, as you will incur _Cardano network fees_ (from ≈0.6 to ≈1.2 ADA) every time you do it!
-
-**4)** If you add **additional LPTs** to a farm, the rewards accumulated since your last action (deposit or withdrawal) will be automatically calculated and sent to you. Then, you will start earning new rewards based on the new LP Token amount.
-
-**5)** If you want to **withdraw a partial amount of LPTs** from a farm, the rewards accumulated since your last deposit or withdrawal action will be automatically calculated and sent to you. Then, you will start earning new rewards based on the new LPTs amount. If you **withdraw all the LPTs** staked in a farm, you will also automatically withdraw and receive all the MIN accrued until that point.
-
-Any deposit or withdrawal transaction will automatically create a pending Harvest UTxO which attaches a **2 ADA fee and approximately 1.5 ADA will be returned** along with the harvested MIN rewards. It looks like receiving an airdrop on DripDropz, where you send 3 ADA or 5 ADA to redeem rewards and get about 1.5 ADA back.
-
-Please note, when we refer to _“staking”_ it refers to **sending the LPTs to the Yield Farming Smart Contract** to accrue MIN rewards, it is completely different to the staking of ADA. It is _non-custodial_ as the LPTs are sent to and locked in the Staking Contract and only their owner can withdraw them.
+In total, to bootstrap liquidity and to ensure early supporters of Minswap are maximally rewarded, **5% of total supply** has been allocated towards _Yield Farming_ in the first 5 months. We welcome any community input regarding pools that could be added and schedule adjustment in our [Forum](https://forum.minswap.org/).
 
 ****
