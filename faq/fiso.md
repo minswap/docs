@@ -148,7 +148,7 @@ Yes, FISO reward calculation will count delegation from IOG wallets as well. If 
 
 ### Will there be a general Minswap FAQ?
 
-Yes, it is [here](general.md).
+Yes, it is [here](broken-reference).
 
 ### Where can I find the original announcements?
 
