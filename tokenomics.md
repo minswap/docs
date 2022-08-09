@@ -2,7 +2,7 @@
 
 The Minswap protocol currently has two types of tokens:
 
-**MIN token:** The governance token of the protocol with future utility. \
+**MIN token:** The governance token of the protocol with [future utility](https://minswap-labs.medium.com/minomics-research-part-1-exploring-tokenomic-models-and-revenue-sources-dd59c434e38f). \
 \
 **MINt token:** A token that can be converted to MIN through usage of the protocol. Please read the following [document](https://minswap-labs.medium.com/how-to-convert-your-mint-tokens-c7331c8eaa01) for the detailed mechanics.\
 \
@@ -14,7 +14,7 @@ The Minswap **Token Distribution** is the following:
 
 ## Token Vesting Schedules
 
-For information on Yield Farming, go to the subsection of [Yield Farming](yield-farming/).&#x20;
+For information on **Yield Farming**, go to the subsection of [Yield Farming](yield-farming/).&#x20;
 
 Tokens from the **team** will be locked for the first 6 months after the launch of the protocol, meaning they will not be accessible to team members during that time. After that time period, Team tokens will vest linearly during the next 2.5 years.
 
@@ -22,5 +22,5 @@ Regarding the 10% of total supply of tokens from the **development fund**, pleas
 
 The **DAO Treasury** has an allocation of 6% of total supply. To bootstrap liquidity on the DEX, 2% of this supply has been allocated to our Liquidity Bootstrapping. All LP tokens obtained from this event and the remaining MIN tokens from the DAO treasury will be locked away for 6 months until a DAO treasury manager contract is implemented.
 
-Additionally, the current **circulating supply** before the launch of our DEX for MIN is **50 million MIN** tokens. 25 million are from the public sale and the other 25 million are from the FISO. The current circulating supply for MINt tokens is **100 million MINt** from the FISO.
+
 
