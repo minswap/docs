@@ -14,7 +14,7 @@ The Yield Farming Emission Schedule until mid August will be the following:
 **2nd month (15th April 2022 to 15th May) :** 1.1% total supply = 55 million MIN ≈ 1,833,333 daily \
 **3rd month** **(15th** **May 2022 to 14th June) :** 1% total supply = 50 million MIN ≈ 1,666,666 daily. \
 **4th month (14th** **June 2022 to 14th July) :** 0.9% total supply = 45 million MIN ≈ 1,500,000 daily. \
-**5th month (14th** **July 2022 to 16th August)** **:** 0.8% total supply = 40 million MIN ≈ 1,333,333 daily.
+**5th month (14th** **July 2022 to 13th August)** **:** 0.8% total supply = 40 million MIN ≈ 1,333,333 daily.
 
 In total, to bootstrap liquidity and to ensure early supporters of Minswap are maximally rewarded, **5% of total supply** has been allocated towards _Yield Farming_ in the first 5 months. We welcome any community input regarding pools that could be added and schedule adjustment in our [Forum](https://forum.minswap.org/).
 
