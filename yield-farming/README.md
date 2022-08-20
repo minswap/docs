@@ -8,7 +8,7 @@ In Minswap, this translates to distributing **MIN token rewards** to users who P
 
 ## **Yield Farming Vesting Schedule**
 
-### Bootrstrapping Phase&#x20;
+### Bootstrapping Phase&#x20;
 
 During the first 5 months after deployment of the DEX, Minswap went through a _Bootstrapping Phase_ using a predictable and aggressive Yield Farming Schedule to bootstrap users and TVL.
 
