@@ -2,7 +2,7 @@
 
 ## What is MINt?
 
-MINt is a cardano native token that **was given to early supporters** of the Minswap protoco during our [FISO](fiso.md). MINt can be **converted into MIN** and offers a **temporary yield farming boost** for providing and locking up LP tokens in the Minswap DEX.
+MINt is a cardano native token that **was given to early supporters** of the Minswap protocol during the [FISO](fiso.md). MINt can be **converted into MIN** and offers a **temporary yield farming boost** for providing and locking up LP tokens in the Minswap DEX.
 
 Before Minswap launched, 80% of all FISO rewards were given out in the form of MINt, only 20% in MIN itself. The **intention** behind MINt is to encourage people to **utilize the protocol** and interact with the DEX. This is done by entering the MINt-to-MIN conversion process, which will require you to stake your MINt for a **vesting period of at least 45 days**. MINt has a **1:1 conversion rate** to MIN. You are free to do this at any point in time from now until April 16th 2023. After that, the MINt token will become worthless, as you will not be able to convert it to MIN any more.&#x20;
 
@@ -16,9 +16,9 @@ For now, **110,000,000 MINt** in total will be distributed through the FISO aird
 
 [FISO airdrop](https://minswap-labs.medium.com/minswap-fair-launch-tokenomics-and-fiso-airdrop-start-date-a75f3e75a546) ([Dec 13th 2021](https://minswap-labs.medium.com/how-to-claim-fiso-rewards-b348e21ef69e)): 100,000,000&#x20;
 
-[1st testnet airdrop](https://minswap-labs.medium.com/minswap-is-the-first-dapp-live-on-cardano-public-testnet-token-rewards-for-use-24032a5cb7ab) (TBA): 5,000,000&#x20;
+[1st testnet airdrop](https://minswap-labs.medium.com/minswap-is-the-first-dapp-live-on-cardano-public-testnet-token-rewards-for-use-24032a5cb7ab) : 5,000,000&#x20;
 
-[2nd testnet airdrop](https://minswap-labs.medium.com/announcing-the-incentivized-test-flight-rewards-8e714e0ebbc0) (TBA): 5,000,000
+[2nd testnet airdrop](https://minswap-labs.medium.com/announcing-the-incentivized-test-flight-rewards-8e714e0ebbc0) : 5,000,000
 
 ## **Where can I get MINt?**
 
