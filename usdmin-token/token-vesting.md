@@ -1,8 +1,8 @@
-# Tokenomics
+# Token Vesting
 
 The Minswap protocol currently has two types of tokens:
 
-**MIN token:** The governance token of the protocol with [utility](usdmin-token/). \
+**MIN token:** The governance token of the protocol with [utility](./). \
 \
 **MINt token:** A token that can be converted to MIN through usage of the protocol. Please read the following [document](https://minswap-labs.medium.com/how-to-convert-your-mint-tokens-c7331c8eaa01) for the detailed mechanics.\
 \
@@ -10,11 +10,11 @@ MINt token conversion will be available one month after the launch of our Yield 
 
 The Minswap **Token Distribution** is the following:
 
-<figure><img src=".gitbook/assets/tokenomics (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/tokenomics (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Token Vesting Schedules
 
-For information on **Yield Farming**, go to the subsection of [Yield Farming](yield-farming/).&#x20;
+For information on **Yield Farming**, go to the subsection of [Yield Farming](../yield-farming/).&#x20;
 
 Tokens from the **team** will be locked for the first 6 months after the launch of the protocol (_March 8th 2022_), meaning they will not be accessible to team members during that time. After that time period, Team tokens will vest linearly during the next 2.5 years.
 

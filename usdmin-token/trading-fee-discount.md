@@ -1,10 +1,10 @@
-# Trading Fee Discount for $MIN Holders and LPs
+# Trading Fee Discount
 
 The motive behind this initiative is the one of rewarding and incentivising those avid Minswap users who trade on the DEX on a frequent basis. Read below for how the Batcher Fee Discount works!
 
 ### How it Works
 
-Currently, everyone who swaps on the Minswap DEX pays a **2 $ADA fee** in addition to the 0.3% fee that is paid to LPs. As part of the initiative to increase the utility of the $MIN token within the platform, the $MIN token will entitle traders on Minswap to a Discount on this 2 $ADA Batcher Fee as long as:
+Currently, everyone who swaps on the Minswap DEX pays a **2 $ADA fee** in addition to the 0.3% fee that is paid to LPs. As part of the initiative to increase the utility of the $MIN token within the platform, the $MIN token will entitle traders on Minswap to a **Discount on this 2 $ADA Batcher Fee** as long as:
 
 1. They **hold $MIN** in their wallet the moment they make the trade.&#x20;
 2. Or they have provided $MIN as liquidity providers and they **hold $MIN/$ADA LP Tokens** in their wallet the moment they make the trade.
