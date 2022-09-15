@@ -10,7 +10,7 @@
 
 **2nd Farm Rebalance:** on the 23rd of May 2022 new Farm Allocations were the following:
 
-&#x20;![](<../../.gitbook/assets/image (8).png>)
+&#x20;![](<../../.gitbook/assets/image (8) (1).png>)
 
 **3rd Farm Rebalance:** on the 7th of June 2022 new Farm Allocations were the following:
 
@@ -30,11 +30,15 @@
 
 **7th Farm Rebalance:** on August 10th 2022 new Farm Allocations were the following:
 
-![](<../../.gitbook/assets/image (4) (2).png>)
+![](<../../.gitbook/assets/image (4).png>)
 
 **8th Farm Rebalance:** on August 25th 2022 new Farm Allocations were the following:
 
-![](<../../.gitbook/assets/image (4).png>)
+![](../../.gitbook/assets/image.png)
+
+**9th Farm Rebalance:** on September 8th 2022 new Farm Allocations were the following:
+
+![](<../../.gitbook/assets/image (8).png>)
 
 
 
