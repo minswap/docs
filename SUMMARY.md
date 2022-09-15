@@ -3,6 +3,8 @@
 * [Introduction](README.md)
 * [Whitepaper](whitepaper.md)
 * [Follow Us](follow-us.md)
+* [$MIN Token](usdmin-token/README.md)
+  * [Trading Fee Discount for $MIN Holders and LPs](usdmin-token/trading-fee-discount-for-usdmin-holders-and-lps.md)
 * [Tokenomics](tokenomics.md)
 * [Yield Farming](yield-farming/README.md)
   * [Yield Farming on Minswap](yield-farming/yield-farming-on-minswap/README.md)
