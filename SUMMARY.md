@@ -1,19 +1,22 @@
 # Table of contents
 
+## Get Started
+
 * [Introduction](README.md)
-* [Whitepaper](whitepaper.md)
-* [Follow Us](follow-us.md)
-* [$MIN Tokenomics](usdmin-tokenomics/README.md)
-  * [Trading Fee Discount](usdmin-tokenomics/trading-fee-discount.md)
-  * [Token Vesting Schedules](usdmin-tokenomics/token-vesting-schedules.md)
-* [Yield Farming](yield-farming/README.md)
-  * [Yield Farming on Minswap](yield-farming/yield-farming-on-minswap/README.md)
-    * [Yield Farming Example](yield-farming/yield-farming-on-minswap/yield-farming-example.md)
-  * [$MIN Point System](yield-farming/farms-allocation-and-governance/README.md)
-    * [Historical MIN Farm Rebalances](yield-farming/farms-allocation-and-governance/historical-min-farm-rebalances.md)
-    * [New MIN Farm Requirements](yield-farming/farms-allocation-and-governance/new-min-farm-requirements.md)
-* [Token Listing](token-listing/README.md)
-  * [CoinMarketCap Tracking](token-listing/coinmarketcap-tracking.md)
+* [Whitepaper](get-started/whitepaper.md)
+* [Follow Us](get-started/follow-us.md)
+
+## MIN Token
+
+* [$MIN Tokenomics](min-token/usdmin-tokenomics/README.md)
+  * [Trading Fee Discount](min-token/usdmin-tokenomics/trading-fee-discount.md)
+  * [Token Vesting Schedules](min-token/usdmin-tokenomics/token-vesting-schedules.md)
+* [Yield Farming](min-token/yield-farming/README.md)
+  * [Yield Farming on Minswap](min-token/yield-farming/yield-farming-on-minswap/README.md)
+    * [Yield Farming Example](min-token/yield-farming/yield-farming-on-minswap/yield-farming-example.md)
+  * [$MIN Point System](min-token/yield-farming/usdmin-point-system/README.md)
+    * [Historical MIN Farm Rebalances](min-token/yield-farming/usdmin-point-system/historical-min-farm-rebalances.md)
+    * [New MIN Farm Requirements](min-token/yield-farming/usdmin-point-system/new-min-farm-requirements.md)
 
 ## FAQ
 
@@ -21,6 +24,8 @@
 * [Meteor LBE](faq/meteor-lbe/README.md)
   * [LBE NFT Mechanism](faq/meteor-lbe/lbe-nft-mechanism.md)
 * [FISO](faq/fiso.md)
+* [Token Listing](faq/token-listing/README.md)
+  * [CoinMarketCap Tracking](faq/token-listing/coinmarketcap-tracking.md)
 
 ## Proposals
 

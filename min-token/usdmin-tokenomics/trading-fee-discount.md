@@ -15,7 +15,7 @@ The moment you want to make a trade on Minswap, the backend will identify how ma
 
 ### Fee Structure
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 The maximum amount for the Fee Discount on the Batcher Fee is **50,000 $MIN** and the equivalent LP Tokens (at the time of writing 25,000 $MIN and the equivalent $ADA are _5,000,000,000 $MIN-ADA LP Tokens_). The **maximum Discount** will be **25%**, meaning users with more than 50,000 $MIN or 5,000,000,000 $MIN-ADA LP Tokens will pay **1.5 $ADA instead of 2 $ADA**. Users with less than 50,000 $MIN will also receive a Discount on their Batcher fees as long as they have 1 $MIN worth in their wallet. This **Discount** is determined by the following formula:
 
@@ -26,6 +26,6 @@ The maximum amount for the Fee Discount on the Batcher Fee is **50,000 $MIN** an
 * (_MX_) is the amount of MIN which can get 25% reduction (currently 50,000 $MIN)&#x20;
 * (_MY_) is the amount of ADA-MIN LP which can get 25% reduction (currently 5,000,000,000 $MIN-ADA LP Tokens)
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-09-15 221602.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-09-15 221602.jpg" alt=""><figcaption></figcaption></figure>
 
 As such, Batcher Fee Discount is linearly increased based on the amount of $MIN and $MIN-ADA LP. ou can see a table representative of the different discounts and the $ADA fee to be paid and the amount of $MIN needed above. Bear in mind, even a wallet with 1 $MIN will be eligible for a Discount in the Batcher Fee!
