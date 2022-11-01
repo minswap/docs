@@ -18,15 +18,17 @@
     * [Historical MIN Farm Rebalances](min-token/yield-farming/usdmin-point-system/historical-min-farm-rebalances.md)
     * [New MIN Farm Requirements](min-token/yield-farming/usdmin-point-system/new-min-farm-requirements.md)
 
+## Governance
+
+* [Governance Module (old)](governance/governance.md)
+* [Governance Module (new)](governance/governance-module-new.md)
+* [Proposals & Snapshot Voting](governance/proposals-and-snapshot-voting.md)
+
 ## FAQ
 
+* [Token Listing](faq/token-listing/README.md)
+  * [CoinMarketCap Tracking](faq/token-listing/coinmarketcap-tracking.md)
 * [MINt token](faq/mint-token.md)
 * [Meteor LBE](faq/meteor-lbe/README.md)
   * [LBE NFT Mechanism](faq/meteor-lbe/lbe-nft-mechanism.md)
 * [FISO](faq/fiso.md)
-* [Token Listing](faq/token-listing/README.md)
-  * [CoinMarketCap Tracking](faq/token-listing/coinmarketcap-tracking.md)
-
-## Proposals
-
-* [Governance](proposals/governance.md)
