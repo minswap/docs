@@ -52,5 +52,7 @@
 
 <figure><img src="../../../.gitbook/assets/farm 1.jpg" alt=""><figcaption></figcaption></figure>
 
+**13th Farm Rebalance:** on November 9th 2022 new Farm Allocations were the following:
 
+<figure><img src="../../../.gitbook/assets/farm rebalance 13th.jpg" alt=""><figcaption></figcaption></figure>
 

@@ -1,4 +1,4 @@
-# Governance Module (new)
+# Governance Module
 
 Minswap is a community-centric DEX. From the onset, tokens are fairly distributed, without any private or VC investment. So far, the community has guided the future of the DEX by providing input in several discussions on the [Minswap Forum.](https://r.search.yahoo.com/\_ylt=Awr93JpybWFjxnAA6LoM34lQ;\_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1667358195/RO=10/RU=https%3a%2f%2fforum.minswap.org%2f/RK=2/RS=c8k92kBL1gmK.CaWcXAvD9LGOX0-) By implementing **on-chain snapshot voting**, Minswap moves a step closer towards being a decentralized protocol that is wholly owned by its users.
 
@@ -10,7 +10,7 @@ The following are imporant Governance Links:
 
 [Governance Forum](https://r.search.yahoo.com/\_ylt=Awr93JpybWFjxnAA6LoM34lQ;\_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1667358195/RO=10/RU=https%3a%2f%2fforum.minswap.org%2f/RK=2/RS=c8k92kBL1gmK.CaWcXAvD9LGOX0-): a more formal avenue where anyone can post ideas to improve Minswap
 
-Voting Portal: anyone can vote to implement ideas with their $MIN&#x20;
+[Voting Portal](https://app.minswap.org/gov): anyone can vote to implement ideas with their $MIN&#x20;
 
 
 

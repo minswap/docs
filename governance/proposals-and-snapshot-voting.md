@@ -16,9 +16,9 @@ A Proposal to be voted on will use the Voting Power of a snapshot from **the day
 
 The **fee** for making a voting transaction is the standard blockchain transaction fee which is around 0.17-0.2 ADA. Moreover, users can change their mind on the answer and re-vote anytime between proposal’s start and end time.
 
-**Quorum**
+### **Quorum**
 
-**Quorum** is the metric which requires the minimum of unique Voting Power of each proposal. If the proposal has the unique Voting Power less than Quorum, then the proposal won’t be approved. For a vote to pass and become binding, it must gain a quorum of at least **5% of the current $MIN circulating supply** (currently around 500 million $MIN) in Voting Power, meaning 25 million $MIN.
+**Quorum** is the metric which requires the minimum of unique Voting Power of each proposal. If the proposal has the unique Voting Power less than Quorum, then the proposal won’t be approved. For a vote to pass and become binding, it must gain a quorum of at least **5% of the current $MIN circulating supply** (currently around 500 million $MIN) in Voting Power, meaning **25 million $MIN**.
 
 <figure><img src="../.gitbook/assets/governance-infographic.png" alt=""><figcaption></figcaption></figure>
 

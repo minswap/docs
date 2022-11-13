@@ -20,8 +20,7 @@
 
 ## Governance
 
-* [Governance Module (old)](governance/governance.md)
-* [Governance Module (new)](governance/governance-module-new.md)
+* [Governance Module](governance/governance-module.md)
 * [Proposals & Snapshot Voting](governance/proposals-and-snapshot-voting.md)
 
 ## FAQ
