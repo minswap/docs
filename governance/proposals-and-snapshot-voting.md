@@ -20,5 +20,5 @@ The **fee** for making a voting transaction is the standard blockchain transacti
 
 **Quorum** is the metric which requires the minimum of unique Voting Power of each proposal. If the proposal has the unique Voting Power less than Quorum, then the proposal won’t be approved. For a vote to pass and become binding, it must gain a quorum of at least **5% of the current $MIN circulating supply** (currently around 500 million $MIN) in Voting Power, meaning **25 million $MIN**.
 
-<figure><img src="../.gitbook/assets/governance-infographic.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/governance-infographic_720.png" alt=""><figcaption></figcaption></figure>
 
