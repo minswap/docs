@@ -12,7 +12,7 @@ There will be an automatic **snapshot** of wallets _everyday at 7 AM UTC_. The s
 
 _Voting Power for 1 MIN in wallet = Voting Power for 1 MIN in MIN-ADA LP Tokens = Voting Power for 1 MIN in staked MIN-ADA LP Tokens = Voting Power for 1 MIN in MINt staking_
 
-A Proposal to be voted on will use the Voting Power of a snapshot from **the day prior** (eg. a proposal starting on 10th November will be based on snapshot data from November 9th 7 AM UTC).
+A Proposal to be voted on will use the Voting Power of a snapshot from **the day prior** (eg. a proposal starting on 10th November will be based on snapshot data from November 9th 7 AM UTC). Snapshot Voting lasts 2 weeks.
 
 The **fee** for making a voting transaction is the standard blockchain transaction fee which is around 0.17-0.2 ADA. Moreover, users can change their mind on the answer and re-vote anytime between proposal’s start and end time.
 
@@ -20,5 +20,5 @@ The **fee** for making a voting transaction is the standard blockchain transacti
 
 **Quorum** is the metric which requires the minimum of unique Voting Power of each proposal. If the proposal has the unique Voting Power less than Quorum, then the proposal won’t be approved. For a vote to pass and become binding, it must gain a quorum of at least **5% of the current $MIN circulating supply** (currently around 500 million $MIN) in Voting Power, meaning **25 million $MIN**.
 
-<figure><img src="../.gitbook/assets/governance-infographic_720.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/governance-infographic_720.png" alt=""><figcaption><p>Minswap Governance Summary</p></figcaption></figure>
 
