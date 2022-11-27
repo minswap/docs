@@ -4,7 +4,7 @@ Since the days of the [Meteor LBE](https://minswap-labs.medium.com/meteor-lbe-ma
 
 In particular, the Minswap DAO Treasury owns, **as of November 25th 2022**:
 
-* MIN/ADA LP Tokens worth _10,642,902 ADA_ (meaning 5,321,451 and the equivalent worth in MIN)
+* MIN/ADA LP Tokens worth _10,642,902 ADA_ (meaning _5,321,451 ADA_ and the equivalent worth in MIN)
 * INDY/ADA LP Tokens worth _213,394 ADA_
 * MCOS/ADA LP Tokens worth _75,154 ADA_
 
