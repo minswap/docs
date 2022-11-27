@@ -10,6 +10,6 @@ The following are imporant Governance Links:
 
 [Minswap Discord](https://discord.gg/minswap): where most of the informal discussion takes place
 
-[Governance Forum](https://forum.minswap.org): a more formal avenue where anyone can post ideas to improve Minswap
+[Governance Forum](https://r.search.yahoo.com/\_ylt=Awr93JpybWFjxnAA6LoM34lQ;\_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1667358195/RO=10/RU=https%3a%2f%2fforum.minswap.org%2f/RK=2/RS=c8k92kBL1gmK.CaWcXAvD9LGOX0-): a more formal avenue where anyone can post ideas to improve Minswap
 
 [Voting Portal](https://app.minswap.org/gov): anyone can vote to implement ideas with their $MIN&#x20;

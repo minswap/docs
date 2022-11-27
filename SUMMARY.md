@@ -22,6 +22,7 @@
 
 * [Governance Module](governance/governance-module.md)
 * [Proposals & Snapshot Voting](governance/proposals-and-snapshot-voting.md)
+* [DAO Treasury POL](governance/dao-treasury-pol.md)
 
 ## FAQ
 
