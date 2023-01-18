@@ -18,4 +18,4 @@ In the first article of the $MINomics Series, [_$MINomics Research Part 1: Explo
 
 As the first step of those initiatives, [$ADA Staking rewards were implemented towards LPs](https://twitter.com/MinswapDEX/status/1541803084879462400?s=20\&t=C2YA8vWM66zeKhnQW4mgxA), a [Launchbowl Event](https://minswap-labs.medium.com/introducing-the-minswap-launch-bowl-a5db8266345c) was launched to increase POL (Protocol-Owned Liquidity), and the[ Trading Fee Discount for $MIN Holders](trading-fee-discount.md) was implemented.
 
-Further improvements toward the tokenomics will be implemented progressively and with the input of the community every step of the way.&#x20;
+Further improvements toward the tokenomics will be implemented progressively and with the input of the community every step of the way. The last initative was the activation of the [Fee Switch](fee-switch.md) (with input from the DAO through the first ever Snapshot Vote)

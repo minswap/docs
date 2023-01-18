@@ -10,7 +10,7 @@
 
 * [$MIN Tokenomics](min-token/usdmin-tokenomics/README.md)
   * [Trading Fee Discount](min-token/usdmin-tokenomics/trading-fee-discount.md)
-  * [Fee Sharing](min-token/usdmin-tokenomics/fee-sharing.md)
+  * [Fee Switch](min-token/usdmin-tokenomics/fee-switch.md)
   * [Token Vesting Schedules](min-token/usdmin-tokenomics/token-vesting-schedules.md)
 * [Yield Farming](min-token/yield-farming/README.md)
   * [Yield Farming on Minswap](min-token/yield-farming/yield-farming-on-minswap/README.md)
@@ -23,7 +23,8 @@
 
 * [Governance Module](governance/governance-module.md)
 * [Proposals & Snapshot Voting](governance/proposals-and-snapshot-voting.md)
-* [DAO Treasury POL](governance/dao-treasury-pol.md)
+* [DAO Treasury POL](governance/dao-treasury-pol/README.md)
+  * [Minswap Monthly Stats](governance/dao-treasury-pol/minswap-monthly-stats.md)
 
 ## FAQ
 
