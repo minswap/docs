@@ -1,6 +1,6 @@
 # Meteor LBE
 
-**\*Disclaimer\* If you currently hold purrADA you need to redeem it right now on** [**https://lbe.minswap.org/**](https://lbe.minswap.org/de-DE)**. Otherwise, it will be worthless!!!**
+### \*Disclaimer\*: the Meteor LBE campaign is now over. We have decided to preserve this page for anyone who has questions about how it was conducted
 
 **1) What wallets are supported?**
 

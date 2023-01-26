@@ -17,7 +17,6 @@
     * [Yield Farming Example](min-token/yield-farming/yield-farming-on-minswap/yield-farming-example.md)
   * [$MIN Point System](min-token/yield-farming/usdmin-point-system/README.md)
     * [Historical MIN Farm Rebalances](min-token/yield-farming/usdmin-point-system/historical-min-farm-rebalances.md)
-    * [New MIN Farm Requirements](min-token/yield-farming/usdmin-point-system/new-min-farm-requirements.md)
 
 ## Governance
 
@@ -28,8 +27,11 @@
 
 ## FAQ
 
-* [Token Listing](faq/token-listing/README.md)
-  * [CoinMarketCap Tracking](faq/token-listing/coinmarketcap-tracking.md)
+* [Token Launching & Farming](faq/token-launching-and-farming/README.md)
+  * [1. Token Listing](faq/token-launching-and-farming/1.-token-listing.md)
+  * [2. CoinMarketCap Tracking](faq/token-launching-and-farming/2.-coinmarketcap-tracking.md)
+  * [3. Launchbowl - Initiatives Rundown](faq/token-launching-and-farming/3.-launchbowl-initiatives-rundown.md)
+  * [4. Farming for Projects](faq/token-launching-and-farming/4.-farming-for-projects.md)
 * [MINt token](faq/mint-token.md)
 * [Meteor LBE](faq/meteor-lbe/README.md)
   * [LBE NFT Mechanism](faq/meteor-lbe/lbe-nft-mechanism.md)

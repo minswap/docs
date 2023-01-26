@@ -68,8 +68,10 @@
 
 <figure><img src="../../../.gitbook/assets/FkhLnAYXoAIFOWF.jfif" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/FjYnekHWIAcbJYi.jfif" alt=""><figcaption></figcaption></figure>
-
-**17th Farm Rebalance:** on January 6th 2022 new Farm Allocations were the following:
+**17th Farm Rebalance:** on January 6th 2023 new Farm Allocations were the following:
 
 <figure><img src="../../../.gitbook/assets/FlxXlFmXgAEWyyU.jfif" alt=""><figcaption></figcaption></figure>
+
+**18th Farm Rebalance:** on January 23rd 2023 new Farm Allocations were the following:
+
+<figure><img src="../../../.gitbook/assets/FnJKWr8WQAEfyIm.jfif" alt=""><figcaption></figcaption></figure>
