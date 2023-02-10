@@ -12,7 +12,7 @@ Currently, there are **3 sources** for the DAO Treasury POL:
 
 The addresses for the LP Tokens are the following:
 
-* 1 - MIN/ADA LP Tokens from Meteor LBE: addr1vxs9zqu2lcddy98wml0d7qtpfy2m7shtz0gzkj93ghgkckg373c0h
+* 1 - MIN/ADA LP Tokens from Meteor LBE: addr1q9wz03xdpasq5t7tv4vvqyw9frhz2x9862ct3xyh697pfwjj2c79gy9l76sdg0xwhd7r0c0kna0tycz4y5s6mlenh8pqyk6dej
 * 2 - INDY/ADA LP Tokens (staked in Yield Farming): addr1q9gxe8vx0kvv5g6gv4n5wmsxexjqsjftc599qqcp2vkmmwh7snv5yhw2qqvdev3c7wn6s3xhrnx25eg6zcqjxj9vrv2s0e38ze&#x20;
 * 2 - MCOS/ADA LP Tokens (staked in Yield Farming): addr1q9gxe8vx0kvv5g6gv4n5wmsxexjqsjftc599qqcp2vkmmwh7snv5yhw2qqvdev3c7wn6s3xhrnx25eg6zcqjxj9vrv2s0e38ze
 * 3 -  MIN/ADA LP Tokens from Fee Switch: addr1qx40kyvkgdxtsdladusny09r0vczmlmrsl52sjel528674jj2c79gy9l76sdg0xwhd7r0c0kna0tycz4y5s6mlenh8pqg82qtn
