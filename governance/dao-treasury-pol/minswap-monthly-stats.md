@@ -11,3 +11,7 @@ December 2022
 January 2023
 
 <figure><img src="../../.gitbook/assets/Fn0GwPwXwAIcaC6.jfif" alt=""><figcaption></figcaption></figure>
+
+February 2023
+
+<figure><img src="../../.gitbook/assets/February stats.jpg" alt=""><figcaption></figcaption></figure>
