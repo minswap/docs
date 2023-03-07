@@ -11,7 +11,7 @@
 * [$MIN Tokenomics](min-token/usdmin-tokenomics/README.md)
   * [Trading Fee Discount](min-token/usdmin-tokenomics/trading-fee-discount.md)
   * [Fee Switch](min-token/usdmin-tokenomics/fee-switch.md)
-  * [Token Allocations & Vesting](min-token/usdmin-tokenomics/token-allocations-and-vesting.md)
+  * [Token Vesting Schedules](min-token/usdmin-tokenomics/token-vesting-schedules.md)
 * [Yield Farming](min-token/yield-farming/README.md)
   * [Yield Farming on Minswap](min-token/yield-farming/yield-farming-on-minswap/README.md)
     * [Yield Farming Example](min-token/yield-farming/yield-farming-on-minswap/yield-farming-example.md)
