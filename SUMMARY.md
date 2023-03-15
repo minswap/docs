@@ -32,6 +32,7 @@
   * [2. CoinMarketCap Tracking](faq/token-launching-and-farming/2.-coinmarketcap-tracking.md)
   * [3. Launchbowl - Initiatives Rundown](faq/token-launching-and-farming/3.-launchbowl-initiatives-rundown.md)
   * [4. Farming for Projects](faq/token-launching-and-farming/4.-farming-for-projects.md)
+* [Zap-In](faq/zap-in.md)
 * [MINt token](faq/mint-token.md)
 * [Meteor LBE](faq/meteor-lbe/README.md)
   * [LBE NFT Mechanism](faq/meteor-lbe/lbe-nft-mechanism.md)
