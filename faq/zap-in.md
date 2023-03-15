@@ -6,5 +6,5 @@ Zap-In works the following way: when zapping a single token into a Liquidity-Poo
 
 This enables anyone to become a Liquidity Provider, by only needing one token. What happens is that half of the provided tokens just get swapped to the other token part of the chosen Liquidity Pool, and then they are added to the Liquidity Pool so the user swapping becomes a 50/50 Liquidity Provider.
 
-Please note that when you are Zapping a said token, essentially **you are selling half of the amount you Zap** of it for the other token part of the Trading Pair.
+Please note that when you are Zapping a said token, essentially **you are selling half of the amount you Zap** for the other token part of the Trading Pair.
 
