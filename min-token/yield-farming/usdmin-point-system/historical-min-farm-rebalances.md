@@ -2,7 +2,7 @@
 
 **Initial Farms:** starting on March 14th 2022
 
-****![](<../../../.gitbook/assets/image (6) (1).png>)****
+![](<../../../.gitbook/assets/image (6) (1).png>)
 
 **1st Farm Rebalance:** on the 23rd of April 2022 new Farm Allocations were the following:
 
@@ -75,3 +75,27 @@
 **18th Farm Rebalance:** on January 23rd 2023 new Farm Allocations were the following:
 
 <figure><img src="../../../.gitbook/assets/FnJKWr8WQAEfyIm.jfif" alt=""><figcaption></figcaption></figure>
+
+**19th Farm Rebalance:** on February 7th 2023 new Farm Allocations were the following:
+
+<figure><img src="../../../.gitbook/assets/February 1.jpg" alt=""><figcaption></figcaption></figure>
+
+**20th Farm Rebalance:** on February 23rd 2023 new Farm Allocations were the following:
+
+<figure><img src="../../../.gitbook/assets/February 2.jpg" alt=""><figcaption></figcaption></figure>
+
+**21st Farm Rebalance:** on March 9th 2023 new Farm Allocations were the following:
+
+<figure><img src="../../../.gitbook/assets/March 1.jpg" alt=""><figcaption></figcaption></figure>
+
+**22nd Farm Rebalance:** on March 24th 2023 new Farm Allocations were the following:
+
+<figure><img src="../../../.gitbook/assets/March 2.jpg" alt=""><figcaption></figcaption></figure>
+
+**23rd Farm Rebalance:** on April 7th 2023 new Farm Allocations were the following:
+
+<figure><img src="../../../.gitbook/assets/April 1.jpg" alt=""><figcaption></figcaption></figure>
+
+**24th Farm Rebalance:** on April 21st 2023 new Farm Allocations were the following:
+
+<figure><img src="../../../.gitbook/assets/April 2.jpg" alt=""><figcaption></figcaption></figure>

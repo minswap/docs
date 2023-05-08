@@ -10,7 +10,7 @@ The **Fee Switch** refers to redirecting 0.05% of the 0.3% Fee that swappers pay
 4. Any $ADA generated are zapped into $MIN/$ADA LP Tokens.
 5. $MIN/$ADA LP Tokens are farmed.
 
-Fee Sharing on the Minswap DEX **** revolves around using Fees to strengthen the Liquidity in the MIN/ADA Pool. Having a strong MIN/ADA Pool, especially in earlier stages of the project, is incredibly important as we highlighted in our [LBE article](https://minswap-labs.medium.com/meteor-lbe-mainnet-launch-yield-farming-more-f73c6c2a8b37).
+Fee Sharing on the Minswap DEX revolves around using Fees to strengthen the Liquidity in the MIN/ADA Pool. Having a strong MIN/ADA Pool, especially in earlier stages of the project, is incredibly important as we highlighted in our [LBE article](https://minswap-labs.medium.com/meteor-lbe-mainnet-launch-yield-farming-more-f73c6c2a8b37).
 
 ### Fee Sharing API
 
