@@ -28,7 +28,7 @@
 ## FAQ
 
 * [Token Launching & Farming](faq/token-launching-and-farming/README.md)
-  * [1. Token Listing](faq/token-launching-and-farming/1.-token-listing.md)
+  * [1. Token Listing & Verification](faq/token-launching-and-farming/1.-token-listing-and-verification.md)
   * [2. CoinMarketCap Tracking](faq/token-launching-and-farming/2.-coinmarketcap-tracking.md)
   * [3. Launchbowl - Initiatives Rundown](faq/token-launching-and-farming/3.-launchbowl-initiatives-rundown.md)
   * [4. Farming for Projects](faq/token-launching-and-farming/4.-farming-for-projects.md)
