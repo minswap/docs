@@ -4,7 +4,7 @@ The motive behind this initiative is the one of rewarding and incentivising thos
 
 ### How it Works
 
-Currently, everyone who swaps on the Minswap DEX pays a **2 $ADA fee** in addition to the 0.3% fee that is paid to LPs. As part of the initiative to increase the utility of the $MIN token within the platform, the $MIN token will entitle traders on Minswap to a **Discount on this 2 $ADA Batcher Fee** as long as:
+Currently, everyone who swaps on the Minswap DEX pays a **2 $ADA fee** in addition to the 0.3% swap fee that is paid to Liquidity Providers. As part of the initiative to increase the utility of the $MIN token within the platform, the $MIN token will entitle traders on Minswap to a **Discount on this 2 $ADA Batcher Fee** as long as:
 
 1. They **hold $MIN** in their wallet the moment they make the trade.&#x20;
 2. Or they have provided $MIN as liquidity providers and they **hold $MIN/$ADA LP Tokens** in their wallet the moment they make the trade.
@@ -28,4 +28,4 @@ The maximum amount for the Fee Discount on the Batcher Fee is **50,000 $MIN** an
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-09-15 221602.jpg" alt=""><figcaption></figcaption></figure>
 
-As such, Batcher Fee Discount is linearly increased based on the amount of $MIN and $MIN-ADA LP. ou can see a table representative of the different discounts and the $ADA fee to be paid and the amount of $MIN needed above. Bear in mind, even a wallet with 1 $MIN will be eligible for a Discount in the Batcher Fee!
+As such, Batcher Fee Discount is linearly increased based on the amount of $MIN and $MIN-ADA LP. Above, you can see a table representative of the different discounts. Bear in mind, even a wallet with 1 $MIN will be eligible for a Discount in the Batcher Fee!

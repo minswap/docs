@@ -13,10 +13,10 @@
   * [Fee Switch](min-token/usdmin-tokenomics/fee-switch.md)
   * [Token Allocations & Vesting](min-token/usdmin-tokenomics/token-allocations-and-vesting.md)
 * [Yield Farming](min-token/yield-farming/README.md)
-  * [Yield Farming on Minswap](min-token/yield-farming/yield-farming-on-minswap/README.md)
-    * [Yield Farming Example](min-token/yield-farming/yield-farming-on-minswap/yield-farming-example.md)
   * [$MIN Point System](min-token/yield-farming/usdmin-point-system/README.md)
     * [Historical MIN Farm Rebalances](min-token/yield-farming/usdmin-point-system/historical-min-farm-rebalances.md)
+  * [Yield Farming on Minswap](min-token/yield-farming/yield-farming-on-minswap/README.md)
+    * [Yield Farming Example](min-token/yield-farming/yield-farming-on-minswap/yield-farming-example.md)
 
 ## Governance
 

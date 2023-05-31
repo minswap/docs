@@ -99,3 +99,11 @@
 **24th Farm Rebalance:** on April 21st 2023 new Farm Allocations were the following:
 
 <figure><img src="../../../.gitbook/assets/April 2.jpg" alt=""><figcaption></figcaption></figure>
+
+**25th Farm Rebalance:** on May 6th 2023 new Farm Allocations were the following:
+
+<figure><img src="../../../.gitbook/assets/May 6th.jpg" alt=""><figcaption></figcaption></figure>
+
+**26th Farm Rebalance:** on May 20th 2023 new Farm Allocations were the following:
+
+<figure><img src="../../../.gitbook/assets/May 20th.jpg" alt=""><figcaption></figcaption></figure>

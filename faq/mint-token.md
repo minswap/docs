@@ -1,5 +1,7 @@
 # MINt token
 
+## _\*Disclaimer\*: The MINt token mechanism is no longer available as it was set to expire one year after launch._
+
 ## What is MINt?
 
 MINt is a cardano native token that **was given to early supporters** of the Minswap protocol during the [FISO](fiso.md). MINt can be **converted into MIN** and offers a **temporary yield farming boost** for providing and locking up LP tokens in the Minswap DEX.
