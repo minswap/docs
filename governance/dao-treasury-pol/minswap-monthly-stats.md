@@ -27,3 +27,21 @@ April 2023
 May 2023
 
 <figure><img src="../../.gitbook/assets/may monthly stats.jpg" alt=""><figcaption></figcaption></figure>
+
+June 2023
+
+<figure><img src="../../.gitbook/assets/June stats.jpg" alt=""><figcaption></figcaption></figure>
+
+July 2023
+
+<figure><img src="../../.gitbook/assets/July stats (1).jpg" alt=""><figcaption></figcaption></figure>
+
+August 2023
+
+<figure><img src="../../.gitbook/assets/August stats (1).jpg" alt=""><figcaption></figcaption></figure>
+
+September 2023
+
+
+
+<figure><img src="../../.gitbook/assets/September stats.png" alt=""><figcaption></figcaption></figure>
