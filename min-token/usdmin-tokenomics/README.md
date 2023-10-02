@@ -8,7 +8,7 @@ The Minswap **Token Distribution** is the following:
 
 Here are the current Utilities of the $MIN Token:
 
-1\) [Stake $MIN to earn $ADA](usdmin-staking.md) Real Yield coming directly from Trading Fees.
+1\) [Stake $MIN to earn $ADA](fee-switch.md) Real Yield coming directly from Trading Fees.
 
 2\) Hold $MIN to obtain [Trading Fee Discounts](trading-fee-discount.md).&#x20;
 

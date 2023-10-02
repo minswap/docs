@@ -10,23 +10,23 @@ In Minswap, this translates to distributing **MIN token rewards** to users who P
 
 ### Bootstrapping Phase&#x20;
 
-During the first 5 months after deployment of the DEX, Minswap went through a _Bootstrapping Phase_ using a predictable and aggressive Yield Farming Schedule to bootstrap users and TVL.
-
-**1st month (16th March 2022 to 15th April) :** 1.2% total supply = 60 million MIN ≈ 2,000,000 daily. \
-**2nd month (15th April 2022 to 15th May) :** 1.1% total supply = 55 million MIN ≈ 1,833,333 daily \
-**3rd month** **(15th** **May 2022 to 14th June) :** 1% total supply = 50 million MIN ≈ 1,666,666 daily. \
-**4th month (14th** **June 2022 to 14th July) :** 0.9% total supply = 45 million MIN ≈ 1,500,000 daily. \
-**5th month (14th** **July 2022 to 13th August)** **:** 0.8% total supply = 40 million MIN ≈ 1,333,333 daily.
-
-In total, to bootstrap liquidity and to ensure early supporters of Minswap are maximally rewarded, **5% of total supply** was allocated towards _Yield Farming_ in the first 5 months. We welcome any community input regarding pools that could be added and schedule adjustment in our [Forum](https://forum.minswap.org/).
+During the first 5 months after deployment of the DEX, Minswap went through a _Bootstrapping Phase_ using a predictable and aggressive Yield Farming Schedule to bootstrap users and TVL. In total, to bootstrap liquidity and to ensure early supporters of Minswap are maximally rewarded, **5% of total supply** was allocated towards _Yield Farming_ in the first 5 months.&#x20;
 
 ### **Minimax** Phase&#x20;
 
-After the _Bootstrapping Phase_, the Minswap DEX will enter the _"Minimax Phase"_ with a _Dynamic Schedule_ approach for a **4-month Period** meaning from **August 13th 2022 to November 13th 2022**. While at first this process will be conducted _off-chain_, the endgame of a _Dynamic Schedule_ would be to have the Emissions Schedule be determined completely _on-chain_ and for Emissions to be determined according to an algorithmic formula coupled with _on-chain voting_.
+After the _Bootstrapping Phase_, the Minswap DEX entered the _"Minimax Phase"_ with a _Dynamic Schedule_ approach. During the  **Minimax Phase** following a [_Dynamic Schedule_](https://minswap-labs.medium.com/minomics-research-part-2-introducing-dynamic-emission-schedules-974783ef1f8d), Emissions were gradually decreased from the starting rate of 1,333,333 $MIN emitted daily to 666,666 $MIN daily. &#x20;
 
-During the 4 months of the **Minimax Phase** for the [_Dynamic Schedule_](https://minswap-labs.medium.com/minomics-research-part-2-introducing-dynamic-emission-schedules-974783ef1f8d), Emissions will be increased or decreased within a **50% threshold** of the last Emissions Rate of the first Farming schedule, meaning the Starting Emissions Rate (SER) of ≈ 1,333,333 $MIN emitted daily from July 14th to August 13th. This means Emissions will be increased to a **maximum rate** of ≈1,999,999 $MIN daily, or decreased to a **minimum rate** of ≈666,666 $MIN daily. None of those two scenarios must or will necessarily occur, but those are the bounds set during the **Minimax Phase.**&#x20;
+### **Current State**&#x20;
 
-Once the **Minimax Phase** is over, with the first **Emissions Report** released, and provided Governance infrastructure is ready by then, the Minswap DAO will have to vote on whether to continue a _Dynamic Emissions_ _Path_ and if so, what structure to pursue within a _Dynamic Emissions Path_.
+Once the **Minimax Phase** was over, an [**Emissions Report**](https://minswap.org/storage/2023/06/31-3-2023\_Emissions\_and\_Treasury\_Report.pdf) was released to give insights into the effectivenes of how Dynamic Emissions were implemented so far. The main conclusion was that Dynamic Emissions are working as intended, but a reduction in the Emissions was still needed. A Governance Proposal was drafted and approved with the following mandates:
+
+1. _**Lower the lower Bound of Emissions by 50%**_ : emissions have a lower bound of 333,333 MIN minimum per day. Be mindful that this is an adjustment to the range of the emissions rate, it does not necessarily mean that the lowest rate will be implemented.
+2. _**Lower the higher Bound of Emissions by ≈50%**_: the higher bound was lowered from 1,999,999 MIN per day to maximum 1,000,000 MIN per day.
+3. _**Adjust the Daily MIN Emissions Rate dynamically every 2 weeks**_: with the **maximum weekly change being a 10% variation** from last MIN Emissions Rate. A Working Group was created (with members who authored the Emissions and DAO Treasury Report) to monitor and decide on the adjustment. The $MIN Emissions Rate is changed bi-weekly.&#x20;
+
+
+
+
 
 
 
