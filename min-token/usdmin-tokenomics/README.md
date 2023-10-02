@@ -12,4 +12,4 @@ Here are the current Utilities of the $MIN Token:
 
 2\) Hold $MIN to obtain [Trading Fee Discounts](trading-fee-discount.md).&#x20;
 
-3\) Vote with your $MIN in [Governance](broken-reference) such as where the $ADA in Minswap LPs should be staked, or deciding on how that $ADA votes in Catalyst
+3\) Vote with your $MIN in [Governance](broken-reference) such as where the $ADA in Minswap LPs should be staked, or deciding on how that $ADA votes in Catalyst.

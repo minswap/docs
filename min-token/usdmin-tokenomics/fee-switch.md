@@ -1,6 +1,6 @@
 # $MIN Staking
 
-On the [Staking Page](https://app.minswap.org/staking) $MIN holders have the Option to stake their $MIN in order to receive $ADA rewards generated from the Fee Switch. Every time someone swaps on Minswap, there is a 0.3% Fee, of which **0.05% is the Fee Switch**. The $ADA generated through is redirected towards $MIN Stakers. Every month $ADA rewards for the entire month are accumulated and then **distributed the month after**. This is similar to how $ADA rewards are distributed to LPs currently.
+On the [Staking Page](https://app.minswap.org/staking) $MIN holders have the Option to stake their $MIN in order to receive $ADA rewards generated from the Fee Switch. Every time someone swaps on Minswap, there is a 0.3% Fee, of which **0.05% is the Fee Switch**. The $ADA generated through it is redirected towards $MIN Stakers. Every month $ADA rewards for the entire month are accumulated and then **distributed the month after**. This is similar to how $ADA rewards are distributed to LPs currently.
 
 $MIN stakers essentially **“soft-lock”** their $MIN for a certain amount of time. It’s a “soft-lock” in that stakers may unlock their $MIN at any time, however doing so **early** means they **forfeit their accrued rewards**. Forfeited rewards from early unstaking are collected monthly and distributed to the $MIN stakers afterwards.
 
