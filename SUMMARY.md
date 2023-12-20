@@ -38,6 +38,6 @@
   * [LBE NFT Mechanism](faq/meteor-lbe/lbe-nft-mechanism.md)
 * [FISO](faq/fiso.md)
 
-## DEX Guide
+## Developer
 
-* [Wallet Connect](dex-guide/wallet-connect.md)
+* [Wallet Connect](developer/wallet-connect.md)
