@@ -6,7 +6,7 @@ The motive behind this initiative is the one of rewarding and incentivising thos
 
 Currently, everyone who swaps on the Minswap DEX pays a **2 $ADA fee** in addition to the 0.3% swap fee that is paid to Liquidity Providers. As part of the initiative to increase the utility of the $MIN token within the platform, the $MIN token will entitle traders on Minswap to a **Discount on this 2 $ADA Batcher Fee** as long as:
 
-1. They **hold $MIN** in their wallet the moment they make the trade.&#x20;
+1. They **hold $MIN** in their wallet the moment they make the trade.
 2. Or they have provided $MIN as liquidity providers and they **hold $MIN/$ADA LP Tokens** in their wallet the moment they make the trade.
 
 For now, the discount **will not apply to those who are staking** $MIN/$ADA LP Tokens in Yield Farming or have $MIN/$ADA LP Tokens in the MINt conversion process.
@@ -15,7 +15,7 @@ The moment you want to make a trade on Minswap, the backend will identify how ma
 
 ### Fee Structure
 
-<figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 The maximum amount for the Fee Discount on the Batcher Fee is **50,000 $MIN** and the equivalent LP Tokens (at the time of writing 25,000 $MIN and the equivalent $ADA are _5,000,000,000 $MIN-ADA LP Tokens_). The **maximum Discount** will be **25%**, meaning users with more than 50,000 $MIN or 5,000,000,000 $MIN-ADA LP Tokens will pay **1.5 $ADA instead of 2 $ADA**. Users with less than 50,000 $MIN will also receive a Discount on their Batcher fees as long as they have 1 $MIN worth in their wallet. This **Discount** is determined by the following formula:
 
@@ -23,7 +23,7 @@ The maximum amount for the Fee Discount on the Batcher Fee is **50,000 $MIN** an
 
 * (_X_) is the amount of MIN in the wallet
 * (_Y_) is the amount of ADA-MIN LP in the wallet
-* (_MX_) is the amount of MIN which can get 25% reduction (currently 50,000 $MIN)&#x20;
+* (_MX_) is the amount of MIN which can get 25% reduction (currently 50,000 $MIN)
 * (_MY_) is the amount of ADA-MIN LP which can get 25% reduction (currently 5,000,000,000 $MIN-ADA LP Tokens)
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-09-15 221602.jpg" alt=""><figcaption></figcaption></figure>
