@@ -24,6 +24,7 @@
 * [DAO Treasury POL](governance/dao-treasury-pol/README.md)
   * [Minswap Monthly Stats](governance/dao-treasury-pol/minswap-monthly-stats.md)
 * [Catalyst Voting](governance/catalyst-voting.md)
+* [Reports](governance/reports.md)
 
 ## FAQ
 
