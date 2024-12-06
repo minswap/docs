@@ -6,14 +6,17 @@ As part of that process, a group of community volunteers collaborates to filter 
 
 This List of Proposals with all the filtered Proposals, why they were chosen, and the score in Catalyst assessment can be found below.
 
-There are 3 Lists so far:
+There are 4 Lists so far:
 
 * Fund 10 Catalyst List
 * Fund 11 Catalyst List
 * Fund 12 Catalyst List
+* Fund 13 Catalyst List
 
 {% file src="../.gitbook/assets/Fund 10 Catalyst List" %}
 
 {% file src="../.gitbook/assets/Fund 11 Catalyst List (2).pdf" %}
 
 {% file src="../.gitbook/assets/Fund 12 Catalyst List.pdf" %}
+
+{% file src="../.gitbook/assets/Fund 13 Catalyst List.pdf" %}
