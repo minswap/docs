@@ -21,6 +21,10 @@
 
 * [Governance Module](governance/governance-module.md)
 * [Proposals & Snapshot Voting](governance/proposals-and-snapshot-voting.md)
+* [Liquidity Pool Fee Governance](governance/liquidity-pool-fee-governance/README.md)
+  * [Create LP Fee Governance](governance/liquidity-pool-fee-governance/create-lp-fee-governance.md)
+  * [Vote for an LP Fee Proposal](governance/liquidity-pool-fee-governance/vote-for-an-lp-fee-proposal.md)
+  * [Fee Manager - Change the Pool Fee](governance/liquidity-pool-fee-governance/fee-manager-change-the-pool-fee.md)
 * [DAO Treasury POL](governance/dao-treasury-pol.md)
 * [Catalyst Voting](governance/catalyst-voting.md)
 * [Reports](governance/reports.md)
