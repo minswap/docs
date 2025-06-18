@@ -555,9 +555,3 @@ curl "${BASE_URL}/cancel-tx" \
 - Orders can only be cancelled by the address that created them
 - The transaction will fail if any of the orders have already been fulfilled or cancelled
 </details>
-
-## OpenAPI Specification
-
-{% openapi src="../openapi/aggregator-api.json" %}
-[Aggregator API Specification](../openapi/aggregator-api.json)
-{% endopenapi %}
