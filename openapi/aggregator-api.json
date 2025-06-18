@@ -1,0 +1,243 @@
+{
+  "title": "Minswap Aggregator API Documentation",
+  "description": "Comprehensive documentation for the Minswap Aggregator API, which provides access to Minswap's aggregation functionality for partners",
+  "baseUrl": "https://monorepo-mainnet-prod.minswap.org/aggregator",
+  "endpoints": [
+    {
+      "name": "/ada-price",
+      "method": "GET",
+      "description": "Get current ADA price in multiple currencies",
+      "parameters": [
+        {
+          "name": "currency",
+          "type": "string",
+          "required": true,
+          "description": "Currency code to get ADA price in"
+        }
+      ],
+      "response": {
+        "type": "object",
+        "properties": {
+          "currency": "string",
+          "value": {
+            "type": "object",
+            "properties": {
+              "change_24h": "number",
+              "price": "number"
+            },
+            "nullable": true
+          }
+        }
+      }
+    },
+    {
+      "name": "/wallet",
+      "method": "GET",
+      "description": "Query wallet balances and token information",
+      "parameters": [
+        {
+          "name": "address",
+          "type": "string",
+          "required": true,
+          "description": "Cardano wallet address (Cbor or Hex format)"
+        }
+      ],
+      "response": {
+        "type": "object",
+        "properties": {
+          "wallet": "string",
+          "ada": "string",
+          "minimum_lovelace": "string",
+          "balance": {
+            "type": "array",
+            "items": {
+              "asset": {
+                "token_id": "string",
+                "ticker": "string?",
+                "is_verified": "boolean?",
+                "price_by_ada": "number?",
+                "project_name": "string?",
+                "decimals": "number?"
+              },
+              "amount": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "/tokens",
+      "method": "POST",
+      "description": "Search and filter token information with pagination",
+      "requestBody": {
+        "type": "object",
+        "properties": {
+          "query": "string",
+          "only_verified": "boolean",
+          "assets": "string[]?",
+          "search_after": "string[]?"
+        }
+      },
+      "response": {
+        "type": "object",
+        "properties": {
+          "tokens": {
+            "type": "array?",
+            "items": {
+              "token_id": "string",
+              "ticker": "string?",
+              "is_verified": "boolean?",
+              "price_by_ada": "number?",
+              "project_name": "string?",
+              "decimals": "number?"
+            }
+          },
+          "search_after": "string[]"
+        }
+      }
+    },
+    {
+      "name": "/estimate",
+      "method": "POST",
+      "description": "Get optimal swap route and price estimation across DEX protocols",
+      "requestBody": {
+        "type": "object",
+        "properties": {
+          "amount": "string",
+          "token_in": "string",
+          "token_out": "string",
+          "slippage": "number",
+          "exclude_protocols": "Protocol[]?",
+          "allow_multi_hops": "boolean?",
+          "partner": "string?"
+        }
+      },
+      "response": {
+        "type": "object",
+        "properties": {
+          "token_in": "string",
+          "token_out": "string",
+          "amount_in": "string",
+          "amount_out": "string",
+          "min_amount_out": "string",
+          "total_lp_fee": "string",
+          "total_dex_fee": "string",
+          "deposits": "string",
+          "avg_price_impact": "number",
+          "paths": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "pool_id": "string",
+                "protocol": "Protocol",
+                "lp_token": "string",
+                "token_in": "string",
+                "token_out": "string",
+                "amount_in": "string",
+                "amount_out": "string",
+                "min_amount_out": "string",
+                "lp_fee": "string",
+                "dex_fee": "string",
+                "deposits": "string",
+                "price_impact": "number"
+              }
+            }
+          },
+          "aggregator_fee": "string?",
+          "aggregator_fee_percent_num": "number?",
+          "aggregator_fee_percent_den": "number?"
+        }
+      }
+    },
+    {
+      "name": "/build-tx",
+      "method": "POST",
+      "description": "Build unsigned swap transaction",
+      "requestBody": {
+        "type": "object",
+        "properties": {
+          "sender": "string",
+          "min_amount_out": "string",
+          "estimate": {
+            "type": "object",
+            "properties": {
+              "amount": "string",
+              "token_in": "string",
+              "token_out": "string",
+              "slippage": "number",
+              "exclude_protocols": "Protocol[]?",
+              "allow_multi_hops": "boolean?",
+              "partner": "string?"
+            }
+          }
+        }
+      },
+      "response": {
+        "type": "object",
+        "properties": {
+          "cbor": "string"
+        }
+      }
+    },
+    {
+      "name": "/finalize-and-submit-tx",
+      "method": "POST",
+      "description": "Submit signed transaction to network",
+      "requestBody": {
+        "type": "object",
+        "properties": {
+          "cbor": "string",
+          "witness_set": "string"
+        }
+      },
+      "response": {
+        "type": "object",
+        "properties": {
+          "tx_id": "string"
+        }
+      }
+    },
+    {
+      "name": "/cancel-tx",
+      "method": "POST",
+      "description": "Build transaction to cancel pending orders",
+      "requestBody": {
+        "type": "object",
+        "properties": {
+          "sender": "string",
+          "orders": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 6,
+            "items": {
+              "tx_in": "string",
+              "protocol": "Protocol"
+            }
+          }
+        }
+      },
+      "response": {
+        "type": "object",
+        "properties": {
+          "cbor": "string"
+        }
+      }
+    }
+  ],
+  "protocols": [
+    "MinswapV2",
+    "Minswap",
+    "MinswapStable",
+    "MuesliSwap",
+    "Splash",
+    "SundaeSwapV3",
+    "SundaeSwap",
+    "VyFinance",
+    "WingRidersV2",
+    "WingRiders",
+    "WingRidersStableV2",
+    "Spectrum",
+    "SplashStable"
+  ]
+}

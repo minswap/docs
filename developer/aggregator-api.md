@@ -2,15 +2,6 @@
 
 The Minswap Aggregator API provides direct access to Minswap's aggregation functionality for partners who want to implement their own interface and control the trading logic.
 
-## OpenAPI
-
-{% openapi src="https://petstore3.swagger.io/api/v3/openapi.json" path="/pet" method="post" %}
-[https://petstore3.swagger.io/api/v3/openapi.json](https://petstore3.swagger.io/api/v3/openapi.json)
-{% endopenapi %}
-
-{% openapi src="../../openapi/aggregator-api.yaml" path="/ada-price" method="get" %}
-{% endopenapi %}
-
 ## Base URL
 
 All API endpoints are accessible at:
@@ -564,4 +555,24 @@ curl "${BASE_URL}/cancel-tx" \
 - Orders can only be cancelled by the address that created them
 - The transaction will fail if any of the orders have already been fulfilled or cancelled
 </details>
+
+## OpenAPI Specification
+
+You can find the complete OpenAPI specifications for the Aggregator API in both JSON and YAML formats:
+
+{% swagger src="../openapi/aggregator-api.json" %}
+[Aggregator API Specification](../openapi/aggregator-api.json)
+{% endswagger %}
+
+The OpenAPI specification is also available in YAML format:
+- [Aggregator API OpenAPI Specification (JSON)](../openapi/aggregator-api.json)
+- [Aggregator API OpenAPI Specification (YAML)](../openapi/aggregator-api.yaml)
+
+You can use these specifications to:
+1. Generate API clients in various programming languages
+2. Import into API testing tools like Postman or Insomnia
+3. Set up automated API testing
+4. Generate custom API documentation
+
+For more details about specific endpoints, refer to the endpoint documentation sections above.
 
