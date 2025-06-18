@@ -9,6 +9,29 @@ All API endpoints are accessible at:
 https://monorepo-mainnet-prod.minswap.org/aggregator
 ```
 
+## Supported DEX Protocols
+
+The aggregator supports the following DEX protocols:
+
+```typescript
+type Protocol =
+    | "MinswapV2"        
+    | "Minswap"          
+    | "MinswapStable"    
+    | "MuesliSwap"       
+    | "Splash"           
+    | "SundaeSwapV3"     
+    | "SundaeSwap"       
+    | "VyFinance"        
+    | "WingRidersV2"     
+    | "WingRiders"       
+    | "WingRidersStableV2" 
+    | "Spectrum"         
+    | "SplashStable";    
+```
+
+This protocol enum is used in various endpoints.
+
 ## Endpoints
 
 <details>
@@ -162,7 +185,7 @@ POST /tokens
 ```typescript
 {
   query: string;            // Search query string (e.g., token name, ticker)
-  only_verified: boolean;   // If true, returns only verified tokens
+  only_verified: boolean;   // If true, returns only verified tokens those are verified by Minswap
   assets?: string[];       // Optional list of specific token_ids to fetch
   search_after?: string[]; // Optional pagination cursor from previous response
 }
@@ -247,7 +270,7 @@ POST /estimate
   token_in: string;          // Input token identifier
   token_out: string;         // Output token identifier
   amount_in: string;         // Input amount (in smallest unit)
-  amount_out: string;        // Expected output amount (in smallest unit)
+  amount_out: string;        // Expected output amount without slippage (in smallest unit)
   min_amount_out: string;    // Minimum output amount considering slippage
   total_lp_fee: string;      // Total LP fees for the route (amount of token_in)
   total_dex_fee: string;     // Total DEX fees for the route (amount of ADA)

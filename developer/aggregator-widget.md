@@ -1,6 +1,6 @@
 # Aggregator Widget
 
-The `@minswap/aggregator-widget` is a React component that provides a customizable interface for token swapping and aggregation functionality.
+The `@minswap/aggregator-widget` is for token swapping at the best prices across all Cardano DEXes.
 
 ## Installation
 
@@ -30,12 +30,14 @@ You can also use the widget directly in HTML without a React build setup. Add th
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Add this part to <head> -->
     <link
       rel="stylesheet"
       href="https://esm.sh/@minswap/aggregator-widget/dist/index.css"
     />
   </head>
   <body>
+    <!-- Add this part to <body> -->
     <div id="minswap-widget"></div>
     <script type="importmap">
       {
@@ -182,7 +184,6 @@ Detailed description of each prop:
     | "VyFinance"
     | "WingRidersV2"
     | "WingRiders"
-    | "WingRidersStableV1"
     | "WingRidersStableV2"
     | "Spectrum"
     | "SplashStable";
