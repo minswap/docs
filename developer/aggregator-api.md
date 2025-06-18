@@ -2,6 +2,15 @@
 
 The Minswap Aggregator API provides direct access to Minswap's aggregation functionality for partners who want to implement their own interface and control the trading logic.
 
+## OpenAPI
+
+{% openapi src="https://petstore3.swagger.io/api/v3/openapi.json" path="/pet" method="post" %}
+[https://petstore3.swagger.io/api/v3/openapi.json](https://petstore3.swagger.io/api/v3/openapi.json)
+{% endopenapi %}
+
+{% openapi src="../../openapi/aggregator-api.yaml" path="/ada-price" method="get" %}
+{% endopenapi %}
+
 ## Base URL
 
 All API endpoints are accessible at:
