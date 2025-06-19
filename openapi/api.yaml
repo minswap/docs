@@ -1,0 +1,381 @@
+openapi: 3.0.0
+info:
+  title: Minswap Aggregator API Documentation
+  version: 1.0.0
+  description: >
+    Comprehensive documentation for the Minswap Aggregator API, which provides
+    access to Minswap's aggregation functionality for partners.
+servers:
+  - url: http://dev-3.minswap.org/aggregator
+paths:
+  /ada-price:
+    get:
+      summary: Get current ADA price in multiple currencies
+      parameters:
+        - name: currency
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Currency code to get ADA price in
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  currency:
+                    type: string
+                  value:
+                    type: object
+                    nullable: true
+                    properties:
+                      change_24h:
+                        type: number
+                      price:
+                        type: number
+  /wallet:
+    get:
+      summary: Query wallet balances and token information
+      parameters:
+        - name: address
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Cardano wallet address (Cbor or Hex format)
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  wallet:
+                    type: string
+                  ada:
+                    type: string
+                  minimum_lovelace:
+                    type: string
+                  balance:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        asset:
+                          type: object
+                          properties:
+                            token_id:
+                              type: string
+                            ticker:
+                              type: string
+                            is_verified:
+                              type: boolean
+                            price_by_ada:
+                              type: number
+                            project_name:
+                              type: string
+                            decimals:
+                              type: number
+                        amount:
+                          type: string
+  /tokens:
+    post:
+      summary: Search and filter token information with pagination
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                only_verified:
+                  type: boolean
+                assets:
+                  type: array
+                  items:
+                    type: string
+                search_after:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tokens:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        token_id:
+                          type: string
+                        ticker:
+                          type: string
+                        is_verified:
+                          type: boolean
+                        price_by_ada:
+                          type: number
+                        project_name:
+                          type: string
+                        decimals:
+                          type: number
+                  search_after:
+                    type: array
+                    items:
+                      type: string
+  /estimate:
+    post:
+      summary: Get optimal swap route and price estimation across DEX protocols
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: string
+                token_in:
+                  type: string
+                token_out:
+                  type: string
+                slippage:
+                  type: number
+                exclude_protocols:
+                  type: array
+                  items:
+                    type: string
+                    enum:
+                      - MinswapV2
+                      - Minswap
+                      - MinswapStable
+                      - MuesliSwap
+                      - Splash
+                      - SundaeSwapV3
+                      - SundaeSwap
+                      - VyFinance
+                      - WingRidersV2
+                      - WingRiders
+                      - WingRidersStableV2
+                      - Spectrum
+                      - SplashStable
+                allow_multi_hops:
+                  type: boolean
+                partner:
+                  type: string
+              required:
+                - amount
+                - token_in
+                - token_out
+                - slippage
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token_in:
+                    type: string
+                  token_out:
+                    type: string
+                  amount_in:
+                    type: string
+                  amount_out:
+                    type: string
+                  min_amount_out:
+                    type: string
+                  total_lp_fee:
+                    type: string
+                  total_dex_fee:
+                    type: string
+                  deposits:
+                    type: string
+                  avg_price_impact:
+                    type: number
+                  paths:
+                    type: array
+                    items:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          pool_id:
+                            type: string
+                          protocol:
+                            type: string
+                            enum:
+                              - MinswapV2
+                              - Minswap
+                              - MinswapStable
+                              - MuesliSwap
+                              - Splash
+                              - SundaeSwapV3
+                              - SundaeSwap
+                              - VyFinance
+                              - WingRidersV2
+                              - WingRiders
+                              - WingRidersStableV2
+                              - Spectrum
+                              - SplashStable
+                          lp_token:
+                            type: string
+                          token_in:
+                            type: string
+                          token_out:
+                            type: string
+                          amount_in:
+                            type: string
+                          amount_out:
+                            type: string
+                          min_amount_out:
+                            type: string
+                          lp_fee:
+                            type: string
+                          dex_fee:
+                            type: string
+                          deposits:
+                            type: string
+                          price_impact:
+                            type: number
+                  aggregator_fee:
+                    type: string
+                  aggregator_fee_percent_num:
+                    type: number
+                  aggregator_fee_percent_den:
+                    type: number
+  /build-tx:
+    post:
+      summary: Build unsigned swap transaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sender:
+                  type: string
+                min_amount_out:
+                  type: string
+                estimate:
+                  type: object
+                  properties:
+                    amount:
+                      type: string
+                    token_in:
+                      type: string
+                    token_out:
+                      type: string
+                    slippage:
+                      type: number
+                    exclude_protocols:
+                      type: array
+                      items:
+                        type: string
+                    allow_multi_hops:
+                      type: boolean
+                    partner:
+                      type: string
+              required:
+                - sender
+                - min_amount_out
+                - estimate
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cbor:
+                    type: string
+  /finalize-and-submit-tx:
+    post:
+      summary: Submit signed transaction to network
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cbor:
+                  type: string
+                witness_set:
+                  type: string
+              required:
+                - cbor
+                - witness_set
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tx_id:
+                    type: string
+  /cancel-tx:
+    post:
+      summary: Build transaction to cancel pending orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sender:
+                  type: string
+                orders:
+                  type: array
+                  minItems: 1
+                  maxItems: 6
+                  items:
+                    type: object
+                    properties:
+                      tx_in:
+                        type: string
+                      protocol:
+                        type: string
+                        enum:
+                          - MinswapV2
+                          - Minswap
+                          - MinswapStable
+                          - MuesliSwap
+                          - Splash
+                          - SundaeSwapV3
+                          - SundaeSwap
+                          - VyFinance
+                          - WingRidersV2
+                          - WingRiders
+                          - WingRidersStableV2
+                          - Spectrum
+                          - SplashStable
+              required:
+                - sender
+                - orders
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cbor:
+                    type: string
