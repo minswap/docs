@@ -6,7 +6,7 @@ info:
     Comprehensive documentation for the Minswap Aggregator API, which provides
     access to Minswap's aggregation functionality for partners.
 servers:
-  - url: http://dev-3.minswap.org/aggregator
+  - url: https://dev-3.minswap.org/aggregator
 paths:
   /ada-price:
     get:
