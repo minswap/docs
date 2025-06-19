@@ -45,3 +45,7 @@
 ## Developer
 
 * [Wallet Connect](developer/wallet-connect.md)
+
+***
+
+* [Aggregator Api](aggregator-api.md)
