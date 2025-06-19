@@ -291,8 +291,7 @@ POST /estimate
     price_impact: number;  // Price impact for this hop
   }>>;
   aggregator_fee?: string;   // Optional aggregator fee amount (amount of ADA)
-  aggregator_fee_percent_num?: number;  // Numerator of fee percentage
-  aggregator_fee_percent_den?: number;  // Denominator of fee percentage
+  aggregator_fee_percent?: number;  // Aggregator fee percentage
 }
 ```
 
@@ -343,8 +342,7 @@ curl "${BASE_URL}/estimate" \
     ]
   ],
   "aggregator_fee": "5000",
-  "aggregator_fee_percent_num": 3,
-  "aggregator_fee_percent_den": 1000
+  "aggregator_fee_percent": 0.5,
 }
 ```
 
