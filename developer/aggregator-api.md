@@ -1,4 +1,18 @@
-# Minswap Aggregator API
+
+***
+
+* ```yaml
+  type: builtin:openapi
+  props:
+    models: true
+  dependencies:
+    spec:
+      ref:
+        kind: openapi
+        spec: minswap-aggregator-api
+  ```
+
+<!-- # Minswap Aggregator API
 
 The Minswap Aggregator API provides direct access to Minswap's aggregation functionality for partners who want to implement their own interface and control the trading logic.
 
@@ -554,4 +568,4 @@ curl "${BASE_URL}/cancel-tx" \
   2. Submit using the `/finalize-and-submit-tx` endpoint
 - Orders can only be cancelled by the address that created them
 - The transaction will fail if any of the orders have already been fulfilled or cancelled
-</details>
+</details> -->
