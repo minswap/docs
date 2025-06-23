@@ -6,7 +6,7 @@ info:
     The Minswap Aggregator API provides direct access to Minswap's aggregation functionality
     for partners who want to implement their own interface and control the trading logic.
 servers:
-  - url: https://dev-3.minswap.org/aggregator
+  - url: https://agg-api.minswap.org/aggregator
     description: Production server
 
 components:
@@ -694,6 +694,87 @@ paths:
                       - Monitor transaction status
                       - Look up transaction on block explorers
                       Example: "1abc..." (hex-encoded transaction hash)
+  /pending-orders:
+    get:
+      summary: Get list of pending swap orders for a wallet
+      description: |
+        Retrieves all pending swap orders for a given wallet address across different DEX protocols.
+        This endpoint is useful for:
+        - Finding orders that need to be cancelled
+        - Tracking pending transactions
+
+        Orders remain pending until they are either:
+        - Filled (swap completed)
+        - Cancelled (using /cancel-tx)
+        - Expired (if the DEX protocol supports expiration)
+      parameters:
+        - name: owner_address
+          in: query
+          required: true
+          schema:
+            type: string
+          description: |
+            Cardano wallet address to query pending orders for
+            Must be in bech32 format
+            Example: "addr1..."
+      responses:
+        '200':
+          description: |
+            Successfully retrieved pending orders
+            Returns an empty array if no pending orders exist
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  orders:
+                    type: array
+                    description: |
+                      List of pending orders for the wallet
+                    items:
+                      type: object
+                      properties:
+                        owner_address:
+                          type: string
+                          description: Wallet address that created the order
+                        protocol:
+                          $ref: '#/components/schemas/Protocol'
+                          description: DEX protocol where the order was placed
+                        token_in:
+                          $ref: '#/components/schemas/Asset'
+                          description: Token being sold in this order
+                        token_out:
+                          $ref: '#/components/schemas/Asset'
+                          description: Token being bought in this order
+                        amount_in:
+                          type: string
+                          description: Amount of input token committed to the order (smallest units)
+                        min_amount_out:
+                          type: string
+                          description: Minimum amount of output token to receive (smallest units)
+                        created_at:
+                          type: number
+                          description: Unix timestamp (ms) when the order was created
+                        tx_in:
+                          type: string
+                          description: Transaction input pointer (TxHash#Index) for the order
+                        dex_fee:
+                          type: string
+                          description: DEX protocol fee amount in lovelace
+                        deposit:
+                          type: string
+                          description: Required ADA deposit amount in lovelace
+                      required:
+                        - owner_address
+                        - protocol
+                        - token_in
+                        - token_out
+                        - amount_in
+                        - min_amount_out
+                        - created_at
+                        - tx_in
+                        - dex_fee
+                        - deposit
   /cancel-tx:
     post:
       summary: Build transaction to cancel pending orders
@@ -718,7 +799,6 @@ paths:
                   description: |
                     Cardano wallet address that:
                     - Originally created the orders
-                    - Will pay transaction fees
                     - Will receive refunded tokens
                     
                     Must be in bech32 format
