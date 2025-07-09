@@ -258,6 +258,9 @@ paths:
                             - "1.5" (with amount_in_decimal=true) means 1.5 ADA 
                             - "1000000" (with amount_in_decimal=false) means 1 ADA
                             Note: Always returned as string to handle large numbers accurately
+                  amount_in_decimal: 
+                    type: boolean
+                    description: Whether amount_in_decimal is enabled or not
   /tokens:
     post:
       summary: Search and filter token information with pagination
@@ -585,6 +588,9 @@ paths:
                     description: |
                       Aggregator fee percentage
                       Example: 0.5
+                  amount_in_decimal: 
+                    type: boolean
+                    description: Whether amount_in_decimal is enabled or not
   /build-tx:
     post:
       summary: Build unsigned swap transaction
@@ -857,6 +863,9 @@ paths:
                         - tx_in
                         - dex_fee
                         - deposit
+                  amount_in_decimal: 
+                    type: boolean
+                    description: Whether amount_in_decimal is enabled or not
   /cancel-tx:
     post:
       summary: Build transaction to cancel pending orders
