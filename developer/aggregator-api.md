@@ -3,7 +3,6 @@ description: >-
   The Minswap Aggregator API provides direct access to Minswap's aggregation
   functionality for partners who want to implement their own interface and
   control the trading logic.
-hidden: true
 ---
 
 # Aggregator API

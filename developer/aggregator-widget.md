@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Aggregator Widget
 
 The `@minswap/aggregator-widget` is for token swapping at the best prices across all Cardano DEXes.
