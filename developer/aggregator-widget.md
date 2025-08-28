@@ -182,6 +182,7 @@ Detailed description of each prop:
       | "SundaeSwapV3"
       | "SundaeSwap"
       | "VyFinance"
+      | "CswapV1"
       | "WingRidersV2"
       | "WingRiders"
       | "WingRidersStableV2"
