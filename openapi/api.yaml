@@ -22,6 +22,7 @@ components:
         - SundaeSwapV3
         - SundaeSwap
         - VyFinance
+        - CswapV1
         - WingRidersV2
         - WingRiders
         - WingRidersStableV2
@@ -381,6 +382,15 @@ paths:
                     - Examples: 0.5 means 0.5% slippage tolerance
                     - Used to calculate min_amount_out
                   example: 0.5
+                include_protocols:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Protocol'
+                  description: |
+                    Optional list of DEX protocols to include from routing:
+                    - Useful for choosing specific DEXs
+                    - Minswap protocols are always included
+                    - This overrides exclude_protocols if both are provided
                 exclude_protocols:
                   type: array
                   items:
@@ -661,6 +671,13 @@ paths:
                         Maximum acceptable slippage percentage
                         Must match the slippage used in /estimate
                         Example: 0.5 for 0.5% slippage tolerance
+                    include_protocols:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/Protocol'
+                      description: |
+                        Optional list of DEX protocols to include
+                        Must match include_protocols used in /estimate
                     exclude_protocols:
                       type: array
                       items:
