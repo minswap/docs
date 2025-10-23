@@ -1,0 +1,3 @@
+[submodule "minswap-course"]
+	path = minswap-course
+	url = https://github.com/pbwebdev/minswap-course
