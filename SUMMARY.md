@@ -42,6 +42,35 @@
   * [LBE NFT Mechanism](faq/meteor-lbe/lbe-nft-mechanism.md)
 * [FISO](faq/fiso.md)
 
+## Courses
+
+* [Getting Started and Best Safety Practices](courses/getting-started-and-best-safety-practices/README.md)
+  * [Overview](courses/getting-started-and-best-safety-practices/overview.md)
+  * [Setting Up Your Wallet](courses/getting-started-and-best-safety-practices/setting-up-your-wallet.md)
+  * [Security Tips](courses/getting-started-and-best-safety-practices/security-tips.md)
+* [How to Perform Swaps](courses/how-to-perform-swaps/README.md)
+  * [Price Impact](courses/how-to-perform-swaps/price-impact.md)
+  * [Slippage](courses/how-to-perform-swaps/slippage.md)
+  * [Batcher](courses/how-to-perform-swaps/batcher.md)
+  * [Swapping Assets](courses/how-to-perform-swaps/swapping-assets.md)
+* [How to Provide Liquidity](courses/how-to-provide-liquidity/README.md)
+  * [What is Liquidity Provisioning?](courses/how-to-provide-liquidity/what-is-liquidity-provisioning.md)
+  * [Zap In & Out](courses/how-to-provide-liquidity/zap-in-and-out.md)
+  * [Risks Understanding Impermanent Loss](courses/how-to-provide-liquidity/risks-understanding-impermanent-loss.md)
+* [Risks and Rewards of Using Minswap](courses/risks-and-rewards-of-using-minswap/README.md)
+  * [Yield Farming](courses/risks-and-rewards-of-using-minswap/yield-farming.md)
+  * [Harvesting Yield Farm Rewards](courses/risks-and-rewards-of-using-minswap/harvesting-yield-farm-rewards.md)
+  * [Withdrawing from Farms](courses/risks-and-rewards-of-using-minswap/withdrawing-from-farms.md)
+  * [What is a Liquidity Bootstrapping Event](courses/risks-and-rewards-of-using-minswap/what-is-a-liquidity-bootstrapping-event.md)
+* [Advanced Trading Features](courses/advanced-trading-features/README.md)
+  * [Limit Orders](courses/advanced-trading-features/limit-orders.md)
+  * [Stop Orders](courses/advanced-trading-features/stop-orders.md)
+* [Governance](courses/governance/README.md)
+  * [What is Governance on Minswap?](courses/governance/what-is-governance-on-minswap.md)
+  * [Minswap Governance Proposals](courses/governance/minswap-governance-proposals.md)
+  * [Voting on Minswap Proposals](courses/governance/voting-on-minswap-proposals.md)
+* [Analytics, Tools & Insights](courses/analytics-tools-and-insights.md)
+
 ## Developer
 
 * [Aggregator Widget](developer/aggregator-widget.md)
