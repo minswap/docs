@@ -2,7 +2,7 @@
 
 Slippage refers to the difference between the expected price of a trade and the price at which it is executed. On decentralised exchanges (DEXS) like Minswap, slippage is more common due to using liquidity pools instead of traditional order books.
 
-[![IMinswap Course MinWallet Setup](https://img.youtube.com/vi/8i3GfDlBJOw/0.jpg)](https://www.youtube.com/watch?v=8i3GfDlBJOw)
+{% embed url="https://youtu.be/8i3GfDlBJOw?si=mILB5V-tq_AsavOQ" %}
 
 There are two types of slippage:\
 **Positive Slippage**: When a trade executes at a better price than expected.\

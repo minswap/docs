@@ -2,7 +2,7 @@
 
 ## Yield Farming on Minswap
 
-[![IMinswap Course MinWallet Setup](https://img.youtube.com/vi/i0Q8H7nJfk0/0.jpg)](https://www.youtube.com/watch?v=i0Q8H7nJfk0)
+{% embed url="https://www.youtube.com/watch?v=i0Q8H7nJfk0" %}
 
 The process of yield farming for rewards is straightforward thanks to the great user interface on the Minswap DEX.
 

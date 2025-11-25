@@ -57,6 +57,7 @@
   * [What is Liquidity Provisioning?](courses/how-to-provide-liquidity/what-is-liquidity-provisioning.md)
   * [Zap In & Out](courses/how-to-provide-liquidity/zap-in-and-out.md)
   * [Risks Understanding Impermanent Loss](courses/how-to-provide-liquidity/risks-understanding-impermanent-loss.md)
+  * [Staking $MIN](courses/how-to-provide-liquidity/staking-usdmin.md)
 * [Risks and Rewards of Using Minswap](courses/risks-and-rewards-of-using-minswap/README.md)
   * [Yield Farming](courses/risks-and-rewards-of-using-minswap/yield-farming.md)
   * [Harvesting Yield Farm Rewards](courses/risks-and-rewards-of-using-minswap/harvesting-yield-farm-rewards.md)

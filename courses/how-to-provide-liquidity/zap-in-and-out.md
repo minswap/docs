@@ -2,7 +2,7 @@
 
 ## What is Zap In?
 
-[![IMinswap Course MinWallet Setup](https://img.youtube.com/vi/sILysG0TYkI/0.jpg)](https://www.youtube.com/watch?v=sILysG0TYkI)
+{% embed url="https://www.youtube.com/watch?v=sILysG0TYkI" %}
 
 “Zap In” is a feature on Minswap that simplifies adding liquidity to a liquidity pool (LP) by automatically converting a single asset into the necessary pair of tokens. In traditional decentralised exchanges (DEXs), providing liquidity requires a user to supply equal amounts of two different tokens for the specific liquidity pool. Zap In streamlines this process by allowing users to deposit a single token, and the platform handles the conversion into the appropriate token pair.
 

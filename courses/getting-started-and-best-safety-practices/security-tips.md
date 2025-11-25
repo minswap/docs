@@ -2,7 +2,7 @@
 
 ## Staying Safe on Minswap
 
-[![IMinswap Course MinWallet Setup](https://img.youtube.com/vi/C208YfCPTGg/0.jpg)](https://www.youtube.com/watch?v=C208YfCPTGg)
+{% embed url="https://www.youtube.com/watch?v=C208YfCPTGg" %}
 
 Decentralised Finance (DeFi) unlocks powerful tools like yield farming, token swaps, and staking without intermediaries—but with this freedom comes responsibility. Platforms like Minswap, while non-custodial and secure by design, still require users to practise caution and follow good security hygiene to avoid risks such as phishing, scams, and user error.
 

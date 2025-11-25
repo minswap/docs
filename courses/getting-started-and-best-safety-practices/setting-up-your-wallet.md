@@ -22,7 +22,9 @@ To begin using Minswap, you'll need a Cardano-compatible wallet. Minswap support
 
 For this course, we'll use **MinWallet**, a lightweight wallet integrated directly into the Minswap DEX, making it easy for users to get started.
 
-[![IMinswap Course MinWallet Setup](https://img.youtube.com/vi/z9R2jgwBwM0/0.jpg)](https://www.youtube.com/watch?v=z9R2jgwBwM0)
+{% embed url="https://www.youtube.com/watch?v=z9R2jgwBwM0" %}
+Minswap Course Setup MinWallet
+{% endembed %}
 
 ### How to Set Up a New MinWallet
 

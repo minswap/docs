@@ -2,7 +2,7 @@
 
 ## What is a Stop Order?
 
-[![IMinswap Course MinWallet Setup](https://img.youtube.com/vi/8i3GfDlBJOw/0.jpg)](https://www.youtube.com/watch?v=8i3GfDlBJOw)
+{% embed url="https://www.youtube.com/watch?v=ptSCZR1zUic" %}
 
 A stop order is a type of trade order that becomes a market order once a specified price is reached, known as the **stop price**. Unlike limit orders, which execute only at a predetermined price or better, stop orders trigger a trade when the market reaches the stop price, at which point the order becomes a regular market order that executes at the best available price. This feature allows traders to automate their trades based on market movements.
 

@@ -1,6 +1,8 @@
 # Swapping Assets
 
-[![IMinswap Course MinWallet Setup](https://img.youtube.com/vi/dksBj-6_UPM/0.jpg)](https://www.youtube.com/watch?v=dksBj-6_UPM)
+
+
+{% embed url="https://www.youtube.com/watch?v=dksBj-6_UPM" %}
 
 Minswap is a decentralised exchange (DEX) on the Cardano blockchain, allowing users to trade (swap) tokens seamlessly in a non-custodial and decentralised manner. Here’s an in-depth look at how swaps work on Minswap:
 

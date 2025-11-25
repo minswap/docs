@@ -2,7 +2,7 @@
 
 ## What is a Limit Order?
 
-[![IMinswap Course MinWallet Setup](https://img.youtube.com/vi/8i3GfDlBJOw/0.jpg)](https://www.youtube.com/watch?v=8i3GfDlBJOw)
+{% embed url="https://www.youtube.com/watch?v=b4y4q1XRDps" %}
 
 A limit order is a trade order that allows users to buy or sell assets at a specific price or better. Unlike market orders, executed immediately at the current market price, limit orders give traders more control by setting a predefined price at which the trade will be executed. This feature ensures that users only buy or sell an asset if it reaches their desired price point, which can be beneficial in managing risk and optimising trade outcomes.
 

@@ -2,7 +2,7 @@
 
 Price impact refers to the change in the price of an asset caused by a trade.
 
-[![IMinswap Course MinWallet Setup](https://img.youtube.com/vi/8i3GfDlBJOw/0.jpg)](https://www.youtube.com/watch?v=8i3GfDlBJOw)
+{% embed url="https://youtu.be/8i3GfDlBJOw?si=Tjr5pH3FNHeNbJs2&t=186" %}
 
 In decentralised exchanges (DEXs) like Minswap, which utilise an Automated Market Maker (AMM) model, trades do not occur between two parties directly but against liquidity pools. When you trade a large quantity of an asset, it can cause the price to shift; this is known as price impact.
 
