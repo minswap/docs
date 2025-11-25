@@ -19,6 +19,8 @@ This course will give you an overview of all the core features Minswap offers, g
 
 ### Quick Start Guide
 
+<figure><img src="https://img.youtube.com/vi/K15to2PcO9M/0.jpg" alt=""><figcaption></figcaption></figure>
+
 * Connect a Wallet: Minswap supports Cardano-compatible wallets such as Lace, Eternl, or Typhon. Connect your wallet to start interacting with the platform.
 * Deposit Funds: Deposit ADA or other supported tokens into your wallet. You’ll need these tokens to provide liquidity or participate in trades.
 * Explore Pools: Navigate to the “Markets“ section and browse the available tokens & liquidity pools. Choose a pair to provide liquidity or swap tokens.
