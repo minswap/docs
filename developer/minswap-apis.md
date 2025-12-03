@@ -309,7 +309,7 @@ type Response = {
   trading_fee_usd_24h: number,
   trading_fee_usd_7d: number,
   trading_fee_tier: number[], // [trading_fee_tier_a, trading_fee_tier_b]
-  trading_fee_apr: number[], // [trading_fee_apr_a, trading_fee_apr_b]
+  trading_fee_apr: number
 }
 ```
 
@@ -468,7 +468,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 - `1y` - Last 12 months
 - `all` - All available data
 
-#### Reuqest Response
+#### Request Response
 
 ```typescript
 // Array of price data points, sorted by timestamp in ascending order
