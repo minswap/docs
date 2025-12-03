@@ -313,7 +313,7 @@ type Response = {
 }
 ```
 
-### Example
+#### Example
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/f5808c2c990d86da54bfc97d89cee6efa20cd8461616359478d96b4c.82e2b1fd27a7712a1a9cf750dfbea1a5778611b20e06dd6a611df7a643f8cb75/metrics'
 ```
@@ -408,7 +408,7 @@ type Candlestick = {
 ```
 **Note:** Results are sorted by timestamp in ascending order.
 
-### Example
+#### Example
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd6.5553444d2d555344412d534c50/price/candlestick?interval=1w'
 ```
@@ -481,7 +481,7 @@ type PricePoint = {
 ```
 **Note:** Results are sorted by timestamp in ascending order (oldest first).
 
-### Example
+#### Example
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd6.5553444d2d555344412d534c50/price/timeseries?period=1w'
 ```
