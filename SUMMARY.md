@@ -74,6 +74,7 @@
 
 ## Developer
 
+* [Minswap APIs](developer/minswap-apis.md)
 * [Aggregator Widget](developer/aggregator-widget.md)
 * [Aggregator API](developer/aggregator-api.md)
 * [Wallet Connect](developer/wallet-connect.md)
