@@ -201,7 +201,7 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/assets/metrics' \
 }
 ```
 ### 2. Get Asset Metrics
-**GET:** `v1/assets/${id}/metrics`
+**GET:** `v1/assets/:id/metrics`
 **Description:** Retrieves detailed metrics for a specific asset by its ID, optionally filtered by display currency. It returns comprehensive asset statistics such as volume, liquidity, and price data for use in analytics or UI display.
 
 #### Request Parameter
@@ -300,7 +300,7 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/assets/016be5325fd
 }
 ```
 ### 3. Get Asset Price Candlestick
-**GET:** `v1/assets/${id}/price/candlestick`
+**GET:** `v1/assets/:id/price/candlestick`
 **Description:** Returns historical candlestick (OHLC) price data for a specific asset, supporting custom time ranges and resolutions
 
 #### Request Parameters
@@ -354,7 +354,7 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/assets/0691b2fecca
 ]
 ```
 ### 4. Get Asset Price Timeseries
-**GET:** `v1/assets/${id}/price/timeseries`
+**GET:** `v1/assets/:id/price/timeseries`
 **Description:**
 
 #### Request Body
@@ -389,7 +389,7 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/assets/016be5325fd
 ]
 ```
 ### 5. Get Asset Similar
-**GET:** `v1/assets/${id}/similars`
+**GET:** `v1/assets/:id/similars`
 **Description:**
 
 #### Request Parameters
@@ -401,10 +401,45 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/assets/016be5325fd
 #### Request Response
 
 ```typescript
-type SimilarAssetsParams = {
-  id: string;
-  limit?: number;
-  currency?: DisplayCurrency;
+type RestAssetMetrics = {
+  asset: RestAssetMetadata;
+  price_change_1h: number;
+  price_change_24h: number;
+  price_change_7d: number;
+  volume_1h: number;
+  volume_24h: number;
+  volume_7d: number;
+  total_supply: number;
+  circulating_supply: number;
+  created_at?: string;
+  created_tx_id?: string;
+  categories?: string[];
+  price: number;
+  liquidity: number;
+  market_cap: number;
+  fully_diluted: number;
+}
+
+type RestAssetMetadata = {
+  currency_symbol: string;
+  token_name: string;
+  is_verified: boolean;
+  metadata?: {
+    decimals: number;
+    name?: string;
+    url?: string;
+    ticker?: string;
+    description?: string;
+    logo?: string;
+  };
+  social_links?: {
+    website?: string;
+    discord?: string;
+    telegram?: string;
+    twitter?: string;
+    coingecko?: string;
+    coin_market_cap?: string;
+  };
 }
 ```
 #### Example
@@ -513,10 +548,10 @@ type Response = {
 }
 
 type RestPoolMetrics = {
-  lp_asset: Token;
+  lp_asset: RestAssetMetadata;
   type: Protocol;
-  asset_a: Token;
-  asset_b: Token;
+  asset_a: RestAssetMetadata;
+  asset_b: RestAssetMetadata;
   liquidity_raw: number;
   liquidity_a_raw: number;
   liquidity_b_raw: number;
@@ -529,6 +564,28 @@ type RestPoolMetrics = {
   liquidity: number;
   liquidity_a: number;
   liquidity_b: number;
+}
+
+type RestAssetMetadata = {
+  currency_symbol: string;
+  token_name: string;
+  is_verified: boolean;
+  metadata?: {
+    decimals: number;
+    name?: string;
+    url?: string;
+    ticker?: string;
+    description?: string;
+    logo?: string;
+  };
+  social_links?: {
+    website?: string;
+    discord?: string;
+    telegram?: string;
+    twitter?: string;
+    coingecko?: string;
+    coin_market_cap?: string;
+  };
 }
 ```
 #### Example
@@ -621,10 +678,10 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/pools/metrics' \
 #### Request Response
 ```typescript
 type RestPoolMetrics = {
-  lp_asset: Token;
+  lp_asset: RestAssetMetadata;
   type: Protocol;
-  asset_a: Token;
-  asset_b: Token;
+  asset_a: RestAssetMetadata;
+  asset_b: RestAssetMetadata;
   liquidity_raw: number;
   liquidity_a_raw: number;
   liquidity_b_raw: number;
@@ -637,6 +694,28 @@ type RestPoolMetrics = {
   liquidity: number;
   liquidity_a: number;
   liquidity_b: number;
+}
+
+type RestAssetMetadata = {
+  currency_symbol: string;
+  token_name: string;
+  is_verified: boolean;
+  metadata?: {
+    decimals: number;
+    name?: string;
+    url?: string;
+    ticker?: string;
+    description?: string;
+    logo?: string;
+  };
+  social_links?: {
+    website?: string;
+    discord?: string;
+    telegram?: string;
+    twitter?: string;
+    coingecko?: string;
+    coin_market_cap?: string;
+  };
 }
 ```
 
@@ -720,7 +799,7 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8f
 #### Request Response
 
 ```typescript
-type Response = Candlestick[]
+type Response = Ohlcv[]
 
 type Ohlcv = {
   open: number;
@@ -812,7 +891,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 ]
 ```
 ### 5. Get Pool Volume Timeseries
-**GET:** `v1/pools/${id}/volume/timeseries`
+**GET:** `v1/pools/:id/volume/timeseries`
 **Description:**
 
 #### Request Body
@@ -849,7 +928,7 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8f
 ]
 ```
 ### 6. Get Pool TVL Timeseries
-**GET:** `v1/pools/${id}/tvl/timeseries`
+**GET:** `v1/pools/:id/tvl/timeseries`
 **Description:**
 
 #### Request Body
@@ -886,7 +965,7 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8f
 ]
 ```
 ### 7. Get Pool Fee Timeseries
-**GET:** `v1/assets/${id}/price/timeseries`
+**GET:** `v1/pools/:id/fees/timeseries`
 **Description:**
 
 #### Request Body
@@ -898,14 +977,29 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8f
 #### Request Response
 
 ```typescript
+type PoolTimeseriesFeesResponse = {
+  value: number;
+  timestamp: number;
+}[]
 ```
 
 #### Example
 
 ```bash
+curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd6.5553444d2d555344412d534c50/fees/timeseries?period=1d&currency=usd'
 ```
 
 ```json
+[
+    {
+        "value": 0,
+        "timestamp": 1767060000000
+    },
+    {
+        "value": 0.9978481459422092,
+        "timestamp": 1767061800000
+    }
+]
 ```
 
 
