@@ -94,11 +94,81 @@ type TimeSeriesPeriod = "1d" | "1w" | "1M" | "6M" | "1y" | "all";
 
 ## Assets APIs
 
-Assets APIs allow you to retrieve information about tokens available on Minswap, including their metadata, verification status, and social links.
-
 ### 1. Get List Assets
 
-**POST:** `/v1/assets`
+**GET:** `/v1/assets`
+
+**Description:** Retrieve a paginated list of assets available on Minswap with their metadata and verification status. Use this endpoint to populate token selection interfaces or search for specific assets.
+
+#### Request Parameters
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| term | string | No | - | Search by asset name, currency symbol, token name, or ticker |
+| limit | number | No | `20` | Number of results per page (min: `1`, max: `100`) |
+| only_verified | boolean | No | `false` | Filter to show only verified tokens |
+| search_after | string[] | No | `[]` | Pagination cursor from previous response |
+
+**Note:** For pagination, use the `search_after` value from the previous response to get the next page of results.
+
+#### Request Response
+
+```typescript
+type Response = {
+  search_after: string[],
+  assets: Asset[]        
+}
+
+type Asset = {
+  currency_symbol: string,  
+  token_name: string,       
+  is_verified: boolean,     
+  metadata?: AssetMetadata, 
+  social_links?: SocialLinks
+}
+```
+#### Example
+```bash
+curl --location 'https://api-mainnet-prod.minswap.org/v1/assets?term=&limit=20&only_verified=false'
+```
+
+```json
+{
+  "search_after": [
+    "1",
+    "14110",
+    "f66d78b4a3cb3d37afa0ec36461e51ecbde00f26c8f0a68f94b69880.69425443"
+  ],
+  "assets": [
+    {
+      "currency_symbol": "",
+      "token_name": "",
+      "is_verified": true,
+      "metadata": {
+        "decimals": 6,
+        "name": "Cardano",
+        "ticker": "ADA"
+      }
+    },
+    {
+      "currency_symbol": "c48cbb3d5e57ed56e276bc45f99ab39abe94e6cd7ac39fb402da47ad",
+      "token_name": "0014df105553444d",
+      "is_verified": true,
+      "metadata": {
+        "name": "USDM",
+        "url": "https://moneta.global/",
+        "ticker": "USDM",
+        "decimals": 6,
+        "description": "Fiat-backed stablecoin native to the Cardano blockchain"
+      }
+    },
+  ]
+}
+```
+
+### 2. Get Assets Metrics
+
+**POST:** `/v1/assets/metrics`
 
 **Description:** Retrieve a paginated list of assets available on Minswap with their metadata and verification status. Use this endpoint to populate token selection interfaces or search for specific assets.
 
@@ -142,6 +212,28 @@ type RestAssetMetrics = {
   liquidity: number;
   market_cap: number;
   fully_diluted: number;
+}
+
+type RestAssetMetadata = {
+  currency_symbol: string;
+  token_name: string;
+  is_verified: boolean;
+  metadata?: {
+    decimals: number;
+    name?: string;
+    url?: string;
+    ticker?: string;
+    description?: string;
+    logo?: string;
+  }
+  social_links?: {
+    website?: string;
+    discord?: string;
+    telegram?: string;
+    twitter?: string;
+    coingecko?: string;
+    coin_market_cap?: string;
+  }
 }
 ```
 #### Example
@@ -200,7 +292,7 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/assets/metrics' \
     ]
 }
 ```
-### 2. Get Asset Metrics
+### 3. Get Asset Metrics
 **GET:** `v1/assets/:id/metrics`
 **Description:** Retrieves detailed metrics for a specific asset by its ID, optionally filtered by display currency. It returns comprehensive asset statistics such as volume, liquidity, and price data for use in analytics or UI display.
 
@@ -299,7 +391,7 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/assets/016be5325fd
     "fully_diluted": 1368912.016292053
 }
 ```
-### 3. Get Asset Price Candlestick
+### 4. Get Asset Price Candlestick
 **GET:** `v1/assets/:id/price/candlestick`
 **Description:** Returns historical candlestick (OHLC) price data for a specific asset, supporting custom time ranges and resolutions
 
@@ -353,7 +445,7 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/assets/0691b2fecca
     }
 ]
 ```
-### 4. Get Asset Price Timeseries
+### 5. Get Asset Price Timeseries
 **GET:** `v1/assets/:id/price/timeseries`
 **Description:**
 
@@ -388,7 +480,7 @@ curl --location 'https://monorepo-mainnet-prod.minswap.org/v1/assets/016be5325fd
     }
 ]
 ```
-### 5. Get Asset Similar
+### 6. Get Asset Similar
 **GET:** `v1/assets/:id/similars`
 **Description:**
 
