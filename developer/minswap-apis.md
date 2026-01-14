@@ -57,7 +57,7 @@ The API implements rate limiting to ensure fair usage. If you exceed the rate li
 The following type definitions are used across multiple endpoints:
 
 ```typescript
-type Token = {
+type Asset = {
   currency_symbol: string,
   token_name: string,
   is_verified: boolean,
@@ -98,26 +98,20 @@ type SupportedCurrency = 'aed' | 'ars' | 'aud' | 'bdt' | 'bhd' | 'bmd' | 'brl' |
 
 type TimeSeriesPeriod = "1d" | "1w" | "1M" | "6M" | "1y" | "all";
 
-type RestAssetMetadata = {
-  currency_symbol: string;
-  token_name: string;
-  is_verified: boolean;
-  metadata?: {
-    decimals: number;
-    name?: string;
-    url?: string;
-    ticker?: string;
-    description?: string;
-    logo?: string;
-  };
-  social_links?: {
-    website?: string;
-    discord?: string;
-    telegram?: string;
-    twitter?: string;
-    coingecko?: string;
-    coin_market_cap?: string;
-  };
+/**
+ * Minutes: `1m`, `5m`, `15m`, `30m`
+ * Hours: `1h`, `2h`, `4h`, `6h`, `12h`
+ * Days/Weeks/Months: `1d`, `1w`, `1M`
+ */
+type CandlestickInterval = "1m" | "5m" | "15m" | "30m" | "1h" | "2h" | "4h" | "6h" | "12h" | "1d" | "1w" | "1M"
+
+type Ohlcv = {
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  volume: number;
+  timestamp: number;
 }
 ```
 
@@ -127,7 +121,7 @@ type RestAssetMetadata = {
 
 **GET:** `/v1/assets`
 
-**Description:** Retrieve a paginated list of assets available on Minswap with their metadata and verification status. Use this endpoint to populate token selection interfaces or search for specific assets.
+**Description:** Retrieve a paginated list of assets available on Minswap with their metadata and verification status. Use this endpoint to populate asset selection interfaces or search for specific assets.
 
 #### Request Parameters
 
@@ -145,8 +139,8 @@ type RestAssetMetadata = {
 ```typescript
 
 type AssetsResponse = {
-  search_after: string[] | undefined | null;
-  assets: RestAssetMetadata[];
+  search_after: string[] | undefined;
+  assets: Asset[];
 }
 
 ```
@@ -193,7 +187,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets?term=&limit=20&o
 
 **POST:** `/v1/assets/metrics`
 
-**Description:** Retrieve a paginated list of assets available on Minswap with their metadata and verification status. Use this endpoint to populate token selection interfaces or search for specific assets.
+**Description:** Retrieve a paginated list of assets available on Minswap with their metadata and verification status. Use this endpoint to populate asset selection interfaces or search for specific assets.
 
 #### Request Body
 
@@ -204,9 +198,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets?term=&limit=20&o
 | only_verified | boolean | No | `true` | Filter to show only verified tokens |
 | search_after | string[] | No | `[]` | Pagination cursor from previous response |
 | sort_direction | string | No | `desc` | Sort order: `asc` or `desc` |
-| sort_field | string | No | `volume_24h` | Sort by: `price_change_1h`, `price_change_24h`, or `price_change_7d`, or `volume_1h`, or `volume_24h`, or `volume_7d`, or `liquidity`, or `market_cap`, or `fully_diluted`, or `total_supply`, or `circulating_supply` |
-| favorite_asset_ids | string[] | No | - | Parameter is an optional array of Asset IDs used to filter and prioritize results for assets marked as favorites by the user (ID asset in format: `{policy_id}{token_name}`) |
-| filter_small_liquidity | boolean | No | `false` | If true, returns only assets with value > $1 USD |
+| sort_field | string | No | `volume_24h` | Sort by: `price_change_1h`, `price_change_24h`, `price_change_7d`, `volume_1h`, `volume_24h`, `volume_7d`, `liquidity`, `market_cap`, `fully_diluted`, `total_supply`, `circulating_supply` |
 | currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
 
 **Note:** For pagination, use the `search_after` value from the previous response to get the next page of results.
@@ -215,12 +207,12 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets?term=&limit=20&o
 
 ```typescript
 type Response = {
-  search_after: string[],
-  asset_metrics: RestAssetMetrics[];       
+  search_after: string[] | undefined,
+  asset_metrics: AssetMetric[];       
 }
 
-type RestAssetMetrics = {
-  asset: RestAssetMetadata;
+type AssetMetric = {
+  asset: Asset;
   price_change_1h: number;
   price_change_24h: number;
   price_change_7d: number;
@@ -248,10 +240,6 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/metrics' \
     "only_verified": true,
     "sort_direction": "desc",
     "sort_field": "liquidity",
-    "favorite_asset_ids": [
-        "5b26e685cc5c9ad630bde3e3cd48c694436671f3d25df53777ca60ef4e564c",
-        "590f6d119b214cdcf7ef7751f8b7f1de615ff8f6de097a5ce62b257b534841524c"
-    ],
     "currency": "usd"
 }'
 ```
@@ -259,7 +247,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/metrics' \
 ```json
 {
     "search_after": [
-        9954917.19354675,
+        "9954917.19354675",
         "c48cbb3d5e57ed56e276bc45f99ab39abe94e6cd7ac39fb402da47ad.0014df105553444d"
     ],
     "asset_metrics": [
@@ -313,7 +301,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/metrics' \
 #### Request Response
 
 ```typescript
-type RestAssetMetrics = {
+type Response = {
   asset: RestAssetMetadata;
   price_change_1h: number;
   price_change_24h: number;
@@ -390,18 +378,14 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/016be5325fd988fe
 | start_time | number | No | - | The Unix timestamp (in milliseconds) marking the start of the time range for the candlestick data. |
 | end_time | number | No | - | The Unix timestamp (in milliseconds) marking the end of the time range for the candlestick data. |
 | limit | number | No | `500` | Max results (min: `1`, max: `1000`) |
-| interval | string | Yes | - | The time interval for each candlestick (e.g., 1T, 1s, 1m, 1D, 1W, 1M). |
+| interval | `CandlestickInterval` | Yes | - | Candlestick interval. |
 | currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
-
-**Supported Intervals:**
-
-- Minutes: `1m`, `5m`, `15m`, `30m`
-- Hours: `1h`, `2h`, `4h`, `6h`, `12h`
-- Days/Weeks/Months: `1d`, `1w`, `1M`
 
 #### Request Response
 ```typescript
- type Ohlcv = {
+type Response = Ohlcv[]
+
+type Ohlcv = {
   open: number;
   high: number;
   low: number;
@@ -452,10 +436,11 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/0691b2fecca1ac4f
 #### Request Response
 
 ```typescript
-type AssetTimeseriesPriceResponse = {
-  value: number;
-  timestamp: number;
-}[];
+// Array of price data points, sorted by timestamp in ascending order
+type Response = {
+  value: number,
+  timestamp: number 
+}[]
 ```
 #### Example
 
@@ -497,22 +482,21 @@ Pools APIs provide comprehensive data about liquidity pools, including metrics, 
 | sort_direction | string | No | `desc` | Sort order: `asc` or `desc` |
 | sort_field | string | Yes | `liquidity` | Sort by: `volume_24h`, `volume_7d`, or `liquidity` |
 | protocols | string[] | No | All | Filter by protocol: `Minswap`, `MinswapV2`, `MinswapStable` |
-| favorite_pool_ids | string[] | No | - | Parameter is an optional array of pool IDs used to filter and prioritize results for pools marked as favorites by the user (LP asset in format: `{policy_id}{token_name}`) |
 | currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
 
 #### Request Response
 
 ```typescript
 type Response = {
-  search_after: string[],
-  pool_metrics: RestPoolMetrics[]
+  search_after: string[] | undefined,
+  pool_metrics: PoolMetrics[]
 }
 
-type RestPoolMetrics = {
-  lp_asset: RestAssetMetadata;
+type PoolMetrics = {
+  lp_asset: AssetMetadata;
   type: Protocol;
-  asset_a: RestAssetMetadata;
-  asset_b: RestAssetMetadata;
+  asset_a: AssetMetadata;
+  asset_b: AssetMetadata;
   liquidity_raw: number;
   liquidity_a_raw: number;
   liquidity_b_raw: number;
@@ -535,10 +519,6 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/metrics' \
     "term": "",
     "only_verified": true,
     "limit": 1,
-    "favorite_pool_ids": [
-        "5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd65553444d2d555344412d534c50",
-        "f5808c2c990d86da54bfc97d89cee6efa20cd8461616359478d96b4c331e2f026a280fd156f48e0a9806ea22642f40da74a39b9d7ae6123fbdd55992"
-    ],
     "sort_field": "liquidity",
     "sort_direction": "desc",
     "currency": "usd"
@@ -548,7 +528,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/metrics' \
 ```json
 {
     "search_after": [
-        10183179.86675752,
+        "10183179.86675752",
         "5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd6.5553444d2d555344412d534c50"
     ],
     "pool_metrics": [
@@ -619,16 +599,16 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/metrics' \
 
 #### Request Response
 ```typescript
-type RestPoolMetrics = {
-  lp_asset: RestAssetMetadata;
+type PoolMetrics = {
+  lp_asset: AssetMetadata;
   type: Protocol;
-  asset_a: RestAssetMetadata;
-  asset_b: RestAssetMetadata;
+  asset_a: AssetMetadata;
+  asset_b: AssetMetadata;
   liquidity_raw: number;
   liquidity_a_raw: number;
   liquidity_b_raw: number;
   trading_fee_tier: number[];
-  trading_fee_apr?: number;
+  trading_fee_apr: number;
   volume_24h: number;
   volume_7d: number;
   trading_fee_24h: number;
@@ -709,27 +689,12 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 | start_time | number | No | - | The Unix timestamp (in milliseconds) marking the start of the time range for the candlestick data. |
 | end_time | number | No | - | The Unix timestamp (in milliseconds) marking the end of the time range for the candlestick data. |
 | limit | number | No | `500` | Limit the number of candlestick records returned (min: `1`, max: `1000`) |
-| interval | string | Yes | - | The time interval for each candlestick (e.g., 1T, 1s, 1m, 1D, 1W, 1M). |
-
-**Supported Intervals:**
-
-- Minutes: `1m`, `5m`, `15m`, `30m`
-- Hours: `1h`, `2h`, `4h`, `6h`, `12h`
-- Days/Weeks/Months: `1d`, `1w`, `1M`
+| interval | `CandlestickInterval` | Yes | - | Candlestick interval. |
 
 #### Request Response
 
 ```typescript
 type Response = Ohlcv[]
-
-type Ohlcv = {
-  open: number;
-  high: number;
-  low: number;
-  close: number;
-  volume: number;
-  timestamp: number;
-}
 ```
 **Note:** Results are sorted by timestamp in ascending order.
 
@@ -776,12 +741,10 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 
 ```typescript
 // Array of price data points, sorted by timestamp in ascending order
-type Response = PricePoint[]
-
-type PricePoint = {
+type Response = {
   value: number,
   timestamp: number 
-}
+}[]
 ```
 **Note:** Results are sorted by timestamp in ascending order (oldest first).
 
@@ -823,7 +786,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 #### Request Response
 
 ```typescript
-type PoolTimeseriesVolumeResponse = {
+type Response = {
   value: number;
   timestamp: number;
 }[]
@@ -864,7 +827,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 #### Request Response
 
 ```typescript
-type PoolTimeseriesTvlResponse = {
+type Response = {
   value: number;
   timestamp: number;
 }[]
@@ -905,7 +868,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 #### Request Response
 
 ```typescript
-type PoolTimeseriesFeesResponse = {
+type Response = {
   value: number;
   timestamp: number;
 }[]
