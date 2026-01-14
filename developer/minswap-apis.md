@@ -4,23 +4,23 @@ This documentation provides comprehensive information about Minswap's public API
 
 ## Table of Contents
 
-- [Getting Started](#getting-started)
-- [HTTP Status Codes](#http-status-codes)
-- [Common Types](#common-types)
-- [Assets APIs](#assets-apis)
-  - [Get List Assets](#1-get-list-assets)
-  - [Get Assets Metrics](#2-get-assets-metrics)
-  - [Get Asset Metrics](#3-get-asset-metrics)
-  - [Get Asset Price Candlestick](#4-get-asset-price-candlestick)
-  - [Get Asset Price Timeseries](#5-get-asset-price-timeseries)
-- [Pools APIs](#pools-apis)
-  - [Get Pools Metrics](#1-get-pools-metrics)
-  - [Get Pool Metrics by ID](#2-get-pool-metrics-by-id)
-  - [Get Pool Price Candlestick](#3-get-pool-price-candlestick)
-  - [Get Pool Price Timeseries](#4-get-pool-price-timeseries)
-  - [Get Pool Volume Timeseries](#5-get-pool-volume-timeseries)
-  - [Get Pool TVL Timeseries](#6-get-pool-tvl-timeseries)
-  - [Get Pool Fee Timeseries](#7-get-pool-fee-timeseries)
+* [Getting Started](minswap-apis.md#getting-started)
+* [HTTP Status Codes](minswap-apis.md#http-status-codes)
+* [Common Types](minswap-apis.md#common-types)
+* [Assets APIs](minswap-apis.md#assets-apis)
+  * [Get List Assets](minswap-apis.md#1-get-list-assets)
+  * [Get Assets Metrics](minswap-apis.md#2-get-assets-metrics)
+  * [Get Asset Metrics](minswap-apis.md#3-get-asset-metrics)
+  * [Get Asset Price Candlestick](minswap-apis.md#4-get-asset-price-candlestick)
+  * [Get Asset Price Timeseries](minswap-apis.md#5-get-asset-price-timeseries)
+* [Pools APIs](minswap-apis.md#pools-apis)
+  * [Get Pools Metrics](minswap-apis.md#1-get-pools-metrics)
+  * [Get Pool Metrics by ID](minswap-apis.md#2-get-pool-metrics-by-id)
+  * [Get Pool Price Candlestick](minswap-apis.md#3-get-pool-price-candlestick)
+  * [Get Pool Price Timeseries](minswap-apis.md#4-get-pool-price-timeseries)
+  * [Get Pool Volume Timeseries](minswap-apis.md#5-get-pool-volume-timeseries)
+  * [Get Pool TVL Timeseries](minswap-apis.md#6-get-pool-tvl-timeseries)
+  * [Get Pool Fee Timeseries](minswap-apis.md#7-get-pool-fee-timeseries)
 
 ## Getting Started
 
@@ -32,14 +32,14 @@ The API implements rate limiting to ensure fair usage. If you exceed the rate li
 
 ## HTTP Status Codes
 
-| Status | Description | Notes |
-|--------|-------------|-------|
-| 200 | Success | Request completed successfully |
-| 400 | Bad Request | Invalid parameters or request format |
-| 401 | Unauthorized | Authentication failed (if required) |
-| 404 | Not Found | Resource not found |
-| 429 | Too Many Requests | Rate limit exceeded, please retry later |
-| 500 | Internal Server Error | Server error, please contact support if persists |
+| Status | Description           | Notes                                            |
+| ------ | --------------------- | ------------------------------------------------ |
+| 200    | Success               | Request completed successfully                   |
+| 400    | Bad Request           | Invalid parameters or request format             |
+| 401    | Unauthorized          | Authentication failed (if required)              |
+| 404    | Not Found             | Resource not found                               |
+| 429    | Too Many Requests     | Rate limit exceeded, please retry later          |
+| 500    | Internal Server Error | Server error, please contact support if persists |
 
 ### Error Response Format
 
@@ -125,12 +125,12 @@ type Ohlcv = {
 
 #### Request Parameters
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| term | string | No | `""` | Search by asset name, currency symbol, token name, or ticker |
-| limit | number | No | `20` | Number of results per page (min: `1`, max: `100`) |
-| only_verified | boolean | No | `false` | Filter to show only verified tokens |
-| search_after | string[] | No | `[]` | Pagination cursor from previous response |
+| Parameter      | Type      | Required | Default | Description                                                  |
+| -------------- | --------- | -------- | ------- | ------------------------------------------------------------ |
+| term           | string    | No       | `""`    | Search by asset name, currency symbol, token name, or ticker |
+| limit          | number    | No       | `20`    | Number of results per page (min: `1`, max: `100`)            |
+| only\_verified | boolean   | No       | `false` | Filter to show only verified tokens                          |
+| search\_after  | string\[] | No       | `[]`    | Pagination cursor from previous response                     |
 
 **Note:** For pagination, use the `search_after` value from the previous response to get the next page of results.
 
@@ -144,7 +144,9 @@ type AssetsResponse = {
 }
 
 ```
+
 #### Example
+
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/assets?term=&limit=20&only_verified=false'
 ```
@@ -187,19 +189,19 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets?term=&limit=20&o
 
 **POST:** `/v1/assets/metrics`
 
-**Description:** Retrieve a paginated list of assets available on Minswap with their metadata and verification status. Use this endpoint to populate asset selection interfaces or search for specific assets.
+**Description:** Retrieve a paginated list of assets with trading and liquidity metrics (price, volume, liquidity, market cap, supply, etc.) for analytics.
 
 #### Request Body
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| term | string | No | `""` | Search by asset name, currency symbol, token name, or ticker |
-| limit | number | No | `20` | Number of results per page (min: `1`, max: `100`) |
-| only_verified | boolean | No | `true` | Filter to show only verified tokens |
-| search_after | string[] | No | `[]` | Pagination cursor from previous response |
-| sort_direction | string | No | `desc` | Sort order: `asc` or `desc` |
-| sort_field | string | No | `volume_24h` | Sort by: `price_change_1h`, `price_change_24h`, `price_change_7d`, `volume_1h`, `volume_24h`, `volume_7d`, `liquidity`, `market_cap`, `fully_diluted`, `total_supply`, `circulating_supply` |
-| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+| Parameter       | Type                | Required | Default      | Description                                                                                                                                                                                 |
+| --------------- | ------------------- | -------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| term            | string              | No       | `""`         | Search by asset name, currency symbol, token name, or ticker                                                                                                                                |
+| limit           | number              | No       | `20`         | Number of results per page (min: `1`, max: `100`)                                                                                                                                           |
+| only\_verified  | boolean             | No       | `true`       | Filter to show only verified tokens                                                                                                                                                         |
+| search\_after   | string\[]           | No       | `[]`         | Pagination cursor from previous response                                                                                                                                                    |
+| sort\_direction | string              | No       | `desc`       | Sort order: `asc` or `desc`                                                                                                                                                                 |
+| sort\_field     | string              | No       | `volume_24h` | Sort by: `price_change_1h`, `price_change_24h`, `price_change_7d`, `volume_1h`, `volume_24h`, `volume_7d`, `liquidity`, `market_cap`, `fully_diluted`, `total_supply`, `circulating_supply` |
+| currency        | `SupportedCurrency` | No       | -            | Return values are in ADA if there is no value                                                                                                                                               |
 
 **Note:** For pagination, use the `search_after` value from the previous response to get the next page of results.
 
@@ -231,7 +233,9 @@ type AssetMetric = {
 }
 
 ```
+
 #### Example
+
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/metrics' \
 --data '{
@@ -285,6 +289,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/metrics' \
     ]
 }
 ```
+
 ### 3. Get Asset Metrics
 
 **GET:** `v1/assets/:id/metrics`
@@ -293,10 +298,10 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/metrics' \
 
 #### Request Parameters
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| id | string | Yes | - | The id parameter is a required string that uniquely identifies the asset for which metrics are being requested (ID asset in format: `{policy_id}{token_name}`) |
-| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+| Parameter | Type                | Required | Default | Description                                                                                                                                                    |
+| --------- | ------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id        | string              | Yes      | -       | The id parameter is a required string that uniquely identifies the asset for which metrics are being requested (ID asset in format: `{policy_id}{token_name}`) |
+| currency  | `SupportedCurrency` | No       | -       | Return values are in ADA if there is no value                                                                                                                  |
 
 #### Request Response
 
@@ -321,11 +326,13 @@ type Response = {
 }
 
 ```
+
 #### Example
 
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/016be5325fd988fea98ad422fcfd53e5352cacfced5c106a932a35a442544e/metrics?currency=usd'
 ```
+
 ```json
 {
     "asset": {
@@ -365,6 +372,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/016be5325fd988fe
     "fully_diluted": 1368912.016292053
 }
 ```
+
 ### 4. Get Asset Price Candlestick
 
 **GET:** `v1/assets/:id/price/candlestick`
@@ -372,16 +380,18 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/016be5325fd988fe
 **Description:** Returns historical candlestick (OHLCV) price data for a specific asset, supporting custom time ranges and resolutions
 
 #### Request Parameters
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| id | string | Yes | - | The id parameter is a required string that uniquely identifies the asset for which metrics are being requested (ID asset in format: `{policy_id}{token_name}`) |
-| start_time | number | No | - | The Unix timestamp (in milliseconds) marking the start of the time range for the candlestick data. |
-| end_time | number | No | - | The Unix timestamp (in milliseconds) marking the end of the time range for the candlestick data. |
-| limit | number | No | `500` | Max results (min: `1`, max: `1000`) |
-| interval | `CandlestickInterval` | Yes | - | Candlestick interval. |
-| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+
+| Parameter   | Type                  | Required | Default | Description                                                                                                                                                    |
+| ----------- | --------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id          | string                | Yes      | -       | The id parameter is a required string that uniquely identifies the asset for which metrics are being requested (ID asset in format: `{policy_id}{token_name}`) |
+| start\_time | number                | No       | -       | The Unix timestamp (in milliseconds) marking the start of the time range for the candlestick data.                                                             |
+| end\_time   | number                | No       | -       | The Unix timestamp (in milliseconds) marking the end of the time range for the candlestick data.                                                               |
+| limit       | number                | No       | `500`   | Max results (min: `1`, max: `1000`)                                                                                                                            |
+| interval    | `CandlestickInterval` | Yes      | -       | Candlestick interval.                                                                                                                                          |
+| currency    | `SupportedCurrency`   | No       | -       | Return values are in ADA if there is no value                                                                                                                  |
 
 #### Request Response
+
 ```typescript
 type Response = Ohlcv[]
 
@@ -394,11 +404,13 @@ type Ohlcv = {
   timestamp: number;
 }
 ```
+
 #### Example
 
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/0691b2fecca1ac4f53cb6dfb00b7013e561d1f34403b957cbb5af1fa4e49474854/price/candlestick?end_time=1766028002000&interval=15m&currency=usd'
 ```
+
 ```json
 [
     {
@@ -419,6 +431,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/0691b2fecca1ac4f
     }
 ]
 ```
+
 ### 5. Get Asset Price Timeseries
 
 **GET:** `v1/assets/:id/price/timeseries`
@@ -427,11 +440,11 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/0691b2fecca1ac4f
 
 #### Request Parameters
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| id | string | Yes | - | The id parameter is a required string that uniquely identifies the asset for which metrics are being requested (ID asset in format: `{policy_id}{token_name}`) |
-| period | `TimeSeriesPeriod` | Yes | - | Time interval for aggregating the timeseries data |
-| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+| Parameter | Type                | Required | Default | Description                                                                                                                                                    |
+| --------- | ------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id        | string              | Yes      | -       | The id parameter is a required string that uniquely identifies the asset for which metrics are being requested (ID asset in format: `{policy_id}{token_name}`) |
+| period    | `TimeSeriesPeriod`  | Yes      | -       | Time interval for aggregating the timeseries data                                                                                                              |
+| currency  | `SupportedCurrency` | No       | -       | Return values are in ADA if there is no value                                                                                                                  |
 
 #### Request Response
 
@@ -442,11 +455,13 @@ type Response = {
   timestamp: number 
 }[]
 ```
+
 #### Example
 
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/016be5325fd988fea98ad422fcfd53e5352cacfced5c106a932a35a442544e/price/timeseries?period=1w&currency=usd'
 ```
+
 ```json
 [
     {
@@ -460,7 +475,6 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/016be5325fd988fe
 ]
 ```
 
-
 ## Pools APIs
 
 Pools APIs provide comprehensive data about liquidity pools, including metrics, price history, and performance indicators.
@@ -473,16 +487,16 @@ Pools APIs provide comprehensive data about liquidity pools, including metrics, 
 
 #### Request Body
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| term | string | No | `""` | Search by asset name, currency symbol, ticker, or LP asset |
-| limit | number | No | `20` | Number of results per page (min: `1`, max: `100`) |
-| only_verified | boolean | No | `false` | Filter to show only pools with verified tokens |
-| search_after | string[] | No | `[]` | Pagination cursor from previous response |
-| sort_direction | string | No | `desc` | Sort order: `asc` or `desc` |
-| sort_field | string | Yes | `liquidity` | Sort by: `volume_24h`, `volume_7d`, or `liquidity` |
-| protocols | string[] | No | All | Filter by protocol: `Minswap`, `MinswapV2`, `MinswapStable` |
-| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+| Parameter       | Type                | Required | Default     | Description                                                 |
+| --------------- | ------------------- | -------- | ----------- | ----------------------------------------------------------- |
+| term            | string              | No       | `""`        | Search by asset name, currency symbol, ticker, or LP asset  |
+| limit           | number              | No       | `20`        | Number of results per page (min: `1`, max: `100`)           |
+| only\_verified  | boolean             | No       | `false`     | Filter to show only pools with verified tokens              |
+| search\_after   | string\[]           | No       | `[]`        | Pagination cursor from previous response                    |
+| sort\_direction | string              | No       | `desc`      | Sort order: `asc` or `desc`                                 |
+| sort\_field     | string              | Yes      | `liquidity` | Sort by: `volume_24h`, `volume_7d`, or `liquidity`          |
+| protocols       | string\[]           | No       | All         | Filter by protocol: `Minswap`, `MinswapV2`, `MinswapStable` |
+| currency        | `SupportedCurrency` | No       | -           | Return values are in ADA if there is no value               |
 
 #### Request Response
 
@@ -512,7 +526,9 @@ type PoolMetrics = {
 }
 
 ```
+
 #### Example
+
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/metrics' \
 --data '{
@@ -591,13 +607,13 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/metrics' \
 
 #### Request Parameters
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
-| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
-
+| Parameter | Type                | Required | Default | Description                                                               |
+| --------- | ------------------- | -------- | ------- | ------------------------------------------------------------------------- |
+| id        | string              | Yes      | -       | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
+| currency  | `SupportedCurrency` | No       | -       | Return values are in ADA if there is no value                             |
 
 #### Request Response
+
 ```typescript
 type PoolMetrics = {
   lp_asset: AssetMetadata;
@@ -621,6 +637,7 @@ type PoolMetrics = {
 ```
 
 #### Example
+
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd65553444d2d555344412d534c50/metrics?currency=usd'
 ```
@@ -683,22 +700,24 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 
 #### Request Parameters
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
-| start_time | number | No | - | The Unix timestamp (in milliseconds) marking the start of the time range for the candlestick data. |
-| end_time | number | No | - | The Unix timestamp (in milliseconds) marking the end of the time range for the candlestick data. |
-| limit | number | No | `500` | Limit the number of candlestick records returned (min: `1`, max: `1000`) |
-| interval | `CandlestickInterval` | Yes | - | Candlestick interval. |
+| Parameter   | Type                  | Required | Default | Description                                                                                        |
+| ----------- | --------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------- |
+| id          | string                | Yes      | -       | LP asset ID combining policy ID and token name: `{policy_id}{token_name}`                          |
+| start\_time | number                | No       | -       | The Unix timestamp (in milliseconds) marking the start of the time range for the candlestick data. |
+| end\_time   | number                | No       | -       | The Unix timestamp (in milliseconds) marking the end of the time range for the candlestick data.   |
+| limit       | number                | No       | `500`   | Limit the number of candlestick records returned (min: `1`, max: `1000`)                           |
+| interval    | `CandlestickInterval` | Yes      | -       | Candlestick interval.                                                                              |
 
 #### Request Response
 
 ```typescript
 type Response = Ohlcv[]
 ```
+
 **Note:** Results are sorted by timestamp in ascending order.
 
 #### Example
+
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd65553444d2d555344412d534c50/price/candlestick?limit=20&interval=1d&start_time=1767259443000&end_time=1767864243000'
 ```
@@ -732,10 +751,10 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 
 #### Request Parameters
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
-| period | `TimeSeriesPeriod` | Yes | - | Time interval for aggregating the timeseries data |
+| Parameter | Type               | Required | Default | Description                                                               |
+| --------- | ------------------ | -------- | ------- | ------------------------------------------------------------------------- |
+| id        | string             | Yes      | -       | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
+| period    | `TimeSeriesPeriod` | Yes      | -       | Time interval for aggregating the timeseries data                         |
 
 #### Request Response
 
@@ -746,9 +765,11 @@ type Response = {
   timestamp: number 
 }[]
 ```
+
 **Note:** Results are sorted by timestamp in ascending order (oldest first).
 
 #### Example
+
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd65553444d2d555344412d534c50/price/timeseries?period=1w'
 ```
@@ -769,6 +790,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
   }
 ]
 ```
+
 ### 5. Get Pool Volume Timeseries
 
 **GET:** `v1/pools/:id/volume/timeseries`
@@ -777,11 +799,11 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 
 #### Request Parameters
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
-| period | `TimeSeriesPeriod` | Yes | - | Time interval for aggregating the timeseries data |
-| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+| Parameter | Type                | Required | Default | Description                                                               |
+| --------- | ------------------- | -------- | ------- | ------------------------------------------------------------------------- |
+| id        | string              | Yes      | -       | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
+| period    | `TimeSeriesPeriod`  | Yes      | -       | Time interval for aggregating the timeseries data                         |
+| currency  | `SupportedCurrency` | No       | -       | Return values are in ADA if there is no value                             |
 
 #### Request Response
 
@@ -810,6 +832,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
     }
 ]
 ```
+
 ### 6. Get Pool TVL Timeseries
 
 **GET:** `v1/pools/:id/tvl/timeseries`
@@ -818,11 +841,11 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 
 #### Request Parameters
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
-| period | `TimeSeriesPeriod` | Yes | - | Time interval for aggregating the timeseries data |
-| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+| Parameter | Type                | Required | Default | Description                                                               |
+| --------- | ------------------- | -------- | ------- | ------------------------------------------------------------------------- |
+| id        | string              | Yes      | -       | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
+| period    | `TimeSeriesPeriod`  | Yes      | -       | Time interval for aggregating the timeseries data                         |
+| currency  | `SupportedCurrency` | No       | -       | Return values are in ADA if there is no value                             |
 
 #### Request Response
 
@@ -851,6 +874,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
     }
 ]
 ```
+
 ### 7. Get Pool Fee Timeseries
 
 **GET:** `v1/pools/:id/fees/timeseries`
@@ -859,11 +883,11 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 
 #### Request Parameters
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|-------------|---------|
-| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
-| period | `TimeSeriesPeriod` | Yes | - | Time interval for aggregating the timeseries data |
-| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+| Parameter | Type                | Required | Default | Description                                                               |
+| --------- | ------------------- | -------- | ------- | ------------------------------------------------------------------------- |
+| id        | string              | Yes      | -       | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
+| period    | `TimeSeriesPeriod`  | Yes      | -       | Time interval for aggregating the timeseries data                         |
+| currency  | `SupportedCurrency` | No       | -       | Return values are in ADA if there is no value                             |
 
 #### Request Response
 
@@ -892,7 +916,3 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
     }
 ]
 ```
-
-
-
-  
