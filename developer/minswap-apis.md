@@ -9,11 +9,18 @@ This documentation provides comprehensive information about Minswap's public API
 - [Common Types](#common-types)
 - [Assets APIs](#assets-apis)
   - [Get List Assets](#1-get-list-assets)
+  - [Get Assets Metrics](#2-get-assets-metrics)
+  - [Get Asset Metrics](#3-get-asset-metrics)
+  - [Get Asset Price Candlestick](#4-get-asset-price-candlestick)
+  - [Get Asset Price Timeseries](#5-get-asset-price-timeseries)
 - [Pools APIs](#pools-apis)
   - [Get Pools Metrics](#1-get-pools-metrics)
   - [Get Pool Metrics by ID](#2-get-pool-metrics-by-id)
   - [Get Pool Price Candlestick](#3-get-pool-price-candlestick)
   - [Get Pool Price Timeseries](#4-get-pool-price-timeseries)
+  - [Get Pool Volume Timeseries](#5-get-pool-volume-timeseries)
+  - [Get Pool TVL Timeseries](#6-get-pool-tvl-timeseries)
+  - [Get Pool Fee Timeseries](#7-get-pool-fee-timeseries)
 
 ## Getting Started
 
@@ -86,11 +93,35 @@ enum SortDirection {
   Ascending = "asc",
   Descending = "desc"
 }
+
+type SupportedCurrency = 'aed' | 'ars' | 'aud' | 'bdt' | 'bhd' | 'bmd' | 'brl' | 'cad' | 'chf' | 'clp' | 'cny' | 'czk' | 'dkk' | 'eur' | 'gbp' | 'hkd' | 'huf' | 'idr' | 'ils' | 'inr' | 'jpy' | 'krw' | 'kwd' | 'lkr' | 'mmk' | 'mxn' | 'myr' | 'ngn' | 'nok' | 'nzd' | 'php' | 'pkr' | 'pln' | 'rub' | 'sar' | 'sek' | 'sgd' | 'thb' | 'try' | 'twd' | 'uah' | 'usd' | 'vef' | 'vnd' | 'xdr' | 'zar';
+
+type TimeSeriesPeriod = "1d" | "1w" | "1M" | "6M" | "1y" | "all";
+
+type RestAssetMetadata = {
+  currency_symbol: string;
+  token_name: string;
+  is_verified: boolean;
+  metadata?: {
+    decimals: number;
+    name?: string;
+    url?: string;
+    ticker?: string;
+    description?: string;
+    logo?: string;
+  };
+  social_links?: {
+    website?: string;
+    discord?: string;
+    telegram?: string;
+    twitter?: string;
+    coingecko?: string;
+    coin_market_cap?: string;
+  };
+}
 ```
 
 ## Assets APIs
-
-Assets APIs allow you to retrieve information about tokens available on Minswap, including their metadata, verification status, and social links.
 
 ### 1. Get List Assets
 
@@ -101,8 +132,8 @@ Assets APIs allow you to retrieve information about tokens available on Minswap,
 #### Request Parameters
 
 | Parameter | Type | Required | Default | Description |
-|-----------|------|----------|---------|-------------|
-| term | string | No | - | Search by asset name, currency symbol, token name, or ticker |
+|-----------|------|----------|-------------|---------|
+| term | string | No | `""` | Search by asset name, currency symbol, token name, or ticker |
 | limit | number | No | `20` | Number of results per page (min: `1`, max: `100`) |
 | only_verified | boolean | No | `false` | Filter to show only verified tokens |
 | search_after | string[] | No | `[]` | Pagination cursor from previous response |
@@ -112,18 +143,12 @@ Assets APIs allow you to retrieve information about tokens available on Minswap,
 #### Request Response
 
 ```typescript
-type Response = {
-  search_after: string[],
-  assets: Asset[]        
+
+type AssetsResponse = {
+  search_after: string[] | undefined | null;
+  assets: RestAssetMetadata[];
 }
 
-type Asset = {
-  currency_symbol: string,  
-  token_name: string,       
-  is_verified: boolean,     
-  metadata?: AssetMetadata, 
-  social_links?: SocialLinks
-}
 ```
 #### Example
 ```bash
@@ -164,6 +189,293 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets?term=&limit=20&o
 }
 ```
 
+### 2. Get Assets Metrics
+
+**POST:** `/v1/assets/metrics`
+
+**Description:** Retrieve a paginated list of assets available on Minswap with their metadata and verification status. Use this endpoint to populate token selection interfaces or search for specific assets.
+
+#### Request Body
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|-------------|---------|
+| term | string | No | `""` | Search by asset name, currency symbol, token name, or ticker |
+| limit | number | No | `20` | Number of results per page (min: `1`, max: `100`) |
+| only_verified | boolean | No | `true` | Filter to show only verified tokens |
+| search_after | string[] | No | `[]` | Pagination cursor from previous response |
+| sort_direction | string | No | `desc` | Sort order: `asc` or `desc` |
+| sort_field | string | No | `volume_24h` | Sort by: `price_change_1h`, `price_change_24h`, or `price_change_7d`, or `volume_1h`, or `volume_24h`, or `volume_7d`, or `liquidity`, or `market_cap`, or `fully_diluted`, or `total_supply`, or `circulating_supply` |
+| favorite_asset_ids | string[] | No | - | Parameter is an optional array of Asset IDs used to filter and prioritize results for assets marked as favorites by the user (ID asset in format: `{policy_id}{token_name}`) |
+| filter_small_liquidity | boolean | No | `false` | If true, returns only assets with value > $1 USD |
+| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+
+**Note:** For pagination, use the `search_after` value from the previous response to get the next page of results.
+
+#### Request Response
+
+```typescript
+type Response = {
+  search_after: string[],
+  asset_metrics: RestAssetMetrics[];       
+}
+
+type RestAssetMetrics = {
+  asset: RestAssetMetadata;
+  price_change_1h: number;
+  price_change_24h: number;
+  price_change_7d: number;
+  volume_1h: number;
+  volume_24h: number;
+  volume_7d: number;
+  total_supply: number;
+  circulating_supply: number;
+  created_at?: string;
+  created_tx_id?: string;
+  categories?: string[];
+  price: number;
+  liquidity: number;
+  market_cap: number;
+  fully_diluted: number;
+}
+
+```
+#### Example
+```bash
+curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/metrics' \
+--data '{
+    "term": "",
+    "limit": 1,
+    "only_verified": true,
+    "sort_direction": "desc",
+    "sort_field": "liquidity",
+    "favorite_asset_ids": [
+        "5b26e685cc5c9ad630bde3e3cd48c694436671f3d25df53777ca60ef4e564c",
+        "590f6d119b214cdcf7ef7751f8b7f1de615ff8f6de097a5ce62b257b534841524c"
+    ],
+    "currency": "usd"
+}'
+```
+
+```json
+{
+    "search_after": [
+        9954917.19354675,
+        "c48cbb3d5e57ed56e276bc45f99ab39abe94e6cd7ac39fb402da47ad.0014df105553444d"
+    ],
+    "asset_metrics": [
+        {
+            "asset": {
+                "currency_symbol": "c48cbb3d5e57ed56e276bc45f99ab39abe94e6cd7ac39fb402da47ad",
+                "token_name": "0014df105553444d",
+                "is_verified": true,
+                "metadata": {
+                    "name": "USDM",
+                    "url": "https://moneta.global/",
+                    "ticker": "USDM",
+                    "decimals": 6,
+                    "description": "Fiat-backed stablecoin native to the Cardano blockchain"
+                }
+            },
+            "total_supply": 0,
+            "circulating_supply": 0,
+            "created_at": "2024-03-17T00:21:21.000Z",
+            "created_tx_id": "ac1cb7d3bc2a6e1a356b16c959e222608005524fc0c35919b63574d6b0b20b5a",
+            "categories": [
+                "Stablecoin"
+            ],
+            "price": 0.9975544277153409,
+            "price_change_1h": 0.02207271877209818,
+            "price_change_24h": -2.350271288070098,
+            "price_change_7d": -0.09023188511685103,
+            "volume_1h": 15276.40548938064,
+            "volume_24h": 1058967.9023246677,
+            "volume_7d": 7092205.7164879,
+            "liquidity": 9954917.19354675,
+            "market_cap": 0,
+            "fully_diluted": 0
+        }
+    ]
+}
+```
+### 3. Get Asset Metrics
+
+**GET:** `v1/assets/:id/metrics`
+
+**Description:** Retrieves detailed metrics for a specific asset by its ID, optionally filtered by display currency. It returns comprehensive asset statistics such as volume, liquidity, and price data for use in analytics or UI display.
+
+#### Request Parameters
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|-------------|---------|
+| id | string | Yes | - | The id parameter is a required string that uniquely identifies the asset for which metrics are being requested (ID asset in format: `{policy_id}{token_name}`) |
+| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+
+#### Request Response
+
+```typescript
+type RestAssetMetrics = {
+  asset: RestAssetMetadata;
+  price_change_1h: number;
+  price_change_24h: number;
+  price_change_7d: number;
+  volume_1h: number;
+  volume_24h: number;
+  volume_7d: number;
+  total_supply: number;
+  circulating_supply: number;
+  created_at?: string;
+  created_tx_id?: string;
+  categories?: string[];
+  price: number;
+  liquidity: number;
+  market_cap: number;
+  fully_diluted: number;
+}
+
+```
+#### Example
+
+```bash
+curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/016be5325fd988fea98ad422fcfd53e5352cacfced5c106a932a35a442544e/metrics?currency=usd'
+```
+```json
+{
+    "asset": {
+        "currency_symbol": "016be5325fd988fea98ad422fcfd53e5352cacfced5c106a932a35a4",
+        "token_name": "42544e",
+        "is_verified": true,
+        "metadata": {
+            "name": "BTN",
+            "url": "https://butane.dev",
+            "ticker": "BTN",
+            "decimals": 6,
+            "description": "BTN is the native token of Butane, an advanced synthetics protocol."
+        },
+        "social_links": {
+            "website": "https://butane.dev",
+            "discord": "https://discord.gg/butane",
+            "telegram": "https://t.me/butaneprotocol",
+            "twitter": "https://twitter.com/butaneprotocol"
+        }
+    },
+    "total_supply": 25000000,
+    "circulating_supply": 12432701.092661,
+    "created_at": "2024-02-22T14:03:08.000Z",
+    "created_tx_id": "c2d43135e34981fcb9a5db3d9b189c81d278adadc9940967f93980f8ee2b7074",
+    "categories": [
+        "DeFi"
+    ],
+    "price": 0.05475648065168212,
+    "price_change_1h": 0.25619128949616055,
+    "price_change_24h": -3.539488320210792,
+    "price_change_7d": -32.212313963662844,
+    "volume_1h": 0,
+    "volume_24h": 150.8735360716138,
+    "volume_7d": 55897.59149512404,
+    "liquidity": 182029.9901877545,
+    "market_cap": 680770.9568284391,
+    "fully_diluted": 1368912.016292053
+}
+```
+### 4. Get Asset Price Candlestick
+
+**GET:** `v1/assets/:id/price/candlestick`
+
+**Description:** Returns historical candlestick (OHLCV) price data for a specific asset, supporting custom time ranges and resolutions
+
+#### Request Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|-------------|---------|
+| id | string | Yes | - | The id parameter is a required string that uniquely identifies the asset for which metrics are being requested (ID asset in format: `{policy_id}{token_name}`) |
+| start_time | number | No | - | The Unix timestamp (in milliseconds) marking the start of the time range for the candlestick data. |
+| end_time | number | No | - | The Unix timestamp (in milliseconds) marking the end of the time range for the candlestick data. |
+| limit | number | No | `500` | Max results (min: `1`, max: `1000`) |
+| interval | string | Yes | - | The time interval for each candlestick (e.g., 1T, 1s, 1m, 1D, 1W, 1M). |
+| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+
+**Supported Intervals:**
+
+- Minutes: `1m`, `5m`, `15m`, `30m`
+- Hours: `1h`, `2h`, `4h`, `6h`, `12h`
+- Days/Weeks/Months: `1d`, `1w`, `1M`
+
+#### Request Response
+```typescript
+ type Ohlcv = {
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  volume: number;
+  timestamp: number;
+}
+```
+#### Example
+
+```bash
+curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/0691b2fecca1ac4f53cb6dfb00b7013e561d1f34403b957cbb5af1fa4e49474854/price/candlestick?end_time=1766028002000&interval=15m&currency=usd'
+```
+```json
+[
+    {
+        "open": 0.05150856356161587,
+        "high": 0.05150856356161587,
+        "low": 0.05047932810976648,
+        "close": 0.050701693758410896,
+        "volume": 50724.16443664555,
+        "timestamp": 1765578600000
+    },
+    {
+        "open": 0.05093382373126923,
+        "high": 0.05093382373126923,
+        "low": 0.05030821733861369,
+        "close": 0.050525200451240655,
+        "volume": 26361.171205892428,
+        "timestamp": 1765579500000
+    }
+]
+```
+### 5. Get Asset Price Timeseries
+
+**GET:** `v1/assets/:id/price/timeseries`
+
+**Description:** Retrieve simplified timeseries price data for a specific asset over a given period. Use this endpoint to analyze price trends and historical price movements.
+
+#### Request Parameters
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|-------------|---------|
+| id | string | Yes | - | The id parameter is a required string that uniquely identifies the asset for which metrics are being requested (ID asset in format: `{policy_id}{token_name}`) |
+| period | `TimeSeriesPeriod` | Yes | - | Time interval for aggregating the timeseries data |
+| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+
+#### Request Response
+
+```typescript
+type AssetTimeseriesPriceResponse = {
+  value: number;
+  timestamp: number;
+}[];
+```
+#### Example
+
+```bash
+curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/016be5325fd988fea98ad422fcfd53e5352cacfced5c106a932a35a442544e/price/timeseries?period=1w&currency=usd'
+```
+```json
+[
+    {
+        "value": 0.21675761701343657,
+        "timestamp": 1766476800000
+    },
+    {
+        "value": 0.21675761701343657,
+        "timestamp": 1766491200000
+    }
+]
+```
+
+
 ## Pools APIs
 
 Pools APIs provide comprehensive data about liquidity pools, including metrics, price history, and performance indicators.
@@ -177,105 +489,117 @@ Pools APIs provide comprehensive data about liquidity pools, including metrics, 
 #### Request Body
 
 | Parameter | Type | Required | Default | Description |
-|-----------|------|----------|---------|-------------|
-| term | string | No | - | Search by asset name, currency symbol, ticker, or LP asset |
+|-----------|------|----------|-------------|---------|
+| term | string | No | `""` | Search by asset name, currency symbol, ticker, or LP asset |
 | limit | number | No | `20` | Number of results per page (min: `1`, max: `100`) |
 | only_verified | boolean | No | `false` | Filter to show only pools with verified tokens |
 | search_after | string[] | No | `[]` | Pagination cursor from previous response |
-| sort_direction | string | No | - | Sort order: `asc` or `desc` |
-| sort_field | string | No | - | Sort by: `volume_usd_24h`, `volume_usd_7d`, or `liquidity_usd` |
+| sort_direction | string | No | `desc` | Sort order: `asc` or `desc` |
+| sort_field | string | Yes | `liquidity` | Sort by: `volume_24h`, `volume_7d`, or `liquidity` |
 | protocols | string[] | No | All | Filter by protocol: `Minswap`, `MinswapV2`, `MinswapStable` |
-
+| favorite_pool_ids | string[] | No | - | Parameter is an optional array of pool IDs used to filter and prioritize results for pools marked as favorites by the user (LP asset in format: `{policy_id}{token_name}`) |
+| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
 
 #### Request Response
 
 ```typescript
 type Response = {
   search_after: string[],
-  pool_metrics: PoolMetric[]
+  pool_metrics: RestPoolMetrics[]
 }
 
-type PoolMetric = {
-  lp_asset: Token,             
-  asset_a: Token,              
-  asset_b: Token,              
-  type: Protocol,              
-  volume_usd_24h: number,      
-  volume_usd_7d: number,       
-  liquidity_usd: number,       
-  liquidity_a_usd: number,     
-  liquidity_b_usd: number,     
-  liquidity: number,           
-  liquidity_a: number,         
-  liquidity_b: number,         
-  trading_fee_usd_24h: number, 
-  trading_fee_usd_7d: number,  
-  trading_fee_tier: number[], // Fee tiers [asset_a_fee, asset_b_fee]
-  trading_fee_apr: number 
+type RestPoolMetrics = {
+  lp_asset: RestAssetMetadata;
+  type: Protocol;
+  asset_a: RestAssetMetadata;
+  asset_b: RestAssetMetadata;
+  liquidity_raw: number;
+  liquidity_a_raw: number;
+  liquidity_b_raw: number;
+  trading_fee_tier: number[];
+  trading_fee_apr?: number;
+  volume_24h: number;
+  volume_7d: number;
+  trading_fee_24h: number;
+  trading_fee_7d: number;
+  liquidity: number;
+  liquidity_a: number;
+  liquidity_b: number;
 }
+
 ```
 #### Example
 ```bash
 curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/metrics' \
---header 'Content-Type: application/json' \
---data '{}'
+--data '{
+    "term": "",
+    "only_verified": true,
+    "limit": 1,
+    "favorite_pool_ids": [
+        "5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd65553444d2d555344412d534c50",
+        "f5808c2c990d86da54bfc97d89cee6efa20cd8461616359478d96b4c331e2f026a280fd156f48e0a9806ea22642f40da74a39b9d7ae6123fbdd55992"
+    ],
+    "sort_field": "liquidity",
+    "sort_direction": "desc",
+    "currency": "usd"
+}'
 ```
 
 ```json
 {
-	"search_after": [
-		"504648.73646031605",
-		"f5808c2c990d86da54bfc97d89cee6efa20cd8461616359478d96b4c.a449f98fa06fff1d6c17b95c65ca609660049dc683cc3e94d3846b05419fc20d"
-	],
-	"pool_metrics": [
-		{
-			"lp_asset": {
-				"currency_symbol": "5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd6",
-				"token_name": "5553444d2d555344412d534c50",
-				"is_verified": false
-			},
-			"type": "MinswapStable",
-			"asset_a": {
-				"currency_symbol": "c48cbb3d5e57ed56e276bc45f99ab39abe94e6cd7ac39fb402da47ad",
-				"token_name": "0014df105553444d",
-				"is_verified": true,
-				"metadata": {
-					"name": "USDM",
-					"url": "https://moneta.global/",
-					"ticker": "USDM",
-					"decimals": 6,
-					"description": "Fiat-backed stablecoin native to the Cardano blockchain"
-				}
-			},
-			"asset_b": {
-				"currency_symbol": "fe7c786ab321f41c654ef6c1af7b3250a613c24e4213e0425a7ae456",
-				"token_name": "55534441",
-				"is_verified": true,
-				"metadata": {
-					"name": "USDA",
-					"url": "https://www.anzens.com",
-					"ticker": "USDA",
-					"decimals": 6,
-					"description": "Anzens USDA Stablecoin"
-				}
-			},
-			"volume_usd_24h": 275887.6115451449,
-			"volume_usd_7d": 1096418.146131719,
-			"liquidity_usd": 11894141.900263073,
-			"liquidity_a_usd": 6371591.613676783,
-			"liquidity_b_usd": 5522550.286586288,
-			"liquidity": 11424797740483,
-			"liquidity_a": 6146880,
-			"liquidity_b": 5301950,
-			"trading_fee_usd_24h": 69.15013892473809,
-			"trading_fee_usd_7d": 274.5034984422627,
-			"trading_fee_tier": [
-				0.05,
-				0.05
-			],
-			"trading_fee_apr": 0.5588071063497281
-		}
-	]
+    "search_after": [
+        10183179.86675752,
+        "5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd6.5553444d2d555344412d534c50"
+    ],
+    "pool_metrics": [
+        {
+            "lp_asset": {
+                "currency_symbol": "5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd6",
+                "token_name": "5553444d2d555344412d534c50",
+                "is_verified": true
+            },
+            "type": "MinswapStable",
+            "asset_a": {
+                "currency_symbol": "c48cbb3d5e57ed56e276bc45f99ab39abe94e6cd7ac39fb402da47ad",
+                "token_name": "0014df105553444d",
+                "is_verified": true,
+                "metadata": {
+                    "name": "USDM",
+                    "url": "https://moneta.global/",
+                    "ticker": "USDM",
+                    "decimals": 6,
+                    "description": "Fiat-backed stablecoin native to the Cardano blockchain"
+                }
+            },
+            "asset_b": {
+                "currency_symbol": "fe7c786ab321f41c654ef6c1af7b3250a613c24e4213e0425a7ae456",
+                "token_name": "55534441",
+                "is_verified": true,
+                "metadata": {
+                    "name": "USDA",
+                    "url": "https://www.anzens.com",
+                    "ticker": "USDA",
+                    "decimals": 6,
+                    "description": "Anzens USDA Stablecoin"
+                }
+            },
+            "trading_fee_tier": [
+                0.05,
+                0.05
+            ],
+            "trading_fee_apr": 0.3437032224976275,
+            "liquidity_raw": 10053890543674,
+            "liquidity_a_raw": 5393732.846663,
+            "liquidity_b_raw": 4683667.353299,
+            "volume_24h": 294243.8992270554,
+            "volume_7d": 2042834.6864464958,
+            "liquidity": 10183179.86675752,
+            "liquidity_a": 5409159.8695964,
+            "liquidity_b": 4774019.997161119,
+            "trading_fee_24h": 73.6453803607475,
+            "trading_fee_7d": 511.1735333229008
+        }
+    ]
 }
 ```
 
@@ -287,82 +611,87 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/metrics' \
 
 #### Request Parameters
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| id | string | Yes | Pool identifier (LP asset in format: `{policy_id}.{token_name}` or `{policy_id}{token_name}`) |
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|-------------|---------|
+| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
+| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+
 
 #### Request Response
-```ts
-type Response = {
-  lp_asset: Token,
-  asset_a: Token,
-  asset_b: Token,
-  type: Protocol,
-  volume_usd_24h: number,
-  volume_usd_7d: number,
-  liquidity_usd: number,
-  liquidity_a_usd: number,
-  liquidity_b_usd: number,
-  liquidity: number,
-  liquidity_a: number,
-  liquidity_b: number,
-  trading_fee_usd_24h: number,
-  trading_fee_usd_7d: number,
-  trading_fee_tier: number[], // [trading_fee_tier_a, trading_fee_tier_b]
-  trading_fee_apr: number
+```typescript
+type RestPoolMetrics = {
+  lp_asset: RestAssetMetadata;
+  type: Protocol;
+  asset_a: RestAssetMetadata;
+  asset_b: RestAssetMetadata;
+  liquidity_raw: number;
+  liquidity_a_raw: number;
+  liquidity_b_raw: number;
+  trading_fee_tier: number[];
+  trading_fee_apr?: number;
+  volume_24h: number;
+  volume_7d: number;
+  trading_fee_24h: number;
+  trading_fee_7d: number;
+  liquidity: number;
+  liquidity_a: number;
+  liquidity_b: number;
 }
+
 ```
 
 #### Example
 ```bash
-curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/f5808c2c990d86da54bfc97d89cee6efa20cd8461616359478d96b4c.82e2b1fd27a7712a1a9cf750dfbea1a5778611b20e06dd6a611df7a643f8cb75/metrics'
+curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd65553444d2d555344412d534c50/metrics?currency=usd'
 ```
 
 ```json
 {
-  "lp_asset": {
-    "currency_symbol": "f5808c2c990d86da54bfc97d89cee6efa20cd8461616359478d96b4c",
-    "token_name": "82e2b1fd27a7712a1a9cf750dfbea1a5778611b20e06dd6a611df7a643f8cb75",
-    "is_verified": false
-  },
-  "type": "MinswapV2",
-  "asset_a": {
-    "currency_symbol": "",
-    "token_name": "",
-    "is_verified": true,
-    "metadata": {
-      "decimals": 6,
-      "name": "Cardano",
-      "ticker": "ADA"
-    }
-  },
-  "asset_b": {
-    "currency_symbol": "29d222ce763455e3d7a09a665ce554f00ac89d2e99a1a83d267170c6",
-    "token_name": "4d494e",
-    "is_verified": true,
-    "metadata": {
-      "name": "Minswap",
-      "url": "https://minswap.org/",
-      "ticker": "MIN",
-      "decimals": 6,
-      "description": "Minswap is a multi-pool decentralize exchange protocol on Cardano"
-    }
-  },
-  "volume_usd_24h": 33450.56473381408,
-  "volume_usd_7d": 414577.06098515296,
-  "liquidity_usd": 4014574.127954561,
-  "liquidity_a_usd": 2007287.0639772804,
-  "liquidity_b_usd": 2007287.0639772804,
-  "liquidity": 31904344470140,
-  "liquidity_a": 4959938,
-  "liquidity_b": 214384918,
-  "trading_fee_usd_24h": 146.6456692739724,
-  "trading_fee_usd_7d": 1275.4345738452926,
-  "trading_fee_tier": [
-    0.3,
-    1
-  ],
-  "trading_fee_apr": 2.714538755500508
+    "lp_asset": {
+        "currency_symbol": "5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd6",
+        "token_name": "5553444d2d555344412d534c50",
+        "is_verified": true
+    },
+    "type": "MinswapStable",
+    "asset_a": {
+        "currency_symbol": "c48cbb3d5e57ed56e276bc45f99ab39abe94e6cd7ac39fb402da47ad",
+        "token_name": "0014df105553444d",
+        "is_verified": true,
+        "metadata": {
+            "name": "USDM",
+            "url": "https://moneta.global/",
+            "ticker": "USDM",
+            "decimals": 6,
+            "description": "Fiat-backed stablecoin native to the Cardano blockchain"
+        }
+    },
+    "asset_b": {
+        "currency_symbol": "fe7c786ab321f41c654ef6c1af7b3250a613c24e4213e0425a7ae456",
+        "token_name": "55534441",
+        "is_verified": true,
+        "metadata": {
+            "name": "USDA",
+            "url": "https://www.anzens.com",
+            "ticker": "USDA",
+            "decimals": 6,
+            "description": "Anzens USDA Stablecoin"
+        }
+    },
+    "trading_fee_tier": [
+        0.05,
+        0.05
+    ],
+    "trading_fee_apr": 0.3436275699948192,
+    "liquidity_raw": 10053890543674,
+    "liquidity_a_raw": 5393732.846663,
+    "liquidity_b_raw": 4683667.353299,
+    "volume_24h": 294243.8992270554,
+    "volume_7d": 2020489.306139798,
+    "liquidity": 10183179.86675752,
+    "liquidity_a": 5409159.8695964,
+    "liquidity_b": 4774019.997161119,
+    "trading_fee_24h": 73.6453803607475,
+    "trading_fee_7d": 505.84438543787957
 }
 ```
 
@@ -374,20 +703,16 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/f5808c2c990d86da5
 
 #### Request Parameters
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| id | string | Yes | Pool identifier (LP asset) |
-
-#### Request Query
-
 | Parameter | Type | Required | Default | Description |
-|-----------|------|----------|---------|-------------|
-| interval | string | **Yes** | - | Candlestick interval (see supported intervals below) |
-| start_time | number | No | 1 year ago | Start timestamp in milliseconds |
-| end_time | number | No | Current time | End timestamp in milliseconds |
-| limit | number | No | `500` | Max results (min: `1`, max: `1000`) |
+|-----------|------|----------|-------------|---------|
+| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
+| start_time | number | No | - | The Unix timestamp (in milliseconds) marking the start of the time range for the candlestick data. |
+| end_time | number | No | - | The Unix timestamp (in milliseconds) marking the end of the time range for the candlestick data. |
+| limit | number | No | `500` | Limit the number of candlestick records returned (min: `1`, max: `1000`) |
+| interval | string | Yes | - | The time interval for each candlestick (e.g., 1T, 1s, 1m, 1D, 1W, 1M). |
 
 **Supported Intervals:**
+
 - Minutes: `1m`, `5m`, `15m`, `30m`
 - Hours: `1h`, `2h`, `4h`, `6h`, `12h`
 - Days/Weeks/Months: `1d`, `1w`, `1M`
@@ -395,50 +720,42 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/f5808c2c990d86da5
 #### Request Response
 
 ```typescript
-type Response = Candlestick[]
+type Response = Ohlcv[]
 
-type Candlestick = {
-  open: number,      
-  high: number,      
-  low: number,       
-  close: number,     
-  volume: number,    
-  timestamp: number  
+type Ohlcv = {
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  volume: number;
+  timestamp: number;
 }
 ```
 **Note:** Results are sorted by timestamp in ascending order.
 
 #### Example
 ```bash
-curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd6.5553444d2d555344412d534c50/price/candlestick?interval=1w'
+curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd65553444d2d555344412d534c50/price/candlestick?limit=20&interval=1d&start_time=1767259443000&end_time=1767864243000'
 ```
 
 ```json
 [
-  {
-    "open": 1,
-    "high": 1.0006422551006466,
-    "low": 0.982164538002603,
-    "close": 0.9985817609540729,
-    "volume": 1162928.645893875,
-    "timestamp": 1740960000000
-  },
-  {
-    "open": 0.9991815087622149,
-    "high": 1.003046739205926,
-    "low": 0.9884252565466588,
-    "close": 1.0004556637397555,
-    "volume": 1983393.985634902,
-    "timestamp": 1741564800000
-  },
-  {
-    "open": 1.0005697563181883,
-    "high": 1.0032710788557815,
-    "low": 0.9938494885491757,
-    "close": 0.994448078550209,
-    "volume": 1197875.7042322678,
-    "timestamp": 1742169600000
-  }
+    {
+        "open": 1.0113540174376618,
+        "high": 1.012268074014591,
+        "low": 1.0108867111873354,
+        "close": 1.0115087260420723,
+        "volume": 571529.0232354626,
+        "timestamp": 1767312000000
+    },
+    {
+        "open": 1.0115018499993238,
+        "high": 1.0115018499993238,
+        "low": 1.0104833741322214,
+        "close": 1.0113550182936037,
+        "volume": 463985.1281049333,
+        "timestamp": 1767398400000
+    }
 ]
 ```
 
@@ -450,23 +767,10 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 
 #### Request Parameters
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| id | string | Yes | Pool identifier (LP asset) |
-
-#### Request Query
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| period | string | **Yes** | Time period to retrieve data for |
-
-**Supported Periods:**
-- `1d` - Last 24 hours
-- `1w` - Last 7 days
-- `1M` - Last 30 days
-- `6M` - Last 6 months
-- `1y` - Last 12 months
-- `all` - All available data
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|-------------|---------|
+| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
+| period | `TimeSeriesPeriod` | Yes | - | Time interval for aggregating the timeseries data |
 
 #### Request Response
 
@@ -483,7 +787,7 @@ type PricePoint = {
 
 #### Example
 ```bash
-curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd6.5553444d2d555344412d534c50/price/timeseries?period=1w'
+curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd65553444d2d555344412d534c50/price/timeseries?period=1w'
 ```
 
 ```json
@@ -500,6 +804,129 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
     "value": 1.0097130824357143,
     "timestamp": 1764100800000
   }
+]
+```
+### 5. Get Pool Volume Timeseries
+
+**GET:** `v1/pools/:id/volume/timeseries`
+
+**Description:** Retrieve trading volume timeseries data for a specific pool over a given period. Use this endpoint to analyze trading activity and volume trends over time.
+
+#### Request Parameters
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|-------------|---------|
+| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
+| period | `TimeSeriesPeriod` | Yes | - | Time interval for aggregating the timeseries data |
+| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+
+#### Request Response
+
+```typescript
+type PoolTimeseriesVolumeResponse = {
+  value: number;
+  timestamp: number;
+}[]
+```
+
+#### Example
+
+```bash
+curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd65553444d2d555344412d534c50/volume/timeseries?period=1d'
+```
+
+```json
+[
+    {
+        "value": 33236.80321708667,
+        "timestamp": 1767340800000
+    },
+    {
+        "value": 29202.326747222072,
+        "timestamp": 1767355200000
+    }
+]
+```
+### 6. Get Pool TVL Timeseries
+
+**GET:** `v1/pools/:id/tvl/timeseries`
+
+**Description:** Retrieve total value locked (TVL) timeseries data for a specific pool over a given period. Use this endpoint to track liquidity changes and pool growth metrics over time.
+
+#### Request Parameters
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|-------------|---------|
+| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
+| period | `TimeSeriesPeriod` | Yes | - | Time interval for aggregating the timeseries data |
+| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+
+#### Request Response
+
+```typescript
+type PoolTimeseriesTvlResponse = {
+  value: number;
+  timestamp: number;
+}[]
+```
+
+#### Example
+
+```bash
+curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd65553444d2d555344412d534c50/tvl/timeseries?period=1w&currency=usd'
+```
+
+```json
+[
+    {
+        "value": 27414288.316657227,
+        "timestamp": 1766476800000
+    },
+    {
+        "value": 28325724.627680056,
+        "timestamp": 1766491200000
+    }
+]
+```
+### 7. Get Pool Fee Timeseries
+
+**GET:** `v1/pools/:id/fees/timeseries`
+
+**Description:** Retrieve accumulated trading fees timeseries data for a specific pool over a given period. Use this endpoint to analyze fee generation and revenue performance of liquidity pools.
+
+#### Request Parameters
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|-------------|---------|
+| id | string | Yes | - | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
+| period | `TimeSeriesPeriod` | Yes | - | Time interval for aggregating the timeseries data |
+| currency | `SupportedCurrency` | No | - | Return values are in ADA if there is no value |
+
+#### Request Response
+
+```typescript
+type PoolTimeseriesFeesResponse = {
+  value: number;
+  timestamp: number;
+}[]
+```
+
+#### Example
+
+```bash
+curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd65553444d2d555344412d534c50/fees/timeseries?period=1d&currency=usd'
+```
+
+```json
+[
+    {
+        "value": 0,
+        "timestamp": 1767060000000
+    },
+    {
+        "value": 0.9978481459422092,
+        "timestamp": 1767061800000
+    }
 ]
 ```
 
