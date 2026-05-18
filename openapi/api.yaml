@@ -21,6 +21,7 @@ components:
         - Splash
         - SundaeSwapV3
         - SundaeSwap
+        - SundaeSwapStable
         - VyFinance
         - CswapV1
         - WingRidersV2
@@ -28,6 +29,9 @@ components:
         - WingRidersStableV2
         - Spectrum
         - SplashStable
+        - ChakraBondingCurve
+        - OpenDjedV1
+        - DanogoCLMMV1
     Asset:
       type: object
       required:
