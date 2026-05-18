@@ -181,13 +181,17 @@ Detailed description of each prop:
       | "Splash"
       | "SundaeSwapV3"
       | "SundaeSwap"
+      | "SundaeSwapStable"
       | "VyFinance"
       | "CswapV1"
       | "WingRidersV2"
       | "WingRiders"
       | "WingRidersStableV2"
       | "Spectrum"
-      | "SplashStable";
+      | "SplashStable"
+      | "ChakraBondingCurve"
+      | "OpenDjedV1"
+      | "DanogoCLMMV1";
     ```
 
     Example:
