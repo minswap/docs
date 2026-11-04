@@ -5,6 +5,7 @@ info:
   description: >
     The Minswap Aggregator API provides direct access to Minswap's aggregation functionality
     for partners who want to implement their own interface and control the trading logic.
+    Requests are rate limited to 100 per second per client IP; over the limit the API answers 429.
 servers:
   - url: https://agg-api.minswap.org/aggregator
     description: Production server
@@ -22,6 +23,7 @@ components:
         - SundaeSwapV3
         - SundaeSwap
         - SundaeSwapStable
+        - SundaeSwapV4
         - VyFinance
         - CswapV1
         - WingRidersV2
@@ -75,6 +77,13 @@ components:
             Can be null if price information is unavailable
             Example: 1.5 means 1 token = 1.5 ADA
           example: 1.5
+        price_by_usd:
+          type: number
+          nullable: true
+          description: |
+            Token price denominated in USD
+            Can be null if price information is unavailable
+          example: 0.29
         project_name:
           type: string
           nullable: true
@@ -96,7 +105,7 @@ components:
 paths:
   /ada-price:
     get:
-      summary: Get current ADA price in multiple currencies
+      summary: Get current ADA price in USD
       parameters:
         - name: currency
           in: query
@@ -104,59 +113,13 @@ paths:
           schema:
             type: string
             enum:
-              - aed  # UAE Dirham
-              - ars  # Argentine Peso
-              - aud  # Australian Dollar
-              - bdt  # Bangladeshi Taka
-              - bhd  # Bahraini Dinar
-              - bmd  # Bermudian Dollar
-              - brl  # Brazilian Real
-              - cad  # Canadian Dollar
-              - chf  # Swiss Franc
-              - clp  # Chilean Peso
-              - cny  # Chinese Yuan
-              - czk  # Czech Koruna
-              - dkk  # Danish Krone
-              - eur  # Euro
-              - gbp  # British Pound
-              - hkd  # Hong Kong Dollar
-              - huf  # Hungarian Forint
-              - idr  # Indonesian Rupiah
-              - ils  # Israeli New Shekel
-              - inr  # Indian Rupee
-              - jpy  # Japanese Yen
-              - krw  # South Korean Won
-              - kwd  # Kuwaiti Dinar
-              - lkr  # Sri Lankan Rupee
-              - mmk  # Myanmar Kyat
-              - mxn  # Mexican Peso
-              - myr  # Malaysian Ringgit
-              - ngn  # Nigerian Naira
-              - nok  # Norwegian Krone
-              - nzd  # New Zealand Dollar
-              - php  # Philippine Peso
-              - pkr  # Pakistani Rupee
-              - pln  # Polish Złoty
-              - rub  # Russian Ruble
-              - sar  # Saudi Riyal
-              - sek  # Swedish Krona
-              - sgd  # Singapore Dollar
-              - thb  # Thai Baht
-              - try  # Turkish Lira
-              - twd  # New Taiwan Dollar
-              - uah  # Ukrainian Hryvnia
               - usd  # US Dollar
-              - vef  # Venezuelan Bolívar
-              - vnd  # Vietnamese Đồng
-              - xdr  # Special Drawing Rights
-              - zar  # South African Rand
           example: "usd"
           description: |
             Currency code to get ADA price in.
-            Common values: usd, eur, jpy.
       responses:
         '200':
-          description: Current ADA price and 24-hour change in requested currency
+          description: Current ADA price and 24-hour change in USD
           content:
             application/json:
               schema:
@@ -166,7 +129,6 @@ paths:
                     type: string
                     description: |
                       The requested currency code in lowercase
-                      Example: "usd", "eur", "gbp"
                     example: "usd"
                   value:
                     type: object
@@ -185,7 +147,7 @@ paths:
                       price:
                         type: number
                         description: |
-                          Current price in the requested currency
+                          Current price in USD
                           Example: 0.75 means 1 ADA = $0.75 USD
                         example: 0.75
   /wallet:
@@ -200,8 +162,9 @@ paths:
           example: "addr1..."
           description: |
             Cardano wallet address to query
-            - Supports both Cbor and Hex format addresses
-            - Will be normalized to Cbor format in response
+            - Supports both bech32 and hex format addresses
+            - Byron (legacy) addresses are not supported
+            - Will be normalized to bech32 format in response
         - name: amount_in_decimal
           in: query
           required: false
@@ -221,7 +184,7 @@ paths:
                   wallet:
                     type: string
                     description: |
-                      The wallet address in cbor format
+                      The wallet address in bech32 format
                       Example: "addr1..."
                     example: "addr1..."
                   ada:
@@ -247,7 +210,7 @@ paths:
                     description: |
                       Array of token balances held in the wallet.
                       Each entry represents a different token's balance and metadata.
-                      ADA (lovelace) is not included here as it has its own field 'ada'.
+                      ADA is included as the entry with token_id "lovelace".
                     items:
                       type: object
                       description: Token balance entry with asset information
@@ -303,9 +266,10 @@ paths:
                   items:
                     type: string
                   description: |
-                    Optional list of specific token_ids to fetch
+                    Optional list of specific token_ids to fetch (at most 100)
                     Format: Array of "<policyId><tokenName>" strings
                     Example: ["29d222ce763455e3d7a09a665ce554f00ac89d2e99a1a83d267170c64d494e"]
+                  maxItems: 100
                   example: ["29d222ce763455e3d7a09a665ce554f00ac89d2e99a1a83d267170c64d494e"]
                 search_after:
                   type: array
@@ -313,6 +277,7 @@ paths:
                     type: string
                   description: |
                     Pagination cursor from previous response
+                    Each page holds up to 20 tokens
       responses:
         '200':
           description: Token search results with pagination information
@@ -334,6 +299,26 @@ paths:
                       type: string
                     description: |
                       Pagination cursor for the next page
+                      Empty when there are no more results
+        '400':
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  code:
+                    type: string
+                    example: ""
+                  error:
+                    type: string
+                    example: "Bad Request"
+                  message:
+                    type: string
+                    example: "only_verified is required"
   /estimate:
     post:
       summary: Get optimal swap route and price estimation across DEX protocols
@@ -413,6 +398,12 @@ paths:
                     Multi-hop swaps can often provide better prices by routing through 
                     intermediate tokens, but may have higher total fees due to multiple swaps.
                     Example: ADA -> MIN -> iUSD might be more efficient than direct ADA -> iUSD
+                allow_non_atomic_multi_hops:
+                  type: boolean
+                  description: |
+                    Control whether routes may chain swap orders across more than one transaction:
+                    the output of one swap is sent to the next pool's order contract.
+                    These hops are returned in callback_paths.
                 partner:
                   type: string
                   description: |
@@ -424,6 +415,7 @@ paths:
                   description: |
                     If true, the amount field is interpreted as a decimal string (e.g., "1.5" ADA),
                     not the smallest unit (e.g., "1500000" lovelace). If false or omitted, amount is in smallest unit.
+                    Amount must be greater than 0.
       responses:
         '200':
           description: |
@@ -590,10 +582,25 @@ paths:
                             description: |
                               Price impact percentage for this specific hop
                               Lower values indicate better pricing
+                          pool_out_ref:
+                            type: string
+                            description: |
+                              Pool UTxO used for this hop (TxHash#Index), when known
+                          callback_paths:
+                            type: array
+                            description: |
+                              Hops that run after this hop in later transactions
+                              (only with allow_non_atomic_multi_hops)
+                              Same shape as paths
+                            items:
+                              type: array
+                              items:
+                                type: object
                   aggregator_fee:
                     type: string
                     description: |
                       Aggregator service fee amount
+                      Omitted when no aggregator fee applies
                       Examples:
                       - "1.5" (with amount_in_decimal=true) means 1.5 ADA 
                       - "1000000" (with amount_in_decimal=false) means 1 ADA
@@ -602,6 +609,12 @@ paths:
                     description: |
                       Aggregator fee percentage
                       Example: 0.5
+                  tokens:
+                    type: object
+                    description: |
+                      Metadata of every token in the route, keyed by token_id
+                    additionalProperties:
+                      $ref: '#/components/schemas/Asset'
                   amount_in_decimal: 
                     type: boolean
                     description: Whether amount_in_decimal is enabled or not
@@ -636,8 +649,8 @@ paths:
                   type: string
                   description: |
                     Minimum acceptable output amount
-                    Must be greater than or equal to the min_amount_out
-                    from the /estimate response to ensure price protection
+                    The route is estimated again when the transaction is built; the request
+                    fails if the new min_amount_out is lower than this value
                     Examples:
                     - "1.5" (with amount_in_decimal=true) means 1.5 ADA 
                     - "1000000" (with amount_in_decimal=false) means 1 ADA
@@ -694,6 +707,11 @@ paths:
                       description: |
                         Whether to allow multi-hop routes
                         Must match allow_multi_hops used in /estimate
+                    allow_non_atomic_multi_hops:
+                      type: boolean
+                      description: |
+                        Whether to allow routes that chain swap orders across transactions
+                        Must match allow_non_atomic_multi_hops used in /estimate
                     partner:
                       type: string
                       description: |
@@ -704,6 +722,29 @@ paths:
                   description: |
                     If true, the amount in the estimate is interpreted as a decimal string (e.g., "1.5" ADA),
                     not the smallest unit (e.g., "1500000" lovelace). If false or omitted, amount is in smallest unit.
+                extra_output:
+                  type: object
+                  description: |
+                    Optional extra ADA payment added to the transaction
+                  properties:
+                    address:
+                      type: string
+                      description: Address that receives the payment
+                    lovelace:
+                      type: string
+                      description: |
+                        ADA amount to pay
+                        Follows amount_in_decimal like the other amounts
+                  required:
+                    - address
+                    - lovelace
+                inputs_to_choose:
+                  type: array
+                  items:
+                    type: string
+                  description: |
+                    Optional list of hex-encoded CBOR UTxOs to build the transaction from
+                    If omitted, the sender's UTxOs are used
               required:
                 - sender
                 - min_amount_out
@@ -933,14 +974,8 @@ paths:
                           Transaction input pointer (TxHash#Index) for the order
                           Format: "<transaction_hash>#<output_index>"
                           Example: "1abc...#0"
-                      protocol:
-                        $ref: '#/components/schemas/Protocol'
-                        description: |
-                          DEX protocol where the order was placed
-                          Must match the protocol used to create the order
                     required:
                       - tx_in
-                      - protocol
               required:
                 - sender
                 - orders

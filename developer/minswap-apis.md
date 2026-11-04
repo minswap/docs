@@ -46,9 +46,9 @@ The API implements rate limiting to ensure fair usage. If you exceed the rate li
 ```json
 {
   "statusCode": 400,
-  "code": "FST_ERR_VALIDATION",
-  "error": "Error message description",
-  "message": "querystring/period must be equal to constant"
+  "code": "",
+  "error": "Bad Request",
+  "message": "invalid period value"
 }
 ```
 
@@ -87,6 +87,22 @@ enum Protocol {
   MinswapV1 = "Minswap",
   MinswapV2 = "MinswapV2",
   MinswapStable = "MinswapStable",
+  Splash = "Splash",
+  Spectrum = "Spectrum",
+  SplashStable = "SplashStable",
+  SundaeSwap = "SundaeSwap",
+  SundaeSwapV3 = "SundaeSwapV3",
+  SundaeSwapV4 = "SundaeSwapV4",
+  SundaeSwapStable = "SundaeSwapStable",
+  WingRiders = "WingRiders",
+  WingRidersV2 = "WingRidersV2",
+  WingRidersStableV2 = "WingRidersStableV2",
+  OpenDjedV1 = "OpenDjedV1",
+  ChakraBondingCurve = "ChakraBondingCurve",
+  CswapV1 = "CswapV1",
+  VyFinance = "VyFinance",
+  MuesliSwap = "MuesliSwap",
+  DanogoCLMMV1 = "DanogoCLMMV1",
 }
 
 enum SortDirection {
@@ -94,7 +110,7 @@ enum SortDirection {
   Descending = "desc"
 }
 
-type SupportedCurrency = 'aed' | 'ars' | 'aud' | 'bdt' | 'bhd' | 'bmd' | 'brl' | 'cad' | 'chf' | 'clp' | 'cny' | 'czk' | 'dkk' | 'eur' | 'gbp' | 'hkd' | 'huf' | 'idr' | 'ils' | 'inr' | 'jpy' | 'krw' | 'kwd' | 'lkr' | 'mmk' | 'mxn' | 'myr' | 'ngn' | 'nok' | 'nzd' | 'php' | 'pkr' | 'pln' | 'rub' | 'sar' | 'sek' | 'sgd' | 'thb' | 'try' | 'twd' | 'uah' | 'usd' | 'vef' | 'vnd' | 'xdr' | 'zar';
+type SupportedCurrency = 'ada' | 'usd';
 
 type TimeSeriesPeriod = "1d" | "1w" | "1M" | "6M" | "1y" | "all";
 
@@ -154,9 +170,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets?term=&limit=20&o
 ```json
 {
   "search_after": [
-    "1",
-    "14110",
-    "f66d78b4a3cb3d37afa0ec36461e51ecbde00f26c8f0a68f94b69880.69425443"
+    "20"
   ],
   "assets": [
     {
@@ -197,11 +211,13 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets?term=&limit=20&o
 | --------------- | ------------------- | -------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | term            | string              | No       | `""`         | Search by asset name, currency symbol, token name, or ticker                                                                                                                                |
 | limit           | number              | No       | `20`         | Number of results per page (min: `1`, max: `100`)                                                                                                                                           |
-| only\_verified  | boolean             | No       | `true`       | Filter to show only verified tokens                                                                                                                                                         |
+| only\_verified  | boolean             | No       | `false`      | Filter to show only verified tokens                                                                                                                                                         |
 | search\_after   | string\[]           | No       | `[]`         | Pagination cursor from previous response                                                                                                                                                    |
 | sort\_direction | string              | No       | `desc`       | Sort order: `asc` or `desc`                                                                                                                                                                 |
 | sort\_field     | string              | No       | `volume_24h` | Sort by: `price_change_1h`, `price_change_24h`, `price_change_7d`, `volume_1h`, `volume_24h`, `volume_7d`, `liquidity`, `market_cap`, `fully_diluted`, `total_supply`, `circulating_supply` |
 | currency        | `SupportedCurrency` | No       | -            | Return values are in ADA if there is no value                                                                                                                                               |
+| favorite\_asset\_ids | string\[]     | No       | `[]`         | Only return these assets (ID asset in format: `{policy_id}{token_name}`, max: `1000`)                                                                                                     |
+| filter\_small\_liquidity | boolean    | No       | `false`      | Hide assets with liquidity below `1000`                                                                                                                                                     |
 
 **Note:** For pagination, use the `search_after` value from the previous response to get the next page of results.
 
@@ -224,7 +240,6 @@ type AssetMetric = {
   total_supply: number;
   circulating_supply: number;
   created_at?: string;
-  created_tx_id?: string;
   categories?: string[];
   price: number;
   liquidity: number;
@@ -251,8 +266,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/metrics' \
 ```json
 {
     "search_after": [
-        "9954917.19354675",
-        "c48cbb3d5e57ed56e276bc45f99ab39abe94e6cd7ac39fb402da47ad.0014df105553444d"
+        "1"
     ],
     "asset_metrics": [
         {
@@ -271,7 +285,6 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/metrics' \
             "total_supply": 0,
             "circulating_supply": 0,
             "created_at": "2024-03-17T00:21:21.000Z",
-            "created_tx_id": "ac1cb7d3bc2a6e1a356b16c959e222608005524fc0c35919b63574d6b0b20b5a",
             "categories": [
                 "Stablecoin"
             ],
@@ -307,7 +320,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/metrics' \
 
 ```typescript
 type Response = {
-  asset: RestAssetMetadata;
+  asset: Asset;
   price_change_1h: number;
   price_change_24h: number;
   price_change_7d: number;
@@ -317,7 +330,6 @@ type Response = {
   total_supply: number;
   circulating_supply: number;
   created_at?: string;
-  created_tx_id?: string;
   categories?: string[];
   price: number;
   liquidity: number;
@@ -356,7 +368,6 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/assets/016be5325fd988fe
     "total_supply": 25000000,
     "circulating_supply": 12432701.092661,
     "created_at": "2024-02-22T14:03:08.000Z",
-    "created_tx_id": "c2d43135e34981fcb9a5db3d9b189c81d278adadc9940967f93980f8ee2b7074",
     "categories": [
         "DeFi"
     ],
@@ -494,8 +505,9 @@ Pools APIs provide comprehensive data about liquidity pools, including metrics, 
 | only\_verified  | boolean             | No       | `false`     | Filter to show only pools with verified tokens              |
 | search\_after   | string\[]           | No       | `[]`        | Pagination cursor from previous response                    |
 | sort\_direction | string              | No       | `desc`      | Sort order: `asc` or `desc`                                 |
-| sort\_field     | string              | Yes      | `liquidity` | Sort by: `volume_24h`, `volume_7d`, or `liquidity`          |
-| protocols       | string\[]           | No       | All         | Filter by protocol: `Minswap`, `MinswapV2`, `MinswapStable` |
+| sort\_field     | string              | No       | `liquidity` | Sort by: `volume_24h`, `volume_7d`, or `liquidity`          |
+| protocols       | `Protocol`\[]       | No       | All         | Filter by protocol                                          |
+| favorite\_pool\_ids | string\[]       | No       | `[]`        | Only return these pools (LP asset ID: `{policy_id}{token_name}`, max: `1000`) |
 | currency        | `SupportedCurrency` | No       | -           | Return values are in ADA if there is no value               |
 
 #### Request Response
@@ -507,22 +519,22 @@ type Response = {
 }
 
 type PoolMetrics = {
-  lp_asset: AssetMetadata;
+  lp_asset: Asset;
   type: Protocol;
-  asset_a: AssetMetadata;
-  asset_b: AssetMetadata;
-  liquidity_raw: number;
-  liquidity_a_raw: number;
-  liquidity_b_raw: number;
+  asset_a: Asset;
+  asset_b: Asset;
+  liquidity: number;            // LP token supply, in the smallest unit
+  liquidity_a: number;          // amount of asset_a in the pool
+  liquidity_b: number;          // amount of asset_b in the pool
   trading_fee_tier: number[];
   trading_fee_apr?: number;
   volume_24h: number;
   volume_7d: number;
   trading_fee_24h: number;
   trading_fee_7d: number;
-  liquidity: number;
-  liquidity_a: number;
-  liquidity_b: number;
+  liquidity_currency: number;   // pool liquidity in the requested currency
+  liquidity_a_currency: number; // value of liquidity_a in the requested currency
+  liquidity_b_currency: number; // value of liquidity_b in the requested currency
 }
 
 ```
@@ -544,8 +556,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/metrics' \
 ```json
 {
     "search_after": [
-        "10183179.86675752",
-        "5f0d38b3eb8fea72cd3cbdaa9594a74d0db79b5a27e85be5e9015bd6.5553444d2d555344412d534c50"
+        "1"
     ],
     "pool_metrics": [
         {
@@ -584,14 +595,14 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/metrics' \
                 0.05
             ],
             "trading_fee_apr": 0.3437032224976275,
-            "liquidity_raw": 10053890543674,
-            "liquidity_a_raw": 5393732.846663,
-            "liquidity_b_raw": 4683667.353299,
+            "liquidity": 10053890543674,
+            "liquidity_a": 5393732.846663,
+            "liquidity_b": 4683667.353299,
             "volume_24h": 294243.8992270554,
             "volume_7d": 2042834.6864464958,
-            "liquidity": 10183179.86675752,
-            "liquidity_a": 5409159.8695964,
-            "liquidity_b": 4774019.997161119,
+            "liquidity_currency": 10183179.86675752,
+            "liquidity_a_currency": 5409159.8695964,
+            "liquidity_b_currency": 4774019.997161119,
             "trading_fee_24h": 73.6453803607475,
             "trading_fee_7d": 511.1735333229008
         }
@@ -616,22 +627,22 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/metrics' \
 
 ```typescript
 type PoolMetrics = {
-  lp_asset: AssetMetadata;
+  lp_asset: Asset;
   type: Protocol;
-  asset_a: AssetMetadata;
-  asset_b: AssetMetadata;
-  liquidity_raw: number;
-  liquidity_a_raw: number;
-  liquidity_b_raw: number;
+  asset_a: Asset;
+  asset_b: Asset;
+  liquidity: number;            // LP token supply, in the smallest unit
+  liquidity_a: number;          // amount of asset_a in the pool
+  liquidity_b: number;          // amount of asset_b in the pool
   trading_fee_tier: number[];
-  trading_fee_apr: number;
+  trading_fee_apr?: number;
   volume_24h: number;
   volume_7d: number;
   trading_fee_24h: number;
   trading_fee_7d: number;
-  liquidity: number;
-  liquidity_a: number;
-  liquidity_b: number;
+  liquidity_currency: number;   // pool liquidity in the requested currency
+  liquidity_a_currency: number; // value of liquidity_a in the requested currency
+  liquidity_b_currency: number; // value of liquidity_b in the requested currency
 }
 
 ```
@@ -679,14 +690,14 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
         0.05
     ],
     "trading_fee_apr": 0.3436275699948192,
-    "liquidity_raw": 10053890543674,
-    "liquidity_a_raw": 5393732.846663,
-    "liquidity_b_raw": 4683667.353299,
+    "liquidity": 10053890543674,
+    "liquidity_a": 5393732.846663,
+    "liquidity_b": 4683667.353299,
     "volume_24h": 294243.8992270554,
     "volume_7d": 2020489.306139798,
-    "liquidity": 10183179.86675752,
-    "liquidity_a": 5409159.8695964,
-    "liquidity_b": 4774019.997161119,
+    "liquidity_currency": 10183179.86675752,
+    "liquidity_a_currency": 5409159.8695964,
+    "liquidity_b_currency": 4774019.997161119,
     "trading_fee_24h": 73.6453803607475,
     "trading_fee_7d": 505.84438543787957
 }
@@ -705,7 +716,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 | id          | string                | Yes      | -       | LP asset ID combining policy ID and token name: `{policy_id}{token_name}`                          |
 | start\_time | number                | No       | -       | The Unix timestamp (in milliseconds) marking the start of the time range for the candlestick data. |
 | end\_time   | number                | No       | -       | The Unix timestamp (in milliseconds) marking the end of the time range for the candlestick data.   |
-| limit       | number                | No       | `500`   | Limit the number of candlestick records returned (min: `1`, max: `1000`)                           |
+| limit       | number                | No       | `500`   | Limit the number of candlestick records returned (min: `1`, max: `500`)                            |
 | interval    | `CandlestickInterval` | Yes      | -       | Candlestick interval.                                                                              |
 
 #### Request Response
@@ -714,7 +725,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 type Response = Ohlcv[]
 ```
 
-**Note:** Results are sorted by timestamp in ascending order.
+**Note:** Results are sorted by timestamp in ascending order. When both `start_time` and `end_time` are set, the range can cover at most 500 intervals.
 
 #### Example
 
@@ -802,7 +813,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 | Parameter | Type                | Required | Default | Description                                                               |
 | --------- | ------------------- | -------- | ------- | ------------------------------------------------------------------------- |
 | id        | string              | Yes      | -       | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
-| period    | `TimeSeriesPeriod`  | Yes      | -       | Time interval for aggregating the timeseries data                         |
+| period    | `TimeSeriesPeriod`  | Yes      | -       | Time interval for aggregating the timeseries data (`all` is not supported) |
 | currency  | `SupportedCurrency` | No       | -       | Return values are in ADA if there is no value                             |
 
 #### Request Response
@@ -844,7 +855,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 | Parameter | Type                | Required | Default | Description                                                               |
 | --------- | ------------------- | -------- | ------- | ------------------------------------------------------------------------- |
 | id        | string              | Yes      | -       | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
-| period    | `TimeSeriesPeriod`  | Yes      | -       | Time interval for aggregating the timeseries data                         |
+| period    | `TimeSeriesPeriod`  | Yes      | -       | Time interval for aggregating the timeseries data (`all` is not supported) |
 | currency  | `SupportedCurrency` | No       | -       | Return values are in ADA if there is no value                             |
 
 #### Request Response
@@ -886,7 +897,7 @@ curl --location 'https://api-mainnet-prod.minswap.org/v1/pools/5f0d38b3eb8fea72c
 | Parameter | Type                | Required | Default | Description                                                               |
 | --------- | ------------------- | -------- | ------- | ------------------------------------------------------------------------- |
 | id        | string              | Yes      | -       | LP asset ID combining policy ID and token name: `{policy_id}{token_name}` |
-| period    | `TimeSeriesPeriod`  | Yes      | -       | Time interval for aggregating the timeseries data                         |
+| period    | `TimeSeriesPeriod`  | Yes      | -       | Time interval for aggregating the timeseries data (`all` is not supported) |
 | currency  | `SupportedCurrency` | No       | -       | Return values are in ADA if there is no value                             |
 
 #### Request Response
