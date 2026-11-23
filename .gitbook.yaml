@@ -1,0 +1,62 @@
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
+
+redirects:
+  courses/advanced-trading-features: trade/limit-orders.md
+  courses/advanced-trading-features/limit-orders: trade/limit-orders.md
+  courses/advanced-trading-features/stop-orders: trade/stop-orders.md
+  courses/analytics-tools-and-insights: resources/analytics-tools-and-insights.md
+  courses/getting-started-and-best-safety-practices: get-started/overview.md
+  courses/getting-started-and-best-safety-practices/overview: get-started/overview.md
+  courses/getting-started-and-best-safety-practices/security-tips: get-started/security-tips.md
+  courses/getting-started-and-best-safety-practices/setting-up-your-wallet: get-started/setting-up-your-wallet.md
+  courses/governance: governance/what-is-governance-on-minswap.md
+  courses/governance/minswap-governance-proposals: governance/minswap-governance-proposals.md
+  courses/governance/voting-on-minswap-proposals: governance/voting-on-minswap-proposals.md
+  courses/governance/what-is-governance-on-minswap: governance/what-is-governance-on-minswap.md
+  courses/how-to-perform-swaps: trade/README.md
+  courses/how-to-perform-swaps/batcher: trade/batcher.md
+  courses/how-to-perform-swaps/price-impact: trade/price-impact.md
+  courses/how-to-perform-swaps/slippage: trade/slippage.md
+  courses/how-to-perform-swaps/swapping-assets: trade/README.md
+  courses/how-to-provide-liquidity: liquidity/README.md
+  courses/how-to-provide-liquidity/risks-understanding-impermanent-loss: liquidity/impermanent-loss.md
+  courses/how-to-provide-liquidity/staking-usdmin: earn/min-staking/how-to-stake-min.md
+  courses/how-to-provide-liquidity/what-is-liquidity-provisioning: liquidity/README.md
+  courses/how-to-provide-liquidity/zap-in-and-out: liquidity/zap-in-and-out.md
+  courses/risks-and-rewards-of-using-minswap: earn/yield-farming/README.md
+  courses/risks-and-rewards-of-using-minswap/harvesting-yield-farm-rewards: earn/yield-farming/harvesting-yield-farm-rewards.md
+  courses/risks-and-rewards-of-using-minswap/what-is-a-liquidity-bootstrapping-event: liquidity/README.md
+  courses/risks-and-rewards-of-using-minswap/withdrawing-from-farms: earn/yield-farming/withdrawing-from-farms.md
+  courses/risks-and-rewards-of-using-minswap/yield-farming: earn/yield-farming/how-to-stake-in-a-farm.md
+  developer/bk-aggregator-api: developer/aggregator-api.md
+  faq/fiso: min-token/README.md
+  faq/meteor-lbe: min-token/README.md
+  faq/meteor-lbe/lbe-nft-mechanism: min-token/README.md
+  faq/mint-token: min-token/README.md
+  faq/stable-pools: liquidity/stable-pools.md
+  faq/token-launching-and-farming: for-projects/README.md
+  faq/token-launching-and-farming/1.-token-listing-and-verification: for-projects/token-listing-and-verification.md
+  faq/token-launching-and-farming/2.-coinmarketcap-tracking: for-projects/coinmarketcap-tracking.md
+  faq/token-launching-and-farming/3.-launchbowl-initiatives-rundown: for-projects/README.md
+  faq/token-launching-and-farming/4.-farming-for-projects: for-projects/farming-for-projects.md
+  faq/zap-in: liquidity/zap-in-and-out.md
+  get-started/follow-us: resources/follow-us.md
+  get-started/whitepaper: resources/whitepaper.md
+  governance/governance-module: governance/README.md
+  governance/liquidity-pool-fee-governance: liquidity/lp-fee-governance/README.md
+  governance/liquidity-pool-fee-governance/create-lp-fee-governance: liquidity/lp-fee-governance/create-lp-fee-governance.md
+  governance/liquidity-pool-fee-governance/fee-manager-change-the-pool-fee: liquidity/lp-fee-governance/fee-manager-change-the-pool-fee.md
+  governance/liquidity-pool-fee-governance/vote-for-an-lp-fee-proposal: liquidity/lp-fee-governance/vote-for-an-lp-fee-proposal.md
+  min-token/usdmin-tokenomics: min-token/README.md
+  min-token/usdmin-tokenomics/fee-switch: earn/min-staking/README.md
+  min-token/usdmin-tokenomics/token-allocations-and-vesting: min-token/token-allocations-and-vesting.md
+  min-token/usdmin-tokenomics/trading-fee-discount: min-token/README.md
+  min-token/yield-farming: earn/yield-farming/README.md
+  min-token/yield-farming/usdmin-point-system: earn/yield-farming/usdmin-point-system.md
+  min-token/yield-farming/yield-farming-on-minswap: earn/yield-farming/yield-farming-on-minswap.md
+  min-token/yield-farming/yield-farming-on-minswap/yield-farming-example: earn/yield-farming/yield-farming-example.md
+  whitepaper: resources/whitepaper.md

@@ -1,2 +1,0 @@
-# Advanced Trading Features
-
