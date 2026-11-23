@@ -32,7 +32,7 @@ Under custom mode, there are 2 modes have their advantages and trade-offs, which
 
 User can toggle between `DApp RPC` and `Wallet RPC` modes upon selecting the dropdown where the address is displayed on the DEX as shown in image below.
 
-<figure><img src="../../.gitbook/assets/wc-rpc-mode.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/wc-rpc-mode.png" alt=""><figcaption></figcaption></figure>
 
 ## Development
 
